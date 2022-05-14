@@ -4,7 +4,7 @@
   "description": "ED25519-compatible HDWallet.",
   "author": "Ian Macalinao <github@igm.pub>",
   "homepage": "https://github.com/movershq/moving-kit#readme",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "directories": {

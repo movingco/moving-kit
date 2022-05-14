@@ -1,7 +1,7 @@
 {
-  "name": "@moving/core",
+  "name": "@moving/aptos",
   "version": "0.1.0",
-  "description": "Core packages for MovingKit.",
+  "description": "Aptos packages for MovingKit.",
   "author": "Ian Macalinao <github@igm.pub>",
   "homepage": "https://github.com/movershq/moving-kit#readme",
   "license": "Apache-2.0",
@@ -28,13 +28,12 @@
     "url": "https://github.com/movershq/moving-kit/issues"
   },
   "dependencies": {
-    "bn.js": "^5.2.0",
-    "js-sha3": "^0.8.0",
-    "tiny-invariant": "^1.2.0",
+    "@moving/core": "workspace:^",
+    "aptos": "^0.0.20",
+    "buffer": "^6.0.3",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@types/bn.js": "^5.1.0",
     "typescript": "^4.6.4"
   }
 }

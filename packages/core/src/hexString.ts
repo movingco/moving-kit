@@ -3,7 +3,11 @@
 import { sha3_256 } from "js-sha3";
 import invariant from "tiny-invariant";
 
-export type MaybeHexString = HexString | string;
+export type MaybeHexString = HexStringLike | string;
+
+export interface HexStringLike {
+  hex(): string;
+}
 
 export class HexString {
   /// We want to make sure this hexString has the `0x` hex prefix
@@ -21,7 +25,10 @@ export class HexString {
     if (typeof hexString === "string") {
       return new HexString(hexString);
     }
-    return hexString;
+    if (hexString instanceof HexString) {
+      return hexString;
+    }
+    return new HexString(hexString.hex());
   }
 
   constructor(hexString: string) {
