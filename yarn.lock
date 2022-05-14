@@ -114,6 +114,7 @@ __metadata:
     "@yarnpkg/doctor": ^3
     bn.js: ^5.2.0
     eslint: ^8.15.0
+    husky: ^8.0.1
     lint-staged: ^12.4.1
     prettier: ^2.6.2
     typescript: ^4.6.4
@@ -2270,6 +2271,15 @@ __metadata:
   version: 2.1.0
   resolution: "human-signals@npm:2.1.0"
   checksum: b87fd89fce72391625271454e70f67fe405277415b48bcc0117ca73d31fa23a4241787afdc8d67f5a116cf37258c052f59ea82daffa72364d61351423848e3b8
+  languageName: node
+  linkType: hard
+
+"husky@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "husky@npm:8.0.1"
+  bin:
+    husky: lib/bin.js
+  checksum: 943a73a13d0201318fd30e83d299bb81d866bd245b69e6277804c3b462638dc1921694cb94c2b8c920a4a187060f7d6058d3365152865406352e934c5fff70dc
   languageName: node
   linkType: hard
 

@@ -21,6 +21,7 @@
     "@yarnpkg/doctor": "^3",
     "bn.js": "^5.2.0",
     "eslint": "^8.15.0",
+    "husky": "^8.0.1",
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
     "typescript": "^4.6.4"
@@ -29,6 +30,11 @@
     "build": "yarn workspaces foreach --exclude @moving/workspace -pt run build",
     "lint": "eslint . --cache",
     "lint:ci": "eslint . --max-warnings=0",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache --fix",
+    "*.{md,js,json,yml,yaml,css,md}": "prettier --write"
   }
 }
