@@ -1,0 +1,43 @@
+{
+  "name": "@moving/hdwallet",
+  "version": "0.1.0",
+  "description": "ED25519-compatible HDWallet.",
+  "author": "Ian Macalinao <github@igm.pub>",
+  "homepage": "https://github.com/movershq/moving-kit#readme",
+  "license": "ISC",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/movershq/moving-kit.git"
+  },
+  "scripts": {
+    "build": "tsc && tsc --project tsconfig.cjs.json"
+  },
+  "bugs": {
+    "url": "https://github.com/movershq/moving-kit/issues"
+  },
+  "dependencies": {
+    "@moving/core": "workspace:^",
+    "bip39-light": "^1.0.7",
+    "ed25519-hd-key": "^1.2.0",
+    "pbkdf2": "^3.1.2",
+    "tiny-invariant": "^1.2.0",
+    "tslib": "^2.4.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/pbkdf2": "^3.1.0",
+    "typescript": "^4.6.4"
+  }
+}
