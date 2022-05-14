@@ -1,13 +1,13 @@
 // Taken from <https://github.com/aptos-labs/aptos-core/blob/main/ecosystem/typescript/sdk/src/hex_string.ts>
 
-import invariant from "tiny-invariant";
 import { sha3_256 } from "js-sha3";
+import invariant from "tiny-invariant";
 
 export type MaybeHexString = HexString | string;
 
 export class HexString {
   /// We want to make sure this hexString has the `0x` hex prefix
-  private readonly hexString: string;
+  private readonly _hexString: string;
 
   static fromBuffer(buffer: Buffer): HexString {
     return new HexString(buffer.toString("hex"));
@@ -26,18 +26,18 @@ export class HexString {
 
   constructor(hexString: string) {
     if (hexString.startsWith("0x")) {
-      this.hexString = hexString;
+      this._hexString = hexString;
     } else {
-      this.hexString = `0x${hexString}`;
+      this._hexString = `0x${hexString}`;
     }
   }
 
   hex(): string {
-    return this.hexString;
+    return this._hexString;
   }
 
   noPrefix(): string {
-    return this.hexString.slice(2);
+    return this._hexString.slice(2);
   }
 
   toString(): string {
@@ -45,7 +45,7 @@ export class HexString {
   }
 
   toShortString(): string {
-    const trimmed = this.hexString.replace(/^0x0*/, "");
+    const trimmed = this._hexString.replace(/^0x0*/, "");
     return `0x${trimmed}`;
   }
 

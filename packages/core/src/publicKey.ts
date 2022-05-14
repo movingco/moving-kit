@@ -1,5 +1,6 @@
 import BN from "bn.js";
 import { sha3_256 } from "js-sha3";
+
 import { HexString } from "./hexString";
 
 /**
