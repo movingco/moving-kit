@@ -84,4 +84,20 @@ export class HexString {
 
     return "0x" + chars.join("");
   }
+
+  /**
+   * Shortened version of this string as a checksum address.
+   * @param leading
+   * @param trailing
+   * @returns
+   */
+  shortened(leading = 5, trailing = 3): string {
+    const hex = this.getChecksumAddress();
+    const last = leading + 2;
+    return (
+      hex.substring(0, leading + 2) +
+      "…" +
+      hex.substring(Math.max(hex.length - trailing, last))
+    );
+  }
 }
