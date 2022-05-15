@@ -64,7 +64,11 @@ export class HexString {
     return Uint8Array.from(this.toBuffer());
   }
 
-  getChecksumAddress(): string {
+  /**
+   * Returns the checksum version of this HexString.
+   * @returns
+   */
+  checksum(): string {
     const chars = this.noPrefix().toLowerCase().split("");
 
     const expanded = new Uint8Array(chars.map((char) => char.charCodeAt(0)));
@@ -99,7 +103,7 @@ export class HexString {
    * @returns
    */
   shortened(leading = 5, trailing = 3): string {
-    const hex = this.getChecksumAddress();
+    const hex = this.checksum();
     const last = leading + 2;
     return (
       hex.substring(0, leading + 2) +

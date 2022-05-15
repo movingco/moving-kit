@@ -1,6 +1,7 @@
 import BN from "bn.js";
 import { sha3_256 } from "js-sha3";
 
+import type { HexStringLike } from "./hexString";
 import { HexString } from "./hexString";
 
 /**
@@ -33,7 +34,7 @@ function isPublicKeyData(value: PublicKeyInitData): value is PublicKeyData {
  *
  * Based on: <https://github.com/solana-labs/solana-web3.js/blob/master/src/publickey.ts>
  */
-export class PublicKey {
+export class PublicKey implements HexStringLike {
   /** @internal */
   private _bn: BN;
 
@@ -67,6 +68,17 @@ export class PublicKey {
    */
   equals(publicKey: PublicKey): boolean {
     return this._bn.eq(publicKey._bn);
+  }
+
+  /**
+   * Return a {@link HexString} representing this public key.
+   */
+  toHexString(): HexString {
+    return HexString.fromBuffer(this.toBuffer());
+  }
+
+  hex(): string {
+    return `0x${this.toBuffer().toString("hex")}`;
   }
 
   /**
