@@ -9,7 +9,7 @@
   "main": "index.js",
   "repository": "git@github.com:movershq/moving-kit.git",
   "author": "Ian Macalinao <github@igm.pub>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.3",
