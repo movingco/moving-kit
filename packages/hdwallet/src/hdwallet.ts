@@ -86,9 +86,13 @@ export class HDWallet {
    * @returns
    */
   deriveArbitraryPath(path: string): Buffer {
-    const derivedSeed = derivePath(path, this.seed.toString("hex")).key;
-    invariant(derivedSeed, "derived seed");
-    return derivedSeed;
+    try {
+      const derivedSeed = derivePath(path, this.seed.toString("hex")).key;
+      invariant(derivedSeed, "derived seed");
+      return derivedSeed;
+    } catch (e) {
+      throw new Error(`could not derive path ${path}: ${(e as Error).message}`);
+    }
   }
 
   /**
