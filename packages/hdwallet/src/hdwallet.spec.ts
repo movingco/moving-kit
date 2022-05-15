@@ -1,5 +1,5 @@
 /// <reference types="jest" />
-import { HDWallet } from "./hdwallet";
+import { generateMnemonic, HDWallet } from "./hdwallet";
 
 describe("HDWallet", () => {
   it("should derive", () => {
@@ -8,5 +8,10 @@ describe("HDWallet", () => {
 
     // This one shouldn't work because it is different
     expect(wallet.derivePath("0'/1'")).not.toStrictEqual(wallet.deriveIndex());
+  });
+
+  it("makes mnemonics", () => {
+    const mnemonic = generateMnemonic();
+    expect(mnemonic.split(" ").length).toEqual(12);
   });
 });
