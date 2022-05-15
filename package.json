@@ -32,7 +32,7 @@
   "scripts": {
     "build": "yarn workspaces foreach --exclude @moving/workspace -pt run build",
     "publish:all": "yarn workspaces foreach --exclude @moving/workspace -pt npm publish",
-    "bump:patch": "yarn workspaces foreach -t version patch",
+    "bump": "yarn workspaces foreach -t version",
     "test": "jest",
     "lint": "eslint . --cache",
     "lint:ci": "eslint . --max-warnings=0",
