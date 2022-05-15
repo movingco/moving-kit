@@ -2,6 +2,8 @@ import * as bip39 from "bip39-light";
 import { derivePath } from "ed25519-hd-key";
 import invariant from "tiny-invariant";
 
+import { randomBytes } from "./randomBytes";
+
 /**
  * Coin ID for Diem-like environments.
  *
@@ -41,7 +43,7 @@ export interface MnemonicAndSeed {
 export const generateMnemonic = (
   strength: number = DEFAULT_STRENGTH
 ): Mnemonic => {
-  return bip39.generateMnemonic(strength);
+  return bip39.generateMnemonic(strength, randomBytes);
 };
 
 /**

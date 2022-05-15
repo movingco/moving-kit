@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "dist/esm/",
+    "lib": ["DOM"],
     "noEmit": false,
     "types": ["jest"]
   },
