@@ -20,14 +20,14 @@ export class Account implements Signer {
   /**
    * Loads a {@link Account} from a private (signing) key.
    *
-   * @param privateKeyBytes The private key.
+   * @param seed The seed of the private key.
    * @param address The address of the account, in hex.
    * @returns
    */
-  static fromPrivateKey(privateKeyBytes: Uint8Array, address?: HexStringLike) {
+  static fromSeed(seed: Uint8Array, address?: HexStringLike) {
     return new Account(
       new AptosAccount(
-        privateKeyBytes,
+        seed,
         address
           ? typeof address === "string"
             ? address
