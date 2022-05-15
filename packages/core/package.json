@@ -1,5 +1,5 @@
 {
-  "name": "@moving/core",
+  "name": "@movingco/core",
   "version": "0.1.0",
   "description": "Core packages for MovingKit.",
   "author": "Ian Macalinao <github@igm.pub>",
@@ -7,12 +7,9 @@
   "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
   "files": [
-    "lib"
+    "src/",
+    "dist/"
   ],
   "publishConfig": {
     "access": "public"

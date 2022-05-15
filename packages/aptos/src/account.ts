@@ -1,5 +1,5 @@
-import type { HexStringLike, Signer } from "@moving/core";
-import { HexString, PublicKey } from "@moving/core";
+import type { HexStringLike, Signer } from "@movingco/core";
+import { HexString, PublicKey } from "@movingco/core";
 import { AptosAccount } from "aptos";
 import { Buffer } from "buffer/";
 

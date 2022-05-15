@@ -1,5 +1,5 @@
 {
-  "name": "@moving/aptos",
+  "name": "@movingco/aptos",
   "version": "0.1.0",
   "description": "Aptos packages for MovingKit.",
   "author": "Ian Macalinao <github@igm.pub>",
@@ -7,12 +7,9 @@
   "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
   "files": [
-    "lib"
+    "src/",
+    "dist/"
   ],
   "publishConfig": {
     "access": "public"
@@ -28,7 +25,7 @@
     "url": "https://github.com/movershq/moving-kit/issues"
   },
   "dependencies": {
-    "@moving/core": "workspace:^",
+    "@movingco/core": "workspace:^",
     "@ubeswap/token-math": "^5.0.2",
     "aptos": "^0.0.20",
     "buffer": "^6.0.3",

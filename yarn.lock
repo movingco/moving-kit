@@ -72,54 +72,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@moving/aptos@workspace:packages/aptos":
-  version: 0.0.0-use.local
-  resolution: "@moving/aptos@workspace:packages/aptos"
-  dependencies:
-    "@moving/core": "workspace:^"
-    "@types/bn.js": ^5.1.0
-    "@ubeswap/token-math": ^5.0.2
-    aptos: ^0.0.20
-    bn.js: ^5.2.0
-    buffer: ^6.0.3
-    jsbi: ^4.3.0
-    tslib: ^2.4.0
-    typescript: ^4.6.4
-  peerDependencies:
-    bn.js: ^5.2.0
-    jsbi: ^4.3.0
-  languageName: unknown
-  linkType: soft
-
-"@moving/core@workspace:^, @moving/core@workspace:packages/core":
-  version: 0.0.0-use.local
-  resolution: "@moving/core@workspace:packages/core"
-  dependencies:
-    "@types/bn.js": ^5.1.0
-    bn.js: ^5.2.0
-    js-sha3: ^0.8.0
-    tiny-invariant: ^1.2.0
-    tslib: ^2.4.0
-    typescript: ^4.6.4
-  languageName: unknown
-  linkType: soft
-
-"@moving/hdwallet@workspace:packages/hdwallet":
-  version: 0.0.0-use.local
-  resolution: "@moving/hdwallet@workspace:packages/hdwallet"
-  dependencies:
-    "@moving/core": "workspace:^"
-    "@types/pbkdf2": ^3.1.0
-    bip39-light: ^1.0.7
-    ed25519-hd-key: ^1.2.0
-    pbkdf2: ^3.1.2
-    tiny-invariant: ^1.2.0
-    tslib: ^2.4.0
-    tweetnacl: ^1.0.3
-    typescript: ^4.6.4
-  languageName: unknown
-  linkType: soft
-
 "@moving/workspace@workspace:.":
   version: 0.0.0-use.local
   resolution: "@moving/workspace@workspace:."
@@ -136,6 +88,54 @@ __metadata:
     husky: ^8.0.1
     lint-staged: ^12.4.1
     prettier: ^2.6.2
+    typescript: ^4.6.4
+  languageName: unknown
+  linkType: soft
+
+"@movingco/aptos@workspace:packages/aptos":
+  version: 0.0.0-use.local
+  resolution: "@movingco/aptos@workspace:packages/aptos"
+  dependencies:
+    "@movingco/core": "workspace:^"
+    "@types/bn.js": ^5.1.0
+    "@ubeswap/token-math": ^5.0.2
+    aptos: ^0.0.20
+    bn.js: ^5.2.0
+    buffer: ^6.0.3
+    jsbi: ^4.3.0
+    tslib: ^2.4.0
+    typescript: ^4.6.4
+  peerDependencies:
+    bn.js: ^5.2.0
+    jsbi: ^4.3.0
+  languageName: unknown
+  linkType: soft
+
+"@movingco/core@workspace:^, @movingco/core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@movingco/core@workspace:packages/core"
+  dependencies:
+    "@types/bn.js": ^5.1.0
+    bn.js: ^5.2.0
+    js-sha3: ^0.8.0
+    tiny-invariant: ^1.2.0
+    tslib: ^2.4.0
+    typescript: ^4.6.4
+  languageName: unknown
+  linkType: soft
+
+"@movingco/hdwallet@workspace:packages/hdwallet":
+  version: 0.0.0-use.local
+  resolution: "@movingco/hdwallet@workspace:packages/hdwallet"
+  dependencies:
+    "@movingco/core": "workspace:^"
+    "@types/pbkdf2": ^3.1.0
+    bip39-light: ^1.0.7
+    ed25519-hd-key: ^1.2.0
+    pbkdf2: ^3.1.2
+    tiny-invariant: ^1.2.0
+    tslib: ^2.4.0
+    tweetnacl: ^1.0.3
     typescript: ^4.6.4
   languageName: unknown
   linkType: soft

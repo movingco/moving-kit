@@ -1,4 +1,4 @@
-import { HexString } from "@moving/core";
+import { HexString } from "@movingco/core";
 
 import type { EncryptedString } from "./encryption";
 import { decryptString, encryptString } from "./encryption";

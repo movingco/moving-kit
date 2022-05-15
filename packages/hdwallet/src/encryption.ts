@@ -1,4 +1,4 @@
-import { HexString } from "@moving/core";
+import { HexString } from "@movingco/core";
 import { pbkdf2 } from "pbkdf2";
 import { randomBytes, secretbox } from "tweetnacl";
 
