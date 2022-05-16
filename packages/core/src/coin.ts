@@ -4,22 +4,13 @@ import {
   TokenAmount as UTokenAmount,
 } from "@ubeswap/token-math";
 
-/**
- * Information about an Aptos coin.
- */
-export interface TokenInfo {
-  name: string;
-  symbol: string;
-  address: string;
-  decimals: number;
-  icon?: string;
-}
+import type { CoinInfo } from "./coinList";
 
 /**
  * An Aptos Coin.
  */
 export class Coin implements UToken<Coin> {
-  constructor(readonly info: TokenInfo) {}
+  constructor(readonly info: CoinInfo) {}
 
   get name(): string {
     return this.info.name;
@@ -41,7 +32,7 @@ export class Coin implements UToken<Coin> {
   }
 
   get icon(): string | undefined {
-    return this.info.icon;
+    return this.info.logoURI;
   }
 
   equals(other: Coin): boolean {

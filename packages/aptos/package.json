@@ -32,6 +32,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
+    "@saberhq/tsconfig": "^1.13.6",
     "@types/bn.js": "^5.1.0",
     "bn.js": "^5.2.0",
     "jsbi": "^4.3.0",

@@ -3,6 +3,7 @@
   "extends": "@saberhq/tsconfig/tsconfig.lib.json",
   "include": ["packages/"],
   "compilerOptions": {
-    "lib": ["DOM"]
+    "lib": ["DOM"],
+    "types": ["jest"]
   }
 }

@@ -1,0 +1,7 @@
+{
+  "extends": "@saberhq/tsconfig/tsconfig.lib.json",
+  "compilerOptions": {
+    "noEmit": false
+  },
+  "exclude": ["**/*.spec.ts"]
+}

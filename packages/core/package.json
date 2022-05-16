@@ -25,13 +25,20 @@
     "url": "https://github.com/movershq/moving-kit/issues"
   },
   "dependencies": {
+    "@ubeswap/token-math": "^5.0.2",
     "bn.js": "^5.2.0",
     "js-sha3": "^0.8.0",
     "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
+    "@saberhq/tsconfig": "^1.13.6",
     "@types/bn.js": "^5.1.0",
+    "jsbi": "^4.3.0",
     "typescript": "^4.6.4"
+  },
+  "peerDependencies": {
+    "bn.js": "^5.2.0",
+    "jsbi": "^4.3.0"
   }
 }
