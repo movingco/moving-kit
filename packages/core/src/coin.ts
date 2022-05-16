@@ -4,7 +4,8 @@ import {
   TokenAmount as UTokenAmount,
 } from "@ubeswap/token-math";
 
-import type { CoinInfo } from "./coinList";
+import type { ChainId, CoinInfo } from "./coinList";
+import { parseMoveType } from "./moveType";
 
 /**
  * An Aptos Coin.
@@ -41,6 +42,25 @@ export class Coin implements UToken<Coin> {
 
   toString(): string {
     return `Token[address=${this.address}, decimals=${this.decimals}]`;
+  }
+
+  /**
+   * Creates a Coin from a type.
+   *
+   * @param chainId
+   * @param innerType
+   * @param decimals
+   * @returns
+   */
+  static fromType(chainId: ChainId, innerType: string, decimals = 6): Coin {
+    const inner = parseMoveType(innerType);
+    return new Coin({
+      chainId,
+      address: innerType,
+      name: `${inner.module.identifier}::${inner.name}`,
+      symbol: inner.name,
+      decimals,
+    });
   }
 }
 

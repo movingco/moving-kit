@@ -1,5 +1,12 @@
 type ExtensionValue = string | number | boolean | null;
 
+export enum ChainId {
+  AptosMainnet = 200,
+  AptosDevnet = 201,
+  SuiMainnet = 300,
+  SuiDevnet = 301,
+}
+
 export interface CoinInfo {
   readonly chainId: number;
   readonly address: string;
@@ -26,6 +33,9 @@ export interface Tags {
   };
 }
 
+/**
+ * List of known coins. Follows the Uniswap token list standard.
+ */
 export interface CoinList {
   readonly name: string;
   readonly timestamp: string;
