@@ -118,3 +118,16 @@ export const parseMoveType = (fullyQualifiedName: string): MoveType => {
   const tokens = tokenize(fullyQualifiedName);
   return parseName(tokens);
 };
+
+/**
+ * Renders a {@link MoveType}.
+ * @param type
+ * @returns
+ */
+export const renderMoveType = (type: MoveType): string => {
+  return `${type.module.address}::${type.module.identifier}::${type.name}${
+    type.typeArguments
+      ? `<${type.typeArguments.map(renderMoveType).join(", ")}>`
+      : ""
+  }`;
+};
