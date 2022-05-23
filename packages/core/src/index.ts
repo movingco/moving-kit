@@ -1,3 +1,4 @@
+export * from "./address";
 export * from "./coin";
 export * from "./coinList";
 export * from "./hexString";

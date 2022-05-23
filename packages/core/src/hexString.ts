@@ -9,6 +9,9 @@ export interface HexStringLike {
   hex(): string;
 }
 
+/**
+ * A hexadecimal string.
+ */
 export class HexString {
   /// We want to make sure this hexString has the `0x` hex prefix
   private readonly _hexString: string;

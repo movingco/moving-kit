@@ -1,15 +1,143 @@
-export interface MoveModuleId {
-  readonly address: string;
+import invariant from "tiny-invariant";
+
+import { Address } from "./address";
+
+/**
+ * Serializable representation of a {@link MoveModule}.
+ */
+export interface MoveModuleRaw {
+  readonly __typename?: "MoveModule";
+  readonly addressHex: string;
   readonly identifier: string;
 }
 
-export interface MoveType {
-  readonly module: MoveModuleId;
+/**
+ * Raw representation of a {@link MoveType}.
+ */
+export interface MoveTypeRaw {
+  readonly __typename?: "MoveType";
+  readonly module: MoveModuleRaw;
   readonly name: string;
   /**
    * Type arguments for the generic, if applicable.
    */
+  readonly typeArguments?: readonly MoveTypeRaw[];
+}
+
+export class MoveModule implements MoveModuleRaw {
+  /**
+   * Address of the module.
+   */
+  readonly address: Address;
+
+  constructor(readonly raw: MoveModuleRaw) {
+    this.address = new Address(raw.addressHex);
+  }
+
+  /**
+   * Address as a hex string. (raw)
+   */
+  get addressHex(): string {
+    return this.raw.addressHex;
+  }
+
+  get identifier(): string {
+    return this.raw.identifier;
+  }
+
+  equals(other: MoveModuleRaw): boolean {
+    return checkModulesEqual(this, other);
+  }
+
+  toJSON(): MoveModuleRaw {
+    return {
+      __typename: "MoveModule",
+      ...this.raw,
+    };
+  }
+}
+
+const checkModulesEqual = (a: MoveModuleRaw, b: MoveModuleRaw): boolean =>
+  a.addressHex === b.addressHex && a.identifier === b.identifier;
+
+const checkTypesEqual = (a: MoveTypeRaw, b: MoveTypeRaw): boolean => {
+  return (
+    checkModulesEqual(a.module, b.module) &&
+    a.name === b.name &&
+    checkTypeArgumentsEqual(a.typeArguments, b.typeArguments)
+  );
+};
+
+const checkTypeArgumentsEqual = (
+  a: readonly MoveTypeRaw[] | undefined,
+  b: readonly MoveTypeRaw[] | undefined
+) => {
+  if (a === undefined || b === undefined) {
+    return a === b;
+  }
+  return checkTypeListsEqual(a, b);
+};
+
+const checkTypeListsEqual = (
+  a: readonly MoveTypeRaw[],
+  b: readonly MoveTypeRaw[]
+) => {
+  if (a.length !== b.length) {
+    return false;
+  }
+  for (let i = 0; i < a.length; i++) {
+    const at = a[i];
+    const bt = b[i];
+    invariant(at && bt, "type lists zip");
+    if (!checkTypesEqual(at, bt)) {
+      return false;
+    }
+  }
+  return true;
+};
+
+/**
+ * Represents a Move type.
+ */
+export class MoveType implements MoveTypeRaw {
+  readonly module: MoveModule;
   readonly typeArguments?: readonly MoveType[];
+
+  constructor(readonly raw: MoveTypeRaw) {
+    this.module = new MoveModule(raw.module);
+    this.typeArguments = raw.typeArguments?.map((t) => new MoveType(t));
+  }
+
+  /**
+   * Parse the {@link MoveType} from the fullyQualifiedName.
+   * @param fullyQualifiedName
+   * @returns
+   */
+  static parse(fullyQualifiedName: string) {
+    return parseMoveType(fullyQualifiedName);
+  }
+
+  get name(): string {
+    return this.raw.name;
+  }
+
+  /**
+   * The fully qualified name of the module.
+   */
+  get fullyQualifiedName(): string {
+    return renderMoveType(this);
+  }
+
+  equals(other: MoveTypeRaw): boolean {
+    return checkTypesEqual(this, other);
+  }
+
+  toJSON(): MoveTypeRaw {
+    return {
+      __typename: "MoveType",
+      ...this.raw,
+    };
+  }
 }
 
 const TOKENS = {
@@ -54,7 +182,7 @@ const tokenize = (fqn: string) => {
   return tokens;
 };
 
-const parseName = (tokens: TypeTokenInfo[]): MoveType => {
+const parseName = (tokens: TypeTokenInfo[]): MoveTypeRaw => {
   const [address, ns1, identifier, ns2, name, ...rest] = tokens;
   if (ns1?.type !== "NAMESPACE") {
     throw new Error(`expected namespace`);
@@ -72,7 +200,7 @@ const parseName = (tokens: TypeTokenInfo[]): MoveType => {
     throw new Error(`missing name`);
   }
 
-  const typeArguments: MoveType[] = [];
+  const typeArguments: MoveTypeRaw[] = [];
   if (rest.length > 0) {
     if (rest[0]?.type !== "START_GENERIC") {
       throw new Error(`expected START_GENERIC`);
@@ -101,8 +229,8 @@ const parseName = (tokens: TypeTokenInfo[]): MoveType => {
     typeArguments.push(parseName(parts));
   }
 
-  const ret: MoveType = {
-    module: { address: address.value, identifier: identifier.value },
+  const ret: MoveTypeRaw = {
+    module: { addressHex: address.value, identifier: identifier.value },
     name: name.value,
   };
   if (typeArguments.length > 0) {
@@ -114,18 +242,21 @@ const parseName = (tokens: TypeTokenInfo[]): MoveType => {
   return ret;
 };
 
+/**
+ * Parses a string into a Move type.
+ */
 export const parseMoveType = (fullyQualifiedName: string): MoveType => {
   const tokens = tokenize(fullyQualifiedName);
-  return parseName(tokens);
+  return new MoveType(parseName(tokens));
 };
 
 /**
- * Renders a {@link MoveType}.
+ * Renders a {@link MoveTypeRaw}.
  * @param type
  * @returns
  */
-export const renderMoveType = (type: MoveType): string => {
-  return `${type.module.address}::${type.module.identifier}::${type.name}${
+export const renderMoveType = (type: MoveTypeRaw): string => {
+  return `${type.module.addressHex}::${type.module.identifier}::${type.name}${
     type.typeArguments
       ? `<${type.typeArguments.map(renderMoveType).join(", ")}>`
       : ""

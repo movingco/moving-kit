@@ -1,6 +1,7 @@
 import BN from "bn.js";
 import { sha3_256 } from "js-sha3";
 
+import { Address } from "./address";
 import type { HexStringLike } from "./hexString";
 import { HexString } from "./hexString";
 
@@ -118,12 +119,12 @@ export class PublicKey implements HexStringLike {
   /**
    * Return the Sui address associated with this public key
    */
-  toSuiAddress(): HexString {
+  toSuiAddress(): Address {
     const hexHash = sha3_256(this.toBytes());
     const publicKeyBytes = new BN(hexHash, 16).toArray(undefined, 32);
     // Only take the first 20 bytes
     const addressBytes = publicKeyBytes.slice(0, 20);
-    return HexString.fromUint8Array(Uint8Array.from(addressBytes));
+    return Address.fromUint8Array(Uint8Array.from(addressBytes));
   }
 
   /**
