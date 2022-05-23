@@ -1,5 +1,5 @@
 import type { HexStringLike, Signer } from "@movingco/core";
-import { HexString, PublicKey } from "@movingco/core";
+import { Address, PublicKey } from "@movingco/core";
 import { AptosAccount } from "aptos";
 import { Buffer } from "buffer/";
 
@@ -7,13 +7,13 @@ import { Buffer } from "buffer/";
  * Backed by a signing key.
  */
 export class Account implements Signer {
-  readonly address: HexString;
+  readonly address: Address;
   readonly pubKey: PublicKey;
 
-  private _authKeyCached: HexString | null = null;
+  private _authKeyCached: Address | null = null;
 
   constructor(readonly account: AptosAccount) {
-    this.address = new HexString(account.address().hex());
+    this.address = new Address(account.address().hex());
     this.pubKey = new PublicKey(this.account.pubKey().toBuffer());
   }
 
@@ -48,7 +48,7 @@ export class Account implements Signer {
   /**
    * Gets the authKey.
    */
-  get authKey(): HexString {
+  get authKey(): Address {
     return (
       this._authKeyCached ??
       (this._authKeyCached = this.pubKey.toAptosAuthKey())

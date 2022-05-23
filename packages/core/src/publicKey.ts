@@ -131,10 +131,10 @@ export class PublicKey implements HexStringLike {
    * Returns the authKey for the associated account
    * See here for more info: https://aptos.dev/basics/basics-accounts#single-signer-authentication
    */
-  toAptosAuthKey(): HexString {
+  toAptosAuthKey(): Address {
     const hash = sha3_256.create();
     hash.update(this.toBytes());
     hash.update("\x00");
-    return new HexString(hash.hex());
+    return new Address(hash.hex());
   }
 }

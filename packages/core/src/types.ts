@@ -1,4 +1,4 @@
-import type { HexString } from "./hexString";
+import type { Address } from "./address";
 
 /**
  * Can sign arbitrary hex strings.
@@ -7,7 +7,7 @@ export interface Signer {
   /**
    * Address of the signer.
    */
-  get address(): HexString;
+  get address(): Address;
 
   /**
    * Signs arbitrary data.
