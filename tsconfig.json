@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@saberhq/tsconfig/tsconfig.lib.json",
-  "include": ["packages/"],
+  "include": ["packages/", "jest.config.js"],
   "compilerOptions": {
     "lib": ["DOM"],
     "types": ["jest"]
