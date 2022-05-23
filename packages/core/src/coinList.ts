@@ -14,9 +14,11 @@ export interface CoinInfo {
   readonly decimals: number;
   readonly symbol: string;
   readonly logoURI?: string;
-  readonly tags?: string[];
+  readonly tags?: readonly string[];
   readonly extensions?: {
-    readonly [key: string]: { [key: string]: ExtensionValue } | ExtensionValue;
+    readonly [key: string]:
+      | Readonly<Record<string, ExtensionValue>>
+      | ExtensionValue;
   };
 }
 
@@ -43,8 +45,8 @@ export interface CoinList {
   /**
    * Named `tokens` for backwards compatibility with the Uniswap standard.
    */
-  readonly tokens: CoinInfo[];
-  readonly keywords?: string[];
+  readonly tokens: readonly CoinInfo[];
+  readonly keywords?: readonly string[];
   readonly tags?: Tags;
   readonly logoURI?: string;
 }
