@@ -5,8 +5,7 @@ import {
 } from "@ubeswap/token-math";
 
 import type { ChainId, CoinInfo } from "./coinList";
-import type { MoveType } from "./moveType";
-import { parseMoveType, renderMoveType } from "./moveType";
+import { StructTag } from "./moveType";
 
 /**
  * An Aptos Coin.
@@ -54,7 +53,7 @@ export class Coin implements UToken<Coin> {
    * @returns
    */
   static fromType(chainId: ChainId, innerType: string, decimals = 6): Coin {
-    const inner = parseMoveType(innerType);
+    const inner = StructTag.parse(innerType);
     return new Coin({
       chainId,
       address: innerType,
@@ -72,11 +71,15 @@ export class Coin implements UToken<Coin> {
    * @param decimals
    * @returns
    */
-  static fromParsedType(chainId: ChainId, inner: MoveType, decimals = 6): Coin {
+  static fromParsedType(
+    chainId: ChainId,
+    inner: StructTag,
+    decimals = 6
+  ): Coin {
     return new Coin({
       chainId,
-      address: renderMoveType(inner),
-      name: `${inner.module.identifier}::${inner.name}`,
+      address: inner.format(),
+      name: `${inner.name} (${inner.module.identifier})`,
       symbol: inner.name,
       decimals,
     });

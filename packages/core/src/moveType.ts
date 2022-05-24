@@ -3,34 +3,55 @@ import invariant from "tiny-invariant";
 import { Address } from "./address";
 
 /**
- * Serializable representation of a {@link MoveModule}.
+ * Parses a string into a Move type.
  */
-export interface MoveModuleRaw {
+const parseStructTag = (fullyQualifiedName: string): StructTag => {
+  const tokens = tokenize(fullyQualifiedName);
+  return new StructTag(parseName(tokens));
+};
+
+/**
+ * Formats and renders a {@link StructTagRaw}.
+ * @param type
+ * @returns
+ */
+const formatStructTag = (type: StructTagRaw): string => {
+  return `${type.module.addressHex}::${type.module.identifier}::${type.name}${
+    type.typeParams
+      ? `<${type.typeParams.map(formatStructTag).join(", ")}>`
+      : ""
+  }`;
+};
+
+/**
+ * Serializable representation of a {@link ModuleId}.
+ */
+export interface ModuleIdRaw {
   readonly __typename?: "MoveModule";
   readonly addressHex: string;
   readonly identifier: string;
 }
 
 /**
- * Raw representation of a {@link MoveType}.
+ * Raw representation of a {@link StructTag}.
  */
-export interface MoveTypeRaw {
+export interface StructTagRaw {
   readonly __typename?: "MoveType";
-  readonly module: MoveModuleRaw;
+  readonly module: ModuleIdRaw;
   readonly name: string;
   /**
    * Type arguments for the generic, if applicable.
    */
-  readonly typeArguments?: readonly MoveTypeRaw[];
+  readonly typeParams?: readonly StructTagRaw[];
 }
 
-export class MoveModule implements MoveModuleRaw {
+export class ModuleId implements ModuleIdRaw {
   /**
    * Address of the module.
    */
   readonly address: Address;
 
-  constructor(readonly raw: MoveModuleRaw) {
+  constructor(readonly raw: ModuleIdRaw) {
     this.address = new Address(raw.addressHex);
   }
 
@@ -45,11 +66,11 @@ export class MoveModule implements MoveModuleRaw {
     return this.raw.identifier;
   }
 
-  equals(other: MoveModuleRaw): boolean {
+  equals(other: ModuleIdRaw): boolean {
     return checkModulesEqual(this, other);
   }
 
-  toJSON(): MoveModuleRaw {
+  toJSON(): ModuleIdRaw {
     return {
       __typename: "MoveModule",
       ...this.raw,
@@ -57,20 +78,20 @@ export class MoveModule implements MoveModuleRaw {
   }
 }
 
-const checkModulesEqual = (a: MoveModuleRaw, b: MoveModuleRaw): boolean =>
+const checkModulesEqual = (a: ModuleIdRaw, b: ModuleIdRaw): boolean =>
   a.addressHex === b.addressHex && a.identifier === b.identifier;
 
-const checkTypesEqual = (a: MoveTypeRaw, b: MoveTypeRaw): boolean => {
+const checkTypesEqual = (a: StructTagRaw, b: StructTagRaw): boolean => {
   return (
     checkModulesEqual(a.module, b.module) &&
     a.name === b.name &&
-    checkTypeArgumentsEqual(a.typeArguments, b.typeArguments)
+    checkTypeArgumentsEqual(a.typeParams, b.typeParams)
   );
 };
 
 const checkTypeArgumentsEqual = (
-  a: readonly MoveTypeRaw[] | undefined,
-  b: readonly MoveTypeRaw[] | undefined
+  a: readonly StructTagRaw[] | undefined,
+  b: readonly StructTagRaw[] | undefined
 ) => {
   if (a === undefined || b === undefined) {
     return a === b;
@@ -79,8 +100,8 @@ const checkTypeArgumentsEqual = (
 };
 
 const checkTypeListsEqual = (
-  a: readonly MoveTypeRaw[],
-  b: readonly MoveTypeRaw[]
+  a: readonly StructTagRaw[],
+  b: readonly StructTagRaw[]
 ) => {
   if (a.length !== b.length) {
     return false;
@@ -97,42 +118,55 @@ const checkTypeListsEqual = (
 };
 
 /**
- * Represents a Move type.
+ * Represents a Struct type.
+ *
+ * This is analogous to `move_core_types::language_storage::StructTag` in Move.
  */
-export class MoveType implements MoveTypeRaw {
-  readonly module: MoveModule;
-  readonly typeArguments?: readonly MoveType[];
+export class StructTag implements StructTagRaw {
+  /**
+   * Module information.
+   */
+  readonly module: ModuleId;
+  /**
+   * Type parameters.
+   *
+   * TODO(igm): this should support more than just {@link StructTag}s.
+   */
+  readonly typeParams?: readonly StructTag[];
 
-  constructor(readonly raw: MoveTypeRaw) {
-    this.module = new MoveModule(raw.module);
-    this.typeArguments = raw.typeArguments?.map((t) => new MoveType(t));
+  constructor(readonly raw: StructTagRaw) {
+    this.module = new ModuleId(raw.module);
+    this.typeParams = raw.typeParams?.map((t) => new StructTag(t));
   }
 
   /**
-   * Parse the {@link MoveType} from the fullyQualifiedName.
+   * Parse the {@link StructTag} from the fullyQualifiedName.
    * @param fullyQualifiedName
    * @returns
    */
   static parse(fullyQualifiedName: string) {
-    return parseMoveType(fullyQualifiedName);
+    return parseStructTag(fullyQualifiedName);
   }
 
+  /**
+   * Name of the struct.
+   */
   get name(): string {
     return this.raw.name;
   }
 
   /**
-   * The fully qualified name of the module.
+   * Formats the module name.
    */
-  get fullyQualifiedName(): string {
-    return renderMoveType(this);
+  format(): string {
+    return formatStructTag(this);
   }
 
-  equals(other: MoveTypeRaw): boolean {
+  equals(other: StructTagRaw): boolean {
     return checkTypesEqual(this, other);
   }
 
-  toJSON(): MoveTypeRaw {
+  toJSON(): StructTagRaw {
     return {
       __typename: "MoveType",
       ...this.raw,
@@ -182,7 +216,7 @@ const tokenize = (fqn: string) => {
   return tokens;
 };
 
-const parseName = (tokens: TypeTokenInfo[]): MoveTypeRaw => {
+const parseName = (tokens: TypeTokenInfo[]): StructTagRaw => {
   const [address, ns1, identifier, ns2, name, ...rest] = tokens;
   if (ns1?.type !== "NAMESPACE") {
     throw new Error(`expected namespace`);
@@ -200,7 +234,7 @@ const parseName = (tokens: TypeTokenInfo[]): MoveTypeRaw => {
     throw new Error(`missing name`);
   }
 
-  const typeArguments: MoveTypeRaw[] = [];
+  const typeArguments: StructTagRaw[] = [];
   if (rest.length > 0) {
     if (rest[0]?.type !== "START_GENERIC") {
       throw new Error(`expected START_GENERIC`);
@@ -229,36 +263,15 @@ const parseName = (tokens: TypeTokenInfo[]): MoveTypeRaw => {
     typeArguments.push(parseName(parts));
   }
 
-  const ret: MoveTypeRaw = {
+  const ret: StructTagRaw = {
     module: { addressHex: address.value, identifier: identifier.value },
     name: name.value,
   };
   if (typeArguments.length > 0) {
     return {
       ...ret,
-      typeArguments,
+      typeParams: typeArguments,
     };
   }
   return ret;
-};
-
-/**
- * Parses a string into a Move type.
- */
-export const parseMoveType = (fullyQualifiedName: string): MoveType => {
-  const tokens = tokenize(fullyQualifiedName);
-  return new MoveType(parseName(tokens));
-};
-
-/**
- * Renders a {@link MoveTypeRaw}.
- * @param type
- * @returns
- */
-export const renderMoveType = (type: MoveTypeRaw): string => {
-  return `${type.module.addressHex}::${type.module.identifier}::${type.name}${
-    type.typeArguments
-      ? `<${type.typeArguments.map(renderMoveType).join(", ")}>`
-      : ""
-  }`;
 };
