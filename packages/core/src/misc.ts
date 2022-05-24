@@ -21,3 +21,16 @@ export const mapN = <T extends unknown[], U>(
     })
   );
 };
+
+/**
+ * Blocks for the given duration.
+ * @param duration
+ * @returns
+ */
+export const sleep = (duration: number): Promise<void> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, duration);
+  });
+};
