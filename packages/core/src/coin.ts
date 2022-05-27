@@ -1,6 +1,7 @@
 import type { BigintIsh, Token as UToken } from "@ubeswap/token-math";
 import {
   parseAmountFromString,
+  Price as UPrice,
   TokenAmount as UTokenAmount,
 } from "@ubeswap/token-math";
 
@@ -8,7 +9,7 @@ import type { ChainId, CoinInfo } from "./coinList";
 import { StructTag } from "./moveType";
 
 /**
- * An Aptos Coin.
+ * A Coin.
  */
 export class Coin implements UToken<Coin> {
   constructor(readonly info: CoinInfo) {}
@@ -87,7 +88,7 @@ export class Coin implements UToken<Coin> {
 }
 
 /**
- * A positive quantity of Aptos coins.
+ * A positive quantity of coins.
  */
 export class CoinAmount extends UTokenAmount<Coin> {
   /**
@@ -115,5 +116,21 @@ export class CoinAmount extends UTokenAmount<Coin> {
       token,
       parseAmountFromString(token, amount, ".", ",")
     );
+  }
+}
+
+export class Price extends UPrice<Coin> {
+  new(
+    baseCurrency: Coin,
+    quoteCurrency: Coin,
+    denominator: BigintIsh,
+    numerator: BigintIsh
+  ): this {
+    return new Price(
+      baseCurrency,
+      quoteCurrency,
+      denominator,
+      numerator
+    ) as this;
   }
 }
