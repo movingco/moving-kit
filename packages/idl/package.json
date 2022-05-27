@@ -1,7 +1,7 @@
 {
-  "name": "@movingco/core",
+  "name": "@movingco/idl",
   "version": "0.1.9",
-  "description": "Core packages for MovingKit.",
+  "description": "IDL.",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
   "license": "Apache-2.0",
@@ -25,7 +25,6 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
-    "@ubeswap/token-math": "^5.0.2",
     "bn.js": "^5.2.1",
     "js-sha3": "^0.8.0",
     "tiny-invariant": "^1.2.0",

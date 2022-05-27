@@ -2,8 +2,8 @@
   "name": "@movingco/aptos",
   "version": "0.1.9",
   "description": "Aptos packages for MovingKit.",
-  "author": "Ian Macalinao <github@igm.pub>",
-  "homepage": "https://github.com/movershq/moving-kit#readme",
+  "author": "Ian Macalinao <ian@moving.wtf>",
+  "homepage": "https://github.com/movingco/moving-kit#readme",
   "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -16,13 +16,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/movershq/moving-kit.git"
+    "url": "git+https://github.com/movingco/moving-kit.git"
   },
   "scripts": {
     "build": "tsc && tsc --project tsconfig.cjs.json"
   },
   "bugs": {
-    "url": "https://github.com/movershq/moving-kit/issues"
+    "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
     "@movingco/core": "workspace:^",
