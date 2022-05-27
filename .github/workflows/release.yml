@@ -1,7 +1,12 @@
 name: Release
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to publish, by explicit version or semver keyword."
+        required: true
+        default: patch
   push:
     tags:
       - "v*.*.*"
