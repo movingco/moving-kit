@@ -45,3 +45,10 @@ jobs:
       # workaround b/c it's broken
       - run: yarn plugin remove @yarnpkg/plugin-version
       - run: yarn doctor packages/
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/yarn
+      - run: yarn docs:generate
