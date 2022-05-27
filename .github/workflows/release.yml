@@ -13,6 +13,10 @@ jobs:
     name: Release SDK on NPM
     steps:
       - uses: actions/checkout@v3
+      - run: |
+          echo "Must be on master branch to publish packages."
+          exit 1
+        if: github.ref != 'refs/heads/master'
       - name: Setup Node
         uses: actions/setup-node@v3
       - name: Get yarn cache directory path
@@ -29,6 +33,44 @@ jobs:
         run: yarn install
       - run: yarn build
       - run: yarn docs:generate
+
+      - name: (auto) Update the version across all packages
+        run: yarn workspaces foreach -t version ${{ github.event.inputs.version }}
+        if: github.event_name == 'workflow_dispatch'
+
+      - name: Update the changelog
+        uses: mikepenz/release-changelog-builder-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Handle release from triggering the action
+      - id: git-release
+        name: (auto) Perform Git release
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          VERSION=$(node -e "console.log(require('./package.json').version);")
+          git config user.name "GitHub Actions"
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add .
+          git commit -a -m "Release v$VERSION"
+          git tag "v$VERSION"
+          git push origin HEAD --tags
+          echo "::set-output name=version::v$VERSION"
+      - name: (auto) Release
+        uses: softprops/action-gh-release@v1
+        if: github.event_name == 'workflow_dispatch'
+        with:
+          tag_name: ${{ steps.git-release.outputs.version }}
+          generate_release_notes: true
+
+      # Handle release from pushing a new tag
+      - name: (tag push) Release
+        uses: softprops/action-gh-release@v1
+        if: github.event_name == 'push'
+        with:
+          tag_name: ${{ steps.git-release.outputs.version }}
+          generate_release_notes: true
+
       - name: Publish to NPM
         run: yarn publish:all
         env:
