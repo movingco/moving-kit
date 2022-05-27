@@ -32,11 +32,11 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^1.13.15",
+    "@saberhq/tsconfig": "^1.13.17",
     "@types/bn.js": "^5.1.0",
-    "bn.js": "^5.2.0",
+    "bn.js": "^5.2.1",
     "jsbi": "^4.3.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.7.2"
   },
   "peerDependencies": {
     "bn.js": "^5.2.0",

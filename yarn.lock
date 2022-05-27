@@ -761,22 +761,22 @@ __metadata:
   resolution: "@moving/workspace@workspace:."
   dependencies:
     "@rushstack/eslint-patch": ^1.1.3
-    "@saberhq/eslint-config": ^1.13.15
-    "@saberhq/tsconfig": ^1.13.15
+    "@saberhq/eslint-config": ^1.13.17
+    "@saberhq/tsconfig": ^1.13.17
     "@types/bn.js": ^5.1.0
     "@types/eslint": ^8.4.2
     "@types/jest": ^27.5.1
     "@types/prettier": ^2.6.1
     "@yarnpkg/doctor": ^3.1.3
-    bn.js: ^5.2.0
+    bn.js: ^5.2.1
     eslint: ^8.16.0
     husky: ^8.0.1
     jest: ^28.1.0
     jest-runtime: ^28.1.0
-    lint-staged: ^12.4.1
+    lint-staged: ^12.4.2
     prettier: ^2.6.2
-    ts-jest: ^28.0.2
-    typescript: ^4.6.4
+    ts-jest: ^28.0.3
+    typescript: ^4.7.2
   languageName: unknown
   linkType: soft
 
@@ -785,15 +785,15 @@ __metadata:
   resolution: "@movingco/aptos@workspace:packages/aptos"
   dependencies:
     "@movingco/core": "workspace:^"
-    "@saberhq/tsconfig": ^1.13.15
+    "@saberhq/tsconfig": ^1.13.17
     "@types/bn.js": ^5.1.0
     "@ubeswap/token-math": ^5.0.2
     aptos: ^0.0.20
-    bn.js: ^5.2.0
+    bn.js: ^5.2.1
     buffer: ^6.0.3
     jsbi: ^4.3.0
     tslib: ^2.4.0
-    typescript: ^4.6.4
+    typescript: ^4.7.2
   peerDependencies:
     bn.js: ^5.2.0
     jsbi: ^4.3.0
@@ -804,15 +804,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/core@workspace:packages/core"
   dependencies:
-    "@saberhq/tsconfig": ^1.13.15
+    "@saberhq/tsconfig": ^1.13.17
     "@types/bn.js": ^5.1.0
     "@ubeswap/token-math": ^5.0.2
-    bn.js: ^5.2.0
+    bn.js: ^5.2.1
     js-sha3: ^0.8.0
     jsbi: ^4.3.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
-    typescript: ^4.6.4
+    typescript: ^4.7.2
   peerDependencies:
     bn.js: ^5.2.0
     jsbi: ^4.3.0
@@ -824,7 +824,7 @@ __metadata:
   resolution: "@movingco/hdwallet@workspace:packages/hdwallet"
   dependencies:
     "@movingco/core": "workspace:^"
-    "@saberhq/tsconfig": ^1.13.15
+    "@saberhq/tsconfig": ^1.13.17
     "@types/jest": ^27.5.1
     "@types/pbkdf2": ^3.1.0
     bip39-light: ^1.0.7
@@ -833,7 +833,7 @@ __metadata:
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
     tweetnacl: ^1.0.3
-    typescript: ^4.6.4
+    typescript: ^4.7.2
   languageName: unknown
   linkType: soft
 
@@ -891,12 +891,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@saberhq/eslint-config@npm:^1.13.15":
-  version: 1.13.15
-  resolution: "@saberhq/eslint-config@npm:1.13.15"
+"@saberhq/eslint-config@npm:^1.13.17":
+  version: 1.13.17
+  resolution: "@saberhq/eslint-config@npm:1.13.17"
   dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.25.0
-    "@typescript-eslint/parser": ^5.25.0
+    "@typescript-eslint/eslint-plugin": ^5.26.0
+    "@typescript-eslint/parser": ^5.26.0
     eslint-config-prettier: ^8.5.0
     eslint-import-resolver-node: ^0.3.6
     eslint-plugin-import: ^2.26.0
@@ -906,14 +906,14 @@ __metadata:
     prettier: ^2.6.2
   peerDependencies:
     eslint: ">=7"
-  checksum: 408eee7d81810b8059b6793204127a169a61a17800cb1caf5c866cc2d6a51c1349ba2a5d160ef31965ed56ca11b0da988a6cc9183aa9f303f6d8fe23a46e8d14
+  checksum: f3241517af9479153fd2a5c0366423baf0790fe5b18977b50d9d893df0d6e26c04483d0d8033990b069a1a7b5a915bc3d808c3017ce9785f7dd5f26dfa7a0bfc
   languageName: node
   linkType: hard
 
-"@saberhq/tsconfig@npm:^1.13.15":
-  version: 1.13.15
-  resolution: "@saberhq/tsconfig@npm:1.13.15"
-  checksum: c09faf88421c27a585892bf9e267c264807fd1aca62df7f07554121856acd49af06f5af877e68aae9878b79a4bedfdc30d41f814978e7743c2437b7b9d10afed
+"@saberhq/tsconfig@npm:^1.13.17":
+  version: 1.13.17
+  resolution: "@saberhq/tsconfig@npm:1.13.17"
+  checksum: bd2dd2ec5d905c4fa4566c7ee4e1972ff58426c3408ea4ce6484a045447373539aff3833a6b0525f1f3a3f83a9e7881ef6834d9300426abe06b817a1f39a24aa
   languageName: node
   linkType: hard
 
@@ -1222,7 +1222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.25.0":
+"@typescript-eslint/eslint-plugin@npm:^5.26.0":
   version: 5.26.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.26.0"
   dependencies:
@@ -1245,7 +1245,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.25.0":
+"@typescript-eslint/parser@npm:^5.26.0":
   version: 5.26.0
   resolution: "@typescript-eslint/parser@npm:5.26.0"
   dependencies:
@@ -2184,10 +2184,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bn.js@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "bn.js@npm:5.2.0"
-  checksum: 6117170393200f68b35a061ecbf55d01dd989302e7b3c798a3012354fa638d124f0b2f79e63f77be5556be80322a09c40339eda6413ba7468524c0b6d4b4cb7a
+"bn.js@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "bn.js@npm:5.2.1"
+  checksum: 3dd8c8d38055fedfa95c1d5fc3c99f8dd547b36287b37768db0abab3c239711f88ff58d18d155dd8ad902b0b0cee973747b7ae20ea12a09473272b0201c9edd3
   languageName: node
   linkType: hard
 
@@ -4763,15 +4763,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:2.x, json5@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "json5@npm:2.2.1"
-  bin:
-    json5: lib/cli.js
-  checksum: 74b8a23b102a6f2bf2d224797ae553a75488b5adbaee9c9b6e5ab8b510a2fc6e38f876d4c77dea672d4014a44b2399e15f2051ac2b37b87f74c0c7602003543b
-  languageName: node
-  linkType: hard
-
 "json5@npm:^1.0.1":
   version: 1.0.1
   resolution: "json5@npm:1.0.1"
@@ -4780,6 +4771,15 @@ __metadata:
   bin:
     json5: lib/cli.js
   checksum: e76ea23dbb8fc1348c143da628134a98adf4c5a4e8ea2adaa74a80c455fc2cdf0e2e13e6398ef819bfe92306b610ebb2002668ed9fc1af386d593691ef346fc3
+  languageName: node
+  linkType: hard
+
+"json5@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "json5@npm:2.2.1"
+  bin:
+    json5: lib/cli.js
+  checksum: 74b8a23b102a6f2bf2d224797ae553a75488b5adbaee9c9b6e5ab8b510a2fc6e38f876d4c77dea672d4014a44b2399e15f2051ac2b37b87f74c0c7602003543b
   languageName: node
   linkType: hard
 
@@ -4831,9 +4831,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^12.4.1":
-  version: 12.4.1
-  resolution: "lint-staged@npm:12.4.1"
+"lint-staged@npm:^12.4.2":
+  version: 12.4.2
+  resolution: "lint-staged@npm:12.4.2"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -4851,7 +4851,7 @@ __metadata:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: b57183b537064cda6caef6679918bf271903145f7c28d09567e918b8b13094048b579f8df808ea590dbd7ea2ec332327c5e372cf3d77e85b7b0254f6541ce4c3
+  checksum: cd2c1d5e79ad6cdcfc3f56dad1c7b72fbb6fb566dfeefa83643717236adc8b92f5a9b8356d545a9377f656107aad159b59cec9fd929f605b41408b8937443a9d
   languageName: node
   linkType: hard
 
@@ -6547,14 +6547,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:^28.0.2":
-  version: 28.0.2
-  resolution: "ts-jest@npm:28.0.2"
+"ts-jest@npm:^28.0.3":
+  version: 28.0.3
+  resolution: "ts-jest@npm:28.0.3"
   dependencies:
     bs-logger: 0.x
     fast-json-stable-stringify: 2.x
     jest-util: ^28.0.0
-    json5: 2.x
+    json5: ^2.2.1
     lodash.memoize: 4.x
     make-error: 1.x
     semver: 7.x
@@ -6576,7 +6576,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: bb244015f947cf9a77c892691a8131116a86f4f1cc7a1ff045cd72f78c16485c07ac582b31117f8d722a0ebb9d51c27468c28e2f8eec8bbae6e2a09ee41066f2
+  checksum: dc6f49507cef996abb75d5870f6ce09c9f191d135a5bb2c38c46adac890f10fd4610b7697a0045b9b37315ce4e075f39d5578da8034d6791952eebc7951475c2
   languageName: node
   linkType: hard
 
@@ -6678,13 +6678,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.4":
-  version: 4.6.4
-  resolution: "typescript@npm:4.6.4"
+"typescript@npm:^4.7.2":
+  version: 4.7.2
+  resolution: "typescript@npm:4.7.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: e7bfcc39cd4571a63a54e5ea21f16b8445268b9900bf55aee0e02ad981be576acc140eba24f1af5e3c1457767c96cea6d12861768fb386cf3ffb34013718631a
+  checksum: 5163585e6b56410f77d5483b698d9489bbee8902c99029eb70cf6d21525a186530ce19a00951af84eefd4a131cc51d0959f5118e25e70ab61f45ac4057dbd1ef
   languageName: node
   linkType: hard
 
@@ -6698,13 +6698,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>":
-  version: 4.6.4
-  resolution: "typescript@patch:typescript@npm%3A4.6.4#~builtin<compat/typescript>::version=4.6.4&hash=7ad353"
+"typescript@patch:typescript@^4.7.2#~builtin<compat/typescript>":
+  version: 4.7.2
+  resolution: "typescript@patch:typescript@npm%3A4.7.2#~builtin<compat/typescript>::version=4.7.2&hash=7ad353"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 1cb434fbc637d347be90e3a0c6cd05e33c38f941713c8786d3031faf1842c2c148ba91d2fac01e7276b0ae3249b8633f1660e32686cc7a8c6a8fd5361dc52c66
+  checksum: 7e2b9a9f4a70fb7616f1b0d986977f8e34a74f046202fa7f24fdee79589598277810fa216b3776c20c0683a9235872c73be34fdb93f67f98c1efaca40999422f
   languageName: node
   linkType: hard
 
