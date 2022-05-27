@@ -1,6 +1,6 @@
 {
   "name": "@movingco/aptos",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Aptos packages for MovingKit.",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
