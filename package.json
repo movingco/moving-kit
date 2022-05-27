@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "name": "@moving/workspace",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "TypeScript utilities for interacting with the Move language and Move blockchains.",
   "main": "index.js",
   "repository": "git@github.com:movershq/moving-kit.git",
