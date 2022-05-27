@@ -9,14 +9,11 @@ export * from "./types";
 
 // re-export token-math types
 // so consumers don't need to use them
-export type {
-  BigintIsh,
+export {
   Fraction,
-  IFormatUint,
   makeDecimalMultiplier,
   MAX_U64,
   MAX_U256,
-  NumberFormat,
   ONE,
   parseBigintIsh,
   Percent,
@@ -26,3 +23,7 @@ export type {
   validateU256,
   ZERO,
 } from "@ubeswap/token-math";
+
+// re-export token-math types
+// so consumers don't need to use them
+export type { BigintIsh, IFormatUint, NumberFormat } from "@ubeswap/token-math";
