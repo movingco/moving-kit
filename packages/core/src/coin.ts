@@ -90,11 +90,30 @@ export class Coin implements UToken<Coin> {
  * A positive quantity of Aptos coins.
  */
 export class CoinAmount extends UTokenAmount<Coin> {
+  /**
+   * @inheritdoc
+   */
   new(token: Coin, amount: BigintIsh): this {
     return new CoinAmount(token, amount) as this;
   }
 
-  static parse(token: Coin, amount: string) {
-    return new CoinAmount(token, parseAmountFromString(token, amount));
+  /**
+   * Alias for {@link token}.
+   */
+  get coin(): Coin {
+    return this.token;
+  }
+
+  /**
+   * Parses a {@link CoinAmount} from a string.
+   * @param token
+   * @param amount
+   * @returns
+   */
+  static parse(token: Coin, amount: string): CoinAmount {
+    return new CoinAmount(
+      token,
+      parseAmountFromString(token, amount, ".", ",")
+    );
   }
 }
