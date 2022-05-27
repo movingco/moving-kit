@@ -42,7 +42,7 @@ export class Coin implements UToken<Coin> {
   }
 
   toString(): string {
-    return `Token[address=${this.address}, decimals=${this.decimals}]`;
+    return `Coin[address=${this.address}, decimals=${this.decimals}]`;
   }
 
   /**
