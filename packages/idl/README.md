@@ -1,11 +1,3 @@
-# `@moving/core`
+# `@moving/idl`
 
-> TODO: description
-
-## Usage
-
-```
-const core = require('@moving/core');
-
-// TODO: DEMONSTRATE API
-```
+Types and parsers for Move IDLs.
