@@ -26,13 +26,13 @@
   },
   "dependencies": {
     "@movingco/core": "workspace:^",
-    "@ubeswap/token-math": "^5.0.2",
+    "@ubeswap/token-math": "^5.1.0",
     "aptos": "^0.0.20",
     "buffer": "^6.0.3",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^1.13.17",
+    "@saberhq/tsconfig": "^1.13.18",
     "@types/bn.js": "^5.1.0",
     "bn.js": "^5.2.1",
     "jsbi": "^4.3.0",

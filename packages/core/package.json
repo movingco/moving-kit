@@ -26,14 +26,14 @@
   },
   "dependencies": {
     "@saberhq/option-utils": "^1.13.18",
-    "@ubeswap/token-math": "^5.0.2",
+    "@ubeswap/token-math": "^5.1.0",
     "bn.js": "^5.2.1",
     "js-sha3": "^0.8.0",
     "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^1.13.17",
+    "@saberhq/tsconfig": "^1.13.18",
     "@types/bn.js": "^5.1.0",
     "jsbi": "^4.3.0",
     "typescript": "^4.7.2"
