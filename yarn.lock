@@ -761,8 +761,8 @@ __metadata:
   resolution: "@moving/workspace@workspace:."
   dependencies:
     "@rushstack/eslint-patch": ^1.1.3
-    "@saberhq/eslint-config": ^1.13.18
-    "@saberhq/tsconfig": ^1.13.18
+    "@saberhq/eslint-config": ^1.13.19
+    "@saberhq/tsconfig": ^1.13.19
     "@types/bn.js": ^5.1.0
     "@types/eslint": ^8.4.2
     "@types/jest": ^27.5.1
@@ -786,7 +786,7 @@ __metadata:
   resolution: "@movingco/aptos@workspace:packages/aptos"
   dependencies:
     "@movingco/core": "workspace:^"
-    "@saberhq/tsconfig": ^1.13.18
+    "@saberhq/tsconfig": ^1.13.19
     "@types/bn.js": ^5.1.0
     "@ubeswap/token-math": ^5.1.0
     aptos: ^0.0.20
@@ -805,8 +805,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/core@workspace:packages/core"
   dependencies:
-    "@saberhq/option-utils": ^1.13.18
-    "@saberhq/tsconfig": ^1.13.18
+    "@saberhq/option-utils": ^1.13.19
+    "@saberhq/tsconfig": ^1.13.19
     "@types/bn.js": ^5.1.0
     "@ubeswap/token-math": ^5.1.0
     bn.js: ^5.2.1
@@ -826,7 +826,7 @@ __metadata:
   resolution: "@movingco/hdwallet@workspace:packages/hdwallet"
   dependencies:
     "@movingco/core": "workspace:^"
-    "@saberhq/tsconfig": ^1.13.18
+    "@saberhq/tsconfig": ^1.13.19
     "@types/jest": ^27.5.1
     "@types/pbkdf2": ^3.1.0
     bip39-light: ^1.0.7
@@ -847,7 +847,7 @@ __metadata:
   resolution: "@movingco/hooks@workspace:packages/hooks"
   dependencies:
     "@movingco/core": "workspace:*"
-    "@saberhq/tsconfig": ^1.13.18
+    "@saberhq/tsconfig": ^1.13.19
     "@types/bn.js": ^5.1.0
     "@types/react": ^18.0.9
     jsbi: ^4.3.0
@@ -866,7 +866,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/idl@workspace:packages/idl"
   dependencies:
-    "@saberhq/tsconfig": ^1.13.18
+    "@saberhq/tsconfig": ^1.13.19
     "@types/bn.js": ^5.1.0
     bn.js: ^5.2.1
     js-sha3: ^0.8.0
@@ -884,7 +884,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/leb128@workspace:packages/leb128"
   dependencies:
-    "@saberhq/tsconfig": ^1.13.18
+    "@saberhq/tsconfig": ^1.13.19
     tslib: ^2.4.0
     typescript: ^4.7.2
   languageName: unknown
@@ -895,7 +895,7 @@ __metadata:
   resolution: "@movingco/prelude@workspace:packages/prelude"
   dependencies:
     "@movingco/core": "workspace:*"
-    "@saberhq/tsconfig": ^1.13.18
+    "@saberhq/tsconfig": ^1.13.19
     tslib: ^2.4.0
     typescript: ^4.7.2
   peerDependencies:
@@ -958,9 +958,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@saberhq/eslint-config@npm:^1.13.18":
-  version: 1.13.18
-  resolution: "@saberhq/eslint-config@npm:1.13.18"
+"@saberhq/eslint-config@npm:^1.13.19":
+  version: 1.13.19
+  resolution: "@saberhq/eslint-config@npm:1.13.19"
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.26.0
     "@typescript-eslint/parser": ^5.26.0
@@ -973,23 +973,23 @@ __metadata:
     prettier: ^2.6.2
   peerDependencies:
     eslint: ">=7"
-  checksum: b8eeebceb969cb4bdaa2a8baed356a89a564afa04c1bdba8b57de138e0d41e32a616fa156c899f715f0b93351c2f134498c4ddee0782cdd5da8d386d787fefee
+  checksum: 48293d254c770ce2f84928bf876b95f9072c5aca65952557f98aa4f3d758e49aac10077de04f703fcb76215a90aee65f03d165952f983c6b1fc55d3d0c04a364
   languageName: node
   linkType: hard
 
-"@saberhq/option-utils@npm:^1.13.18":
-  version: 1.13.18
-  resolution: "@saberhq/option-utils@npm:1.13.18"
+"@saberhq/option-utils@npm:^1.13.19":
+  version: 1.13.19
+  resolution: "@saberhq/option-utils@npm:1.13.19"
   dependencies:
     tslib: ^2.4.0
-  checksum: a314c806e302ba3137a2477291c52db4940b3790e95824782d3dfa3545c9d8087cee2ca7ce38bfc09085e7ba91426cefdfd410601bd88bb23c5bed77ab7aabd9
+  checksum: 117ac6041d58dc7767391cd6d9627265d7e14a948cd710b3b90d0318eeba820bf74675cc8280d53e47d8b048cd625dd0015043cedf30bd9ee6bbf7950b2def5e
   languageName: node
   linkType: hard
 
-"@saberhq/tsconfig@npm:^1.13.18":
-  version: 1.13.18
-  resolution: "@saberhq/tsconfig@npm:1.13.18"
-  checksum: cadb4bc370d602b22c62777c3c08f46ab0ef94f581dfe2e8f97559372e3f742be91cbc539c26edf3e74e17a52fce28afaf2ed2985fc43d31fadee1a8195f4643
+"@saberhq/tsconfig@npm:^1.13.19":
+  version: 1.13.19
+  resolution: "@saberhq/tsconfig@npm:1.13.19"
+  checksum: a43a4895cabe2d0925bc750c6b014f2275ab1941c6abe77e26f3220c66c93bb12525713a97beffbb4f5314ca57c8c876f9568af639788f93846d9eb65cd1bcd7
   languageName: node
   linkType: hard
 

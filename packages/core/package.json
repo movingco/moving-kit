@@ -25,7 +25,7 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
-    "@saberhq/option-utils": "^1.13.18",
+    "@saberhq/option-utils": "^1.13.19",
     "@ubeswap/token-math": "^5.1.0",
     "bn.js": "^5.2.1",
     "js-sha3": "^0.8.0",
@@ -33,7 +33,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^1.13.18",
+    "@saberhq/tsconfig": "^1.13.19",
     "@types/bn.js": "^5.1.0",
     "jsbi": "^4.3.0",
     "typescript": "^4.7.2"
