@@ -14,6 +14,13 @@ import { StructTag } from "./moveType";
 export class Coin implements UToken<Coin> {
   constructor(readonly info: CoinInfo) {}
 
+  /**
+   * The chain ID.
+   */
+  get chainId(): number {
+    return this.info.chainId;
+  }
+
   get name(): string {
     return this.info.name;
   }
