@@ -848,7 +848,7 @@ __metadata:
     "@movingco/core": "workspace:*"
     "@saberhq/tsconfig": ^1.13.17
     "@types/bn.js": ^5.1.0
-    "@types/react": ^18
+    "@types/react": ^18.0.9
     jsbi: ^4.3.0
     react: ^18.1.0
     tiny-invariant: ^1.2.0
@@ -1256,7 +1256,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18":
+"@types/react@npm:^18.0.9":
   version: 18.0.9
   resolution: "@types/react@npm:18.0.9"
   dependencies:
