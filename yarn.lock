@@ -774,7 +774,6 @@ __metadata:
     husky: ^8.0.1
     jest: ^28.1.0
     jest-runtime: ^28.1.0
-    js-sha3: ^0.8.0
     lint-staged: ^12.4.2
     prettier: ^2.6.2
     ts-jest: ^28.0.3
@@ -794,7 +793,6 @@ __metadata:
     aptos: ^0.0.20
     bn.js: ^5.2.1
     buffer: ^6.0.3
-    js-sha3: ^0.8.0
     jsbi: ^4.3.0
     tslib: ^2.4.0
     typescript: ^4.7.2
@@ -873,7 +871,6 @@ __metadata:
     "@saberhq/tsconfig": ^1.13.20
     "@types/bn.js": ^5.1.0
     bn.js: ^5.2.1
-    js-sha3: ^0.8.0
     jsbi: ^4.3.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0

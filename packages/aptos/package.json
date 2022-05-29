@@ -36,7 +36,6 @@
     "@movingco/leb128": "workspace:^",
     "aptos": "^0.0.20",
     "buffer": "^6.0.3",
-    "js-sha3": "^0.8.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
