@@ -1,6 +1,6 @@
 {
   "name": "@movingco/hdwallet",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "ED25519-compatible HDWallet.",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
