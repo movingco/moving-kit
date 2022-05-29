@@ -19,7 +19,6 @@ export {
   Percent,
   Rounding,
   TEN,
-  validateU64,
   validateU256,
   ZERO,
 } from "@ubeswap/token-math";

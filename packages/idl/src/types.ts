@@ -53,7 +53,7 @@ export interface IDLField {
 
 export interface IDLArgument {
   name: string;
-  type_tag: string;
+  ty: IDLType;
 }
 
 export interface IDLScriptFunction {

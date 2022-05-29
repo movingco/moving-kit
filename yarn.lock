@@ -801,7 +801,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/core@workspace:^, @movingco/core@workspace:packages/core":
+"@movingco/core@workspace:*, @movingco/core@workspace:^, @movingco/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@movingco/core@workspace:packages/core"
   dependencies:
@@ -851,6 +851,20 @@ __metadata:
     js-sha3: ^0.8.0
     jsbi: ^4.3.0
     tiny-invariant: ^1.2.0
+    tslib: ^2.4.0
+    typescript: ^4.7.2
+  peerDependencies:
+    bn.js: ^5.2.0
+    jsbi: ^4.3.0
+  languageName: unknown
+  linkType: soft
+
+"@movingco/prelude@workspace:packages/prelude":
+  version: 0.0.0-use.local
+  resolution: "@movingco/prelude@workspace:packages/prelude"
+  dependencies:
+    "@movingco/core": "workspace:*"
+    "@saberhq/tsconfig": ^1.13.17
     tslib: ^2.4.0
     typescript: ^4.7.2
   peerDependencies:
