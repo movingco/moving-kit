@@ -1,12 +1,10 @@
 import BN from "bn.js";
 import { Buffer } from "buffer/";
-import { default as sha3 } from "js-sha3/index.js";
 
 import { Address } from "./address.js";
 import type { HexStringLike } from "./hexString.js";
 import { HexString } from "./hexString.js";
-
-const { sha3_256 } = sha3;
+import { sha3_256 } from "./sha3.js";
 
 /**
  * Value to be converted into public key
