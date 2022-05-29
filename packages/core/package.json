@@ -25,6 +25,7 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
+    "@saberhq/option-utils": "^1.13.18",
     "@ubeswap/token-math": "^5.0.2",
     "bn.js": "^5.2.1",
     "js-sha3": "^0.8.0",

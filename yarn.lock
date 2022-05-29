@@ -805,6 +805,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/core@workspace:packages/core"
   dependencies:
+    "@saberhq/option-utils": ^1.13.18
     "@saberhq/tsconfig": ^1.13.17
     "@types/bn.js": ^5.1.0
     "@ubeswap/token-math": ^5.0.2
@@ -973,6 +974,15 @@ __metadata:
   peerDependencies:
     eslint: ">=7"
   checksum: f3241517af9479153fd2a5c0366423baf0790fe5b18977b50d9d893df0d6e26c04483d0d8033990b069a1a7b5a915bc3d808c3017ce9785f7dd5f26dfa7a0bfc
+  languageName: node
+  linkType: hard
+
+"@saberhq/option-utils@npm:^1.13.18":
+  version: 1.13.18
+  resolution: "@saberhq/option-utils@npm:1.13.18"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: a314c806e302ba3137a2477291c52db4940b3790e95824782d3dfa3545c9d8087cee2ca7ce38bfc09085e7ba91426cefdfd410601bd88bb23c5bed77ab7aabd9
   languageName: node
   linkType: hard
 
