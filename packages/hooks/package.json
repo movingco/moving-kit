@@ -1,0 +1,45 @@
+{
+  "name": "@movingco/hooks",
+  "version": "0.1.13",
+  "description": "React hooks.",
+  "author": "Ian Macalinao <ian@moving.wtf>",
+  "homepage": "https://github.com/movingco/moving-kit#readme",
+  "license": "Apache-2.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/movingco/moving-kit.git"
+  },
+  "scripts": {
+    "build": "tsc && tsc --project tsconfig.cjs.json"
+  },
+  "bugs": {
+    "url": "https://github.com/movingco/moving-kit/issues"
+  },
+  "dependencies": {
+    "@movingco/core": "workspace:*",
+    "tiny-invariant": "^1.2.0",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@saberhq/tsconfig": "^1.13.17",
+    "@types/bn.js": "^5.1.0",
+    "@types/react": "^18",
+    "jsbi": "^4.3.0",
+    "react": "^18.1.0",
+    "typescript": "^4.7.2"
+  },
+  "peerDependencies": {
+    "bn.js": "^5.2.0",
+    "jsbi": "^4.3.0",
+    "react": "*"
+  }
+}
