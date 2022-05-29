@@ -1,11 +1,11 @@
-export * from "./address";
-export * from "./coin";
-export * from "./coinList";
-export * from "./hexString";
-export * from "./misc";
-export * from "./moveType";
-export * from "./publicKey";
-export * from "./types";
+export * from "./address.js";
+export * from "./coin.js";
+export * from "./coinList.js";
+export * from "./hexString.js";
+export * from "./misc.js";
+export * from "./moveType.js";
+export * from "./publicKey.js";
+export * from "./types.js";
 
 // re-export token-math types
 // so consumers don't need to use them

@@ -1,9 +1,11 @@
 import BN from "bn.js";
-import { sha3_256 } from "js-sha3";
+import sha3 = require("js-sha3");
 
-import { Address } from "./address";
-import type { HexStringLike } from "./hexString";
-import { HexString } from "./hexString";
+import { Address } from "./address.js";
+import type { HexStringLike } from "./hexString.js";
+import { HexString } from "./hexString.js";
+
+const { sha3_256 } = sha3;
 
 /**
  * Value to be converted into public key

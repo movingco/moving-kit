@@ -1,5 +1,5 @@
 import { MAX_U64, ZERO } from "@ubeswap/token-math";
-import JSBI from "jsbi";
+import { default as JSBI } from "jsbi";
 
 export * from "@saberhq/option-utils";
 

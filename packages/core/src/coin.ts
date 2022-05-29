@@ -5,8 +5,8 @@ import {
   TokenAmount as UTokenAmount,
 } from "@ubeswap/token-math";
 
-import type { ChainId, CoinInfo } from "./coinList";
-import { StructTag } from "./moveType";
+import type { ChainId, CoinInfo } from "./coinList.js";
+import { StructTag } from "./moveType.js";
 
 /**
  * A Coin.

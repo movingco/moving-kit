@@ -1,11 +1,11 @@
 import { HexString } from "@movingco/core";
 
-import type { EncryptedString } from "./encryption";
-import { decryptString, encryptString } from "./encryption";
-import type { MnemonicAndSeed } from "./hdwallet";
+import type { EncryptedString } from "./encryption.js";
+import { decryptString, encryptString } from "./encryption.js";
+import type { MnemonicAndSeed } from "./hdwallet.js";
 
-export * from "./encryption";
-export * from "./hdwallet";
+export * from "./encryption.js";
+export * from "./hdwallet.js";
 
 /**
  * Encrypts a mnemonic and seed with a password via PBKDF2.

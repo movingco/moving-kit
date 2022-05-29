@@ -1,6 +1,6 @@
-import invariant from "tiny-invariant";
+import { default as invariant } from "tiny-invariant";
 
-import { Address } from "./address";
+import { Address } from "./address.js";
 
 /**
  * Parses a string into a Move type.

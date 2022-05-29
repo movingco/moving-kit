@@ -1,9 +1,10 @@
 import type { SerializableHexString } from "@movingco/core";
 import { encodeU32 } from "@movingco/leb128";
 import { Buffer } from "buffer/";
-import { sha3_256 } from "js-sha3";
+import sha3 = require("js-sha3");
+import type { Account } from "./account.js";
 
-import type { Account } from "./account";
+const { sha3_256 } = sha3;
 
 const SALT = "APTOS::RawTransactionWithData";
 

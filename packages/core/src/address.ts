@@ -1,5 +1,5 @@
-import type { MaybeHexString } from "./hexString";
-import { HexString } from "./hexString";
+import type { MaybeHexString } from "./hexString.js";
+import { HexString } from "./hexString.js";
 
 /**
  * An address, backed by a hex string.

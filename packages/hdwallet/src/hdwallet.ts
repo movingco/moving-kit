@@ -1,8 +1,8 @@
 import * as bip39 from "bip39-light";
 import { derivePath } from "ed25519-hd-key";
-import invariant from "tiny-invariant";
+import { default as invariant } from "tiny-invariant";
 
-import { randomBytes } from "./randomBytes";
+import { randomBytes } from "./randomBytes.js";
 
 /**
  * Coin ID for Diem-like environments.
