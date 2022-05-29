@@ -62,7 +62,7 @@ export const generateMnemonicAndSeed = (
  * A BIP32 HDWallet.
  */
 export class HDWallet {
-  constructor(readonly seed: Buffer) {}
+  constructor(readonly seed: Uint8Array) {}
 
   /**
    * Generates a new HDWallet.
@@ -74,7 +74,7 @@ export class HDWallet {
     wallet: HDWallet;
   } {
     const { mnemonic, seed } = generateMnemonicAndSeed(strength);
-    return { mnemonic, wallet: new HDWallet(Buffer.from(seed)) };
+    return { mnemonic, wallet: new HDWallet(seed) };
   }
 
   static fromMnemonic(mnemonic: string): HDWallet {
@@ -87,9 +87,12 @@ export class HDWallet {
    * @param path
    * @returns
    */
-  deriveArbitraryPath(path: string): Buffer {
+  deriveArbitraryPath(path: string): Uint8Array {
     try {
-      const derivedSeed = derivePath(path, this.seed.toString("hex")).key;
+      const derivedSeed = derivePath(
+        path,
+        Buffer.from(this.seed).toString("hex")
+      ).key;
       invariant(derivedSeed, "derived seed");
       return derivedSeed;
     } catch (e) {
@@ -102,7 +105,7 @@ export class HDWallet {
    * @param path
    * @returns
    */
-  derivePath(path: string): Buffer {
+  derivePath(path: string): Uint8Array {
     return this.deriveArbitraryPath(`${BASE_DERIVATION_PATH}/${path}`);
   }
 
@@ -111,7 +114,7 @@ export class HDWallet {
    * @param accountIndex
    * @returns
    */
-  deriveIndex(accountIndex = 0): Buffer {
+  deriveIndex(accountIndex = 0): Uint8Array {
     // We align on BIP44 like the Ledger support in Solana
     // All path components are hardened (i.e with ')
     // https://github.com/solana-labs/ledger-app-solana/blob/c66543976aa8171be6ea0c0771b1e9447a857c40/examples/example-sign.js#L57-L83v
