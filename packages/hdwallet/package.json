@@ -41,7 +41,7 @@
     "tweetnacl": "^1.0.3"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^1.13.19",
+    "@saberhq/tsconfig": "^1.13.20",
     "@types/jest": "^27.5.1",
     "@types/pbkdf2": "^3.1.0",
     "typescript": "^4.7.2"
