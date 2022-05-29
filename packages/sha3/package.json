@@ -5,15 +5,8 @@
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
   "license": "Apache-2.0",
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    }
-  },
+  "type": "commonjs",
   "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
   "files": [
     "src/",
     "dist/"
@@ -26,7 +19,7 @@
     "url": "git+https://github.com/movingco/moving-kit.git"
   },
   "scripts": {
-    "build": "tsc && tsc --project tsconfig.cjs.json"
+    "build": "tsc"
   },
   "bugs": {
     "url": "https://github.com/movingco/moving-kit/issues"

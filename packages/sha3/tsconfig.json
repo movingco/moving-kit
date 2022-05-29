@@ -1,8 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist/esm/",
-    "types": ["node"]
+    "module": "CommonJS",
+    "outDir": "dist/cjs/"
   },
   "include": ["src/"]
 }
