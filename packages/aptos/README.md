@@ -1,6 +1,6 @@
-# `@moving/hooks`
+# `@moving/aptos`
 
-React hooks for Move applications.
+Aptos-specific helper utilities.
 
 ## License
 

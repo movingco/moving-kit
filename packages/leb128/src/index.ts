@@ -31,7 +31,6 @@ export const decodeU32 = (arr: Uint8Array): number => {
         "index overflow while parsing uleb128-encoded uint32 value"
       );
     }
-
     const digit = x & 0x7f;
     value = value | (digit << shift);
     if (value < 0 || value > MAX_UINT_32) {

@@ -1,6 +1,6 @@
-# `@moving/hooks`
+# `@moving/hdwallet`
 
-React hooks for Move applications.
+ED25519-compatible HDWallet.
 
 ## License
 

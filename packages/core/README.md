@@ -1,11 +1,7 @@
 # `@moving/core`
 
-> TODO: description
+Core types and helpers for the Moving Kit.
 
-## Usage
+## License
 
-```
-const core = require('@moving/core');
-
-// TODO: DEMONSTRATE API
-```
+The Moving Kit is licensed under the Apache License, Version 2.0.
