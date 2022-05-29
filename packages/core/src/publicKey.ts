@@ -1,6 +1,8 @@
 import BN from "bn.js";
 import sha3 = require("js-sha3");
 
+import { Buffer } from "buffer/";
+
 import { Address } from "./address.js";
 import type { HexStringLike } from "./hexString.js";
 import { HexString } from "./hexString.js";
@@ -102,7 +104,7 @@ export class PublicKey implements HexStringLike {
    * Return the Buffer representation of the public key
    */
   toBuffer(): Buffer {
-    const b = this._bn.toArrayLike(Buffer);
+    const b = Buffer.from(this._bn.toArray());
     if (b.length === PUBLIC_KEY_SIZE) {
       return b;
     }

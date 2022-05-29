@@ -1,3 +1,5 @@
+import type { Buffer } from "buffer/";
+
 import type { MaybeHexString } from "./hexString.js";
 import { HexString } from "./hexString.js";
 

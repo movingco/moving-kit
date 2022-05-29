@@ -1,5 +1,6 @@
 // Taken from <https://github.com/aptos-labs/aptos-core/blob/main/ecosystem/typescript/sdk/src/hex_string.ts>
 
+import { Buffer } from "buffer/";
 import { default as invariant } from "tiny-invariant";
 
 import sha3 = require("js-sha3");

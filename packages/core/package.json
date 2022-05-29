@@ -35,6 +35,7 @@
     "@saberhq/option-utils": "^1.13.20",
     "@ubeswap/token-math": "^5.1.0",
     "bn.js": "^5.2.1",
+    "buffer": "^6.0.3",
     "js-sha3": "^0.8.0",
     "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0"

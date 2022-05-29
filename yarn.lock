@@ -812,6 +812,7 @@ __metadata:
     "@types/bn.js": ^5.1.0
     "@ubeswap/token-math": ^5.1.0
     bn.js: ^5.2.1
+    buffer: ^6.0.3
     js-sha3: ^0.8.0
     jsbi: ^4.3.0
     tiny-invariant: ^1.2.0
