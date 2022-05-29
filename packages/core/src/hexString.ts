@@ -10,9 +10,19 @@ export interface HexStringLike {
 }
 
 /**
+ * Hex string interface with more serialization methods.
+ */
+export interface SerializableHexString extends HexStringLike {
+  noPrefix(): string;
+  toString(): string;
+  toUint8Array(): Uint8Array;
+  toBuffer(): Buffer;
+}
+
+/**
  * A hexadecimal string.
  */
-export class HexString {
+export class HexString implements SerializableHexString {
   /// We want to make sure this hexString has the `0x` hex prefix
   private readonly _hexString: string;
 

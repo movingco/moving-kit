@@ -786,12 +786,13 @@ __metadata:
   resolution: "@movingco/aptos@workspace:packages/aptos"
   dependencies:
     "@movingco/core": "workspace:^"
+    "@movingco/leb128": "workspace:^"
     "@saberhq/tsconfig": ^1.13.19
     "@types/bn.js": ^5.1.0
-    "@ubeswap/token-math": ^5.1.0
     aptos: ^0.0.20
     bn.js: ^5.2.1
     buffer: ^6.0.3
+    js-sha3: ^0.8.0
     jsbi: ^4.3.0
     tslib: ^2.4.0
     typescript: ^4.7.2
@@ -880,7 +881,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/leb128@workspace:packages/leb128":
+"@movingco/leb128@workspace:^, @movingco/leb128@workspace:packages/leb128":
   version: 0.0.0-use.local
   resolution: "@movingco/leb128@workspace:packages/leb128"
   dependencies:
