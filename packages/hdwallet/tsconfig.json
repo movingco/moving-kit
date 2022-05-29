@@ -2,8 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist/esm/",
-    "lib": ["DOM"],
-    "moduleResolution": "nodenext"
+    "lib": ["DOM"]
   },
   "include": ["src/"]
 }
