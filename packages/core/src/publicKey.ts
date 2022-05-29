@@ -1,10 +1,10 @@
+import { sha3_256 } from "@movingco/sha3";
 import BN from "bn.js";
 import { Buffer } from "buffer/";
 
 import { Address } from "./address.js";
 import type { HexStringLike } from "./hexString.js";
 import { HexString } from "./hexString.js";
-import { sha3_256 } from "./sha3.js";
 
 /**
  * Value to be converted into public key

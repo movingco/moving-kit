@@ -5,8 +5,8 @@ export * from "./hexString.js";
 export * from "./misc.js";
 export * from "./moveType.js";
 export * from "./publicKey.js";
-export * from "./sha3.js";
 export * from "./types.js";
+export * from "@movingco/sha3";
 
 // re-export token-math types
 // so consumers don't need to use them
