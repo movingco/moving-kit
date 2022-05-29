@@ -1,7 +1,8 @@
 import type { SerializableHexString } from "@movingco/core";
 import { encodeU32 } from "@movingco/leb128";
 import { Buffer } from "buffer/";
-import sha3 = require("js-sha3");
+import { default as sha3 } from "js-sha3/index.js";
+
 import type { Account } from "./account.js";
 
 const { sha3_256 } = sha3;

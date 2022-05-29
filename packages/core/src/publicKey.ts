@@ -1,7 +1,6 @@
 import BN from "bn.js";
-import sha3 = require("js-sha3");
-
 import { Buffer } from "buffer/";
+import { default as sha3 } from "js-sha3/index.js";
 
 import { Address } from "./address.js";
 import type { HexStringLike } from "./hexString.js";
