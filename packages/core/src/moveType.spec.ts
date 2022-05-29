@@ -1,4 +1,4 @@
-import { StructTag } from "./moveType";
+import { StructTag } from "./moveType.js";
 
 describe("moveType", () => {
   describe("parseType", () => {

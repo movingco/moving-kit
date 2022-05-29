@@ -1,5 +1,5 @@
 /// <reference types="jest" />
-import { generateMnemonic, HDWallet } from "./hdwallet";
+import { generateMnemonic, HDWallet } from "./hdwallet.js";
 
 describe("HDWallet", () => {
   it("should derive", () => {

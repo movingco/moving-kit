@@ -1,9 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@saberhq/tsconfig/tsconfig.lib.json",
-  "include": ["packages/", "jest.config.js"],
+  "include": ["packages/", "jest.config.mjs"],
   "compilerOptions": {
     "lib": ["DOM"],
-    "types": ["jest"]
+    "types": ["jest"],
+    "moduleResolution": "nodenext"
   }
 }
