@@ -879,6 +879,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@movingco/leb128@workspace:packages/leb128":
+  version: 0.0.0-use.local
+  resolution: "@movingco/leb128@workspace:packages/leb128"
+  dependencies:
+    "@saberhq/tsconfig": ^1.13.17
+    tslib: ^2.4.0
+    typescript: ^4.7.2
+  languageName: unknown
+  linkType: soft
+
 "@movingco/prelude@workspace:packages/prelude":
   version: 0.0.0-use.local
   resolution: "@movingco/prelude@workspace:packages/prelude"
