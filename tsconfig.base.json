@@ -1,8 +1,4 @@
 {
-  "extends": "@saberhq/tsconfig/tsconfig.lib.json",
-  "compilerOptions": {
-    "moduleResolution": "nodenext",
-    "noEmit": false
-  },
+  "extends": "@saberhq/tsconfig/tsconfig.module.json",
   "exclude": ["**/*.spec.ts"]
 }

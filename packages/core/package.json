@@ -33,15 +33,15 @@
   },
   "dependencies": {
     "@movingco/sha3": "workspace:^",
-    "@saberhq/option-utils": "^1.13.20",
-    "@ubeswap/token-math": "^5.1.0",
+    "@saberhq/option-utils": "^1.13.23",
+    "@ubeswap/token-math": "^5.1.1",
     "bn.js": "^5.2.1",
     "buffer": "^6.0.3",
     "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^1.13.20",
+    "@saberhq/tsconfig": "^1.13.23",
     "@types/bn.js": "^5.1.0",
     "jsbi": "^4.3.0",
     "typescript": "^4.7.2"

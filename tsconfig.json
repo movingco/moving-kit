@@ -5,6 +5,7 @@
   "compilerOptions": {
     "lib": ["DOM"],
     "types": ["jest"],
-    "moduleResolution": "nodenext"
+    "moduleResolution": "nodenext",
+    "noEmit": true
   }
 }
