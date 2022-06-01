@@ -4,7 +4,7 @@
     "packages/*"
   ],
   "name": "@moving/workspace",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "description": "TypeScript utilities for interacting with the Move language and Move blockchains.",
   "repository": "git@github.com:movingco/moving-kit.git",
   "author": "Ian Macalinao <ian@moving.wtf>",
