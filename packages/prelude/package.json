@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@movingco/core": "workspace:*",
+    "@movingco/idl": "workspace:^",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

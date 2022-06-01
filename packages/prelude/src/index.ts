@@ -5,6 +5,27 @@ import {
   validateU64,
   validateU128,
 } from "@movingco/core";
+import type { IDLModule, IDLScriptFunction } from "@movingco/idl";
+
+/**
+ * Definition of a Move module as defined in generated types.
+ */
+export interface MoveModuleDefinition<A extends string, N extends string> {
+  /** The address of the module. */
+  readonly ADDRESS: A;
+  /** The full module name. */
+  readonly FULL_NAME: `${A}::${N}`;
+  /** The name of the module. */
+  readonly NAME: N;
+  /** The IDL of the module. */
+  readonly IDL: IDLModule;
+  /** All module function IDLs. */
+  readonly functions: Record<string, IDLScriptFunction>;
+  /** All struct types with ability `key`. */
+  readonly resources: Record<string, `${A}::${N}::${string}`>;
+  /** All struct types. */
+  readonly structs: Record<string, `${A}::${N}::${string}`>;
+}
 
 /**
  * Hex string argument.

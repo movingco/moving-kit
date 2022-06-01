@@ -864,7 +864,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/idl@workspace:packages/idl":
+"@movingco/idl@workspace:^, @movingco/idl@workspace:packages/idl":
   version: 0.0.0-use.local
   resolution: "@movingco/idl@workspace:packages/idl"
   dependencies:
@@ -896,6 +896,7 @@ __metadata:
   resolution: "@movingco/prelude@workspace:packages/prelude"
   dependencies:
     "@movingco/core": "workspace:*"
+    "@movingco/idl": "workspace:^"
     "@saberhq/tsconfig": ^1.13.20
     tslib: ^2.4.0
     typescript: ^4.7.2
