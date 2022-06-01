@@ -71,7 +71,12 @@ export class HexString implements SerializableHexString {
   }
 
   toBuffer(): Buffer {
-    return Buffer.from(this.noPrefix(), "hex");
+    return Buffer.from(
+      this._hexString.length % 2 === 1
+        ? `0${this.noPrefix()}`
+        : this.noPrefix(),
+      "hex"
+    );
   }
 
   toUint8Array(): Uint8Array {
