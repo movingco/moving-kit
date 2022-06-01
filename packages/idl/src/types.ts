@@ -1,17 +1,20 @@
 export interface IDLPackage {
   name: string;
-  modules: Record<string, IDLModule>;
-  structs: readonly IDLStruct[];
-  aliases: Record<string, string>;
+  modules: { readonly [id: string]: IDLModule };
+  structs: readonly IDLStruct<string, string>[];
+  aliases: { readonly [alias: string]: string };
 }
 
-export interface ModuleId {
-  address: string;
-  name: string;
+export interface ModuleId<
+  A extends string = string,
+  N extends string = string
+> {
+  address: A;
+  name: N;
 }
 
-export interface IDLStruct {
-  module_name: ModuleId;
+export interface IDLStruct<A extends string, N extends string> {
+  module_name: ModuleId<A, N>;
   name: string;
   fields: readonly IDLField[];
   type_params?: readonly string[];
@@ -20,7 +23,7 @@ export interface IDLStruct {
 
 export interface IDLModule {
   doc?: string;
-  functions: IDLScriptFunction[];
+  functions: readonly IDLScriptFunction[];
 }
 
 export type IDLAbility = "copy" | "drop" | "store" | "key";
