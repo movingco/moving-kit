@@ -33,7 +33,7 @@
   "dependencies": {
     "@movingco/sha3": "workspace:^",
     "@saberhq/option-utils": "^1.13.25",
-    "@ubeswap/token-math": "^5.1.2",
+    "@ubeswap/token-math": "^5.1.3",
     "bn.js": "^5.2.1",
     "buffer": "^6.0.3",
     "tiny-invariant": "^1.2.0",

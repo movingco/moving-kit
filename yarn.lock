@@ -810,7 +810,7 @@ __metadata:
     "@saberhq/option-utils": ^1.13.25
     "@saberhq/tsconfig": ^1.13.25
     "@types/bn.js": ^5.1.0
-    "@ubeswap/token-math": ^5.1.2
+    "@ubeswap/token-math": ^5.1.3
     bn.js: ^5.2.1
     buffer: ^6.0.3
     jsbi: ^4.3.0
@@ -1476,19 +1476,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ubeswap/token-math@npm:^5.1.2":
-  version: 5.1.2
-  resolution: "@ubeswap/token-math@npm:5.1.2"
+"@ubeswap/token-math@npm:^5.1.3":
+  version: 5.1.3
+  resolution: "@ubeswap/token-math@npm:5.1.3"
   dependencies:
     "@types/big.js": ^6.1.3
-    big.js: ^6.1.1
+    big.js: ^6.2.0
     decimal.js-light: ^2.5.1
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
   peerDependencies:
     bn.js: ^5.2.0
     jsbi: ^3 || ^4
-  checksum: b260bd0d30b8b7d0764fe8f41380bdd3b47e32ba8c61f7033f9b1e9e8c945f43df42874501d2136a2370504fb723ebbaf2146b525be712f440c71f8b5746fa61
+  checksum: 097921d82e0123dc55c2107aef9eec2df490fcb165fdcd3fb7e8655b0f870be46b3ede68b5f24ef734ec1adb52ec60d2380cb0414e1438296956b9cb52c5bb3a
   languageName: node
   linkType: hard
 
@@ -2281,10 +2281,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"big.js@npm:^6.1.1":
-  version: 6.1.1
-  resolution: "big.js@npm:6.1.1"
-  checksum: ba5db278e7d6700d7f92b7421e851bb65b6336d90b882869696c50574623c6be31f81500c3195fb1b391045163ffe62745e1c2bc30b35cb15e1b3e3ed135266b
+"big.js@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "big.js@npm:6.2.0"
+  checksum: 42bcbf0be703c4ae8669c969d0e108f9e1730f20e85bd779e31f7a92d28f6b3e87de96e25ef8657edc0b5dc945a0f66c184ec2654276b86f49e4e9ba025f131a
   languageName: node
   linkType: hard
 
