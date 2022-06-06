@@ -32,8 +32,8 @@
     "typescript": "^4.7.3"
   },
   "scripts": {
-    "build": "yarn workspaces foreach --exclude @moving/workspace -vpti run build",
-    "publish:all": "yarn workspaces foreach --exclude @moving/workspace -vpti npm publish",
+    "build": "yarn workspaces foreach --exclude @moving/workspace -vpti --topological-dev run build",
+    "publish:all": "yarn workspaces foreach --exclude @moving/workspace -vpti --topological-dev npm publish",
     "docs:generate": "typedoc --excludePrivate --includeVersion --out docs/ packages/**/src/index.{ts,tsx}",
     "bump": "yarn workspaces foreach -t version",
     "test": "jest",
