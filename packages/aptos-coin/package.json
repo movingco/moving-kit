@@ -1,0 +1,49 @@
+{
+  "name": "@movingco/aptos-coin",
+  "version": "0.1.29",
+  "description": "Aptos Coin helpers.",
+  "author": "Ian Macalinao <ian@moving.wtf>",
+  "homepage": "https://github.com/movingco/moving-kit#readme",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/movingco/moving-kit.git"
+  },
+  "scripts": {
+    "build": "tsc && tsc --project tsconfig.cjs.json"
+  },
+  "bugs": {
+    "url": "https://github.com/movingco/moving-kit/issues"
+  },
+  "dependencies": {
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@movingco/prelude": "workspace:^",
+    "@saberhq/tsconfig": "^1.13.26",
+    "@types/bn.js": "^5.1.0",
+    "bn.js": "^5.2.1",
+    "jsbi": "^4.3.0",
+    "typescript": "^4.7.3"
+  },
+  "peerDependencies": {
+    "@movingco/prelude": "workspace:^",
+    "bn.js": "^5.2.0",
+    "jsbi": "^4.3.0"
+  }
+}
