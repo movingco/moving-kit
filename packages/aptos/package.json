@@ -31,13 +31,13 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
-    "@movingco/core": "workspace:^",
     "@movingco/leb128": "workspace:^",
     "aptos": "^0.0.20",
     "buffer": "^6.0.3",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
+    "@movingco/core": "workspace:^",
     "@saberhq/tsconfig": "^1.13.26",
     "@types/bn.js": "^5.1.0",
     "bn.js": "^5.2.1",
@@ -45,6 +45,7 @@
     "typescript": "^4.7.3"
   },
   "peerDependencies": {
+    "@movingco/core": "workspace:^",
     "bn.js": "^5.2.0",
     "jsbi": "^4.3.0"
   }
