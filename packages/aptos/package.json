@@ -32,13 +32,13 @@
   },
   "dependencies": {
     "@movingco/leb128": "workspace:^",
-    "aptos": "^0.0.20",
+    "aptos": "^1.0.0",
     "buffer": "^6.0.3",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@movingco/core": "workspace:^",
-    "@saberhq/tsconfig": "^1.13.26",
+    "@saberhq/tsconfig": "^1.13.27",
     "@types/bn.js": "^5.1.0",
     "bn.js": "^5.2.1",
     "jsbi": "^4.3.0",
