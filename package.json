@@ -45,5 +45,8 @@
   "lint-staged": {
     "*.{ts,tsx}": "eslint --cache --fix",
     "*.{md,js,json,yml,yaml,css,md}": "prettier --write"
+  },
+  "resolutions": {
+    "axios": "^0.27"
   }
 }
