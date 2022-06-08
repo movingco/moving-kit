@@ -1,5 +1,3 @@
-type ExtensionValue = string | number | boolean | null;
-
 export enum ChainId {
   AptosMainnet = 200,
   AptosDevnet = 201,
@@ -7,7 +5,15 @@ export enum ChainId {
   SuiDevnet = 301,
 }
 
-export interface CoinInfo {
+export interface MovingExtensions {
+  readonly website?: string;
+  /**
+   * The CoinGecko API ID of the coin.
+   */
+  readonly coingeckoId?: string;
+}
+
+export interface CoinInfo<E = MovingExtensions> {
   readonly chainId: number;
   readonly address: string;
   readonly name: string;
@@ -15,11 +21,7 @@ export interface CoinInfo {
   readonly symbol: string;
   readonly logoURI?: string;
   readonly tags?: readonly string[];
-  readonly extensions?: {
-    readonly [key: string]:
-      | Readonly<Record<string, ExtensionValue>>
-      | ExtensionValue;
-  };
+  readonly extensions?: E;
 }
 
 export interface Version {
@@ -45,7 +47,7 @@ export interface CoinList {
   /**
    * Named `tokens` for backwards compatibility with the Uniswap standard.
    */
-  readonly tokens: readonly CoinInfo[];
+  readonly tokens: readonly CoinInfo<MovingExtensions>[];
   readonly keywords?: readonly string[];
   readonly tags?: Tags;
   readonly logoURI?: string;
