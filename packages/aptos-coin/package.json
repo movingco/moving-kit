@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@movingco/prelude": "workspace:^",
-    "@saberhq/tsconfig": "^1.13.27",
+    "@saberhq/tsconfig": "^1.13.29",
     "@types/bn.js": "^5.1.0",
     "bn.js": "^5.2.1",
     "jsbi": "^4.3.0",

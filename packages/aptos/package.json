@@ -33,14 +33,14 @@
   "dependencies": {
     "@movingco/leb128": "workspace:^",
     "@vespaiach/axios-fetch-adapter": "^0.3.0",
-    "aptos": "^1.0.0",
+    "aptos": "^1.1.0",
     "axios": "^0.27.2",
     "buffer": "^6.0.3",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@movingco/core": "workspace:^",
-    "@saberhq/tsconfig": "^1.13.27",
+    "@saberhq/tsconfig": "^1.13.29",
     "@types/bn.js": "^5.1.0",
     "bn.js": "^5.2.1",
     "jsbi": "^4.3.0",
