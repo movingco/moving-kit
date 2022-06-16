@@ -1,0 +1,135 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>TableItemRequest | @moving/workspace - v0.1.32</title><meta name="description" content="Documentation for @moving/workspace - v0.1.32"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base=".."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">@moving/workspace - v0.1.32</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><ul class="tsd-breadcrumb"><li><a href="../modules.html">@moving/workspace - v0.1.32</a></li><li><a href="../modules/aptos_api_src.html">aptos-api/src</a></li><li><a href="aptos_api_src.TableItemRequest.html">TableItemRequest</a></li></ul><h1>Interface TableItemRequest </h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><section class="tsd-panel tsd-hierarchy"><h3>Hierarchy</h3><ul class="tsd-hierarchy"><li><span class="target">TableItemRequest</span></li></ul></section><section class="tsd-panel-group tsd-index-group"><h2>Index</h2><section class="tsd-panel tsd-index-panel"><div class="tsd-index-content"><section class="tsd-index-section "><h3>Properties</h3><ul class="tsd-index-list"><li class="tsd-kind-property tsd-parent-kind-interface"><a href="aptos_api_src.TableItemRequest.html#key" class="tsd-kind-icon">key</a></li><li class="tsd-kind-property tsd-parent-kind-interface"><a href="aptos_api_src.TableItemRequest.html#key_type" class="tsd-kind-icon">key_<wbr/>type</a></li><li class="tsd-kind-property tsd-parent-kind-interface"><a href="aptos_api_src.TableItemRequest.html#value_type" class="tsd-kind-icon">value_<wbr/>type</a></li></ul></section></div></section></section><section class="tsd-panel-group tsd-member-group "><h2>Properties</h2><section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="key" class="tsd-anchor"></a><h3 class="tsd-anchor-link">key<a href="#key" aria-label="Permalink" class="tsd-anchor-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></svg></a></h3><div class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/movingco/moving-kit/blob/f6cc4b8/packages/aptos-api/src/data-contracts.ts#L1173">packages/aptos-api/src/data-contracts.ts:1173</a></li></ul></aside><div class="tsd-comment tsd-typography"><div class="lead">
+<p>Move <code>bool</code> type value is serialized into <code>boolean</code>.</p>
+</div><div><p>Move <code>u8</code> type value is serialized into <code>integer</code>.
+Move <code>u64</code> and <code>u128</code> type value is serialized into <code>string</code>.
+Move <code>address</code> type value(16 bytes Aptos account address) is serialized into
+hex-encoded string, which is prefixed with <code>0x</code> and leading zeros are trimmed.
+For example:</p>
+<ul>
+<li><code>0x1</code></li>
+<li><code>0x1668f6be25668c1a17cd8caf6b8d2f25</code>
+Move <code>vector</code> type value is serialized into <code>array</code>, except <code>vector&lt;u8&gt;</code> which is
+serialized into hex-encoded string with <code>0x</code> prefix.</li>
+<li><code>vector&lt;u64&gt;{255, 255}</code> =&gt; <code>[&quot;255&quot;, &quot;255&quot;]</code></li>
+<li><code>vector&lt;u8&gt;{255, 255}</code> =&gt; <code>0xffff</code>
+Move <code>struct</code> type value is serialized into <code>object</code> that looks like this (except some Move stdlib types, see the following section):<pre><code class="language-json"><span class="hl-1">{</span><br/><span class="hl-2">field1_name</span><span class="hl-1">: </span><span class="hl-2">field</span><span class="hl-3">1</span><span class="hl-2">_value</span><span class="hl-1">,</span><br/><span class="hl-2">field2_name</span><span class="hl-1">: </span><span class="hl-2">field</span><span class="hl-3">2</span><span class="hl-2">_value</span><span class="hl-1">,</span><br/><span class="hl-2">......</span><br/><span class="hl-1">}</span>
+</code></pre>
+  <code>{ &quot;created&quot;: &quot;0xa550c18&quot;, &quot;role_id&quot;: &quot;0&quot; }</code>
+<strong>Special serialization for Move stdlib types:</strong></li>
+<li><a href="https://github.com/aptos-labs/aptos-core/blob/main/language/move-stdlib/docs/ASCII.md">0x1::ASCII::String</a> is serialized into <code>string</code>. For example, struct value <code>0x1::ASCII::String{bytes: b&quot;hello world&quot;}</code> is serialized as <code>&quot;hello world&quot;</code> in JSON.</li>
+</ul>
+</div></div></section><section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="key_type" class="tsd-anchor"></a><h3 class="tsd-anchor-link">key_<wbr/>type<a href="#key_type" aria-label="Permalink" class="tsd-anchor-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></svg></a></h3><div class="tsd-signature tsd-kind-icon">key_<wbr/>type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/movingco/moving-kit/blob/f6cc4b8/packages/aptos-api/src/data-contracts.ts#L1090">packages/aptos-api/src/data-contracts.ts:1090</a></li></ul></aside><div class="tsd-comment tsd-typography"><div class="lead">
+<p>String representation of an on-chain Move type identifier defined by the Move language.</p>
+</div><div><p>Values:</p>
+<ul>
+<li>bool</li>
+<li>u8</li>
+<li>u64</li>
+<li>u128</li>
+<li>address</li>
+<li>signer</li>
+<li>vector: <code>vector&lt;{non-reference MoveTypeId}&gt;</code></li>
+<li>struct: <code>{address}::{module_name}::{struct_name}::&lt;{generic types}&gt;</code></li>
+<li>reference: immutable <code>&amp;</code> and mutable <code>&amp;mut</code> references.</li>
+<li>generic_type_parameter: it is always start with <code>T</code> and following an index number,
+which is the position of the generic type parameter in the <code>struct</code> or
+<code>function</code> generic type parameters definition.
+Vector type value examples:</li>
+</ul>
+<ul>
+<li><code>vector&lt;u8&gt;</code></li>
+<li><code>vector&lt;vector&lt;u64&gt;&gt;</code></li>
+<li><code>vector&lt;0x1::AptosAccount::Balance&lt;0x1::XDX::XDX&gt;&gt;</code>
+Struct type value examples:</li>
+<li><code>0x1::Aptos::Aptos&lt;0x1::XDX::XDX&gt;</code></li>
+<li><code>0x1::Abc::Abc&lt;vector&lt;u8&gt;, vector&lt;u64&gt;&gt;</code></li>
+<li><code>0x1::AptosAccount::AccountOperationsCapability</code>
+Reference type value examples:</li>
+<li><code>&amp;signer</code></li>
+<li><code>&amp;mut address</code></li>
+<li><code>&amp;mut vector&lt;u8&gt;</code>
+Generic type parameter value example, the following is <code>0x1::TransactionFee::TransactionFee</code> JSON representation:
+{
+&quot;name&quot;: &quot;TransactionFee&quot;,
+&quot;is_native&quot;: false,
+&quot;abilities&quot;: [&quot;key&quot;],
+&quot;generic_type_params&quot;: [
+    {&quot;constraints&quot;: [], &quot;is_phantom&quot;: true}
+],
+&quot;fields&quot;: [
+    { &quot;name&quot;: &quot;balance&quot;, &quot;type&quot;: &quot;0x1::Aptos::Aptos<T0>&quot; },
+    { &quot;name&quot;: &quot;preburn&quot;, &quot;type&quot;: &quot;0x1::Aptos::Preburn<T0>&quot; }
+]
+}
+It&#39;s Move source code:
+module AptosFramework::TransactionFee {
+struct TransactionFee<phantom CoinType> has key {
+    balance: Aptos<CoinType>,
+    preburn: Preburn<CoinType>,
+}
+The <code>T0</code> in the above JSON representation is the generic type place holder for
+the <code>CoinType</code> in the Move source code.
+Note:</li>
+</ul>
+<ol>
+<li>Empty chars should be ignored when comparing 2 struct tag ids.</li>
+<li>When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).</li>
+</ol>
+</div></div></section><section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="value_type" class="tsd-anchor"></a><h3 class="tsd-anchor-link">value_<wbr/>type<a href="#value_type" aria-label="Permalink" class="tsd-anchor-icon"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path></svg></a></h3><div class="tsd-signature tsd-kind-icon">value_<wbr/>type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources"><ul><li>Defined in <a href="https://github.com/movingco/moving-kit/blob/f6cc4b8/packages/aptos-api/src/data-contracts.ts#L1145">packages/aptos-api/src/data-contracts.ts:1145</a></li></ul></aside><div class="tsd-comment tsd-typography"><div class="lead">
+<p>String representation of an on-chain Move type identifier defined by the Move language.</p>
+</div><div><p>Values:</p>
+<ul>
+<li>bool</li>
+<li>u8</li>
+<li>u64</li>
+<li>u128</li>
+<li>address</li>
+<li>signer</li>
+<li>vector: <code>vector&lt;{non-reference MoveTypeId}&gt;</code></li>
+<li>struct: <code>{address}::{module_name}::{struct_name}::&lt;{generic types}&gt;</code></li>
+<li>reference: immutable <code>&amp;</code> and mutable <code>&amp;mut</code> references.</li>
+<li>generic_type_parameter: it is always start with <code>T</code> and following an index number,
+which is the position of the generic type parameter in the <code>struct</code> or
+<code>function</code> generic type parameters definition.
+Vector type value examples:</li>
+</ul>
+<ul>
+<li><code>vector&lt;u8&gt;</code></li>
+<li><code>vector&lt;vector&lt;u64&gt;&gt;</code></li>
+<li><code>vector&lt;0x1::AptosAccount::Balance&lt;0x1::XDX::XDX&gt;&gt;</code>
+Struct type value examples:</li>
+<li><code>0x1::Aptos::Aptos&lt;0x1::XDX::XDX&gt;</code></li>
+<li><code>0x1::Abc::Abc&lt;vector&lt;u8&gt;, vector&lt;u64&gt;&gt;</code></li>
+<li><code>0x1::AptosAccount::AccountOperationsCapability</code>
+Reference type value examples:</li>
+<li><code>&amp;signer</code></li>
+<li><code>&amp;mut address</code></li>
+<li><code>&amp;mut vector&lt;u8&gt;</code>
+Generic type parameter value example, the following is <code>0x1::TransactionFee::TransactionFee</code> JSON representation:
+{
+&quot;name&quot;: &quot;TransactionFee&quot;,
+&quot;is_native&quot;: false,
+&quot;abilities&quot;: [&quot;key&quot;],
+&quot;generic_type_params&quot;: [
+    {&quot;constraints&quot;: [], &quot;is_phantom&quot;: true}
+],
+&quot;fields&quot;: [
+    { &quot;name&quot;: &quot;balance&quot;, &quot;type&quot;: &quot;0x1::Aptos::Aptos<T0>&quot; },
+    { &quot;name&quot;: &quot;preburn&quot;, &quot;type&quot;: &quot;0x1::Aptos::Preburn<T0>&quot; }
+]
+}
+It&#39;s Move source code:
+module AptosFramework::TransactionFee {
+struct TransactionFee<phantom CoinType> has key {
+    balance: Aptos<CoinType>,
+    preburn: Preburn<CoinType>,
+}
+The <code>T0</code> in the above JSON representation is the generic type place holder for
+the <code>CoinType</code> in the Move source code.
+Note:</li>
+</ul>
+<ol>
+<li>Empty chars should be ignored when comparing 2 struct tag ids.</li>
+<li>When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).</li>
+</ol>
+</div></div></section></section></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class=""><a href="../modules.html">Modules</a></li><li class="current tsd-kind-module"><a href="../modules/aptos_api_src.html">aptos-<wbr/>api/src</a></li><li class=" tsd-kind-module"><a href="../modules/aptos_coin_src.html">aptos-<wbr/>coin/src</a></li><li class=" tsd-kind-module"><a href="../modules/aptos_src.html">aptos/src</a></li><li class=" tsd-kind-module"><a href="../modules/core_src.html">core/src</a></li><li class=" tsd-kind-module"><a href="../modules/hdwallet_src.html">hdwallet/src</a></li><li class=" tsd-kind-module"><a href="../modules/hooks_src.html">hooks/src</a></li><li class=" tsd-kind-module"><a href="../modules/idl_src.html">idl/src</a></li><li class=" tsd-kind-module"><a href="../modules/leb128_src.html">leb128/src</a></li><li class=" tsd-kind-module"><a href="../modules/prelude_src.html">prelude/src</a></li><li class=" tsd-kind-module"><a href="../modules/sha3_src.html">sha3/src</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="current tsd-kind-interface tsd-parent-kind-module"><a href="aptos_api_src.TableItemRequest.html" class="tsd-kind-icon">Table<wbr/>Item<wbr/>Request</a><ul><li class="tsd-kind-property tsd-parent-kind-interface"><a href="aptos_api_src.TableItemRequest.html#key" class="tsd-kind-icon">key</a></li><li class="tsd-kind-property tsd-parent-kind-interface"><a href="aptos_api_src.TableItemRequest.html#key_type" class="tsd-kind-icon">key_<wbr/>type</a></li><li class="tsd-kind-property tsd-parent-kind-interface"><a href="aptos_api_src.TableItemRequest.html#value_type" class="tsd-kind-icon">value_<wbr/>type</a></li></ul></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li><li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li><li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li><li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li><li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="../assets/main.js"></script></body></html>
