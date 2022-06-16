@@ -1,0 +1,49 @@
+{
+  "name": "@movingco/aptos-api",
+  "version": "0.1.32",
+  "description": "Aptos API wrapper generated from the Swagger spec.",
+  "author": "Ian Macalinao <ian@moving.wtf>",
+  "homepage": "https://github.com/movingco/moving-kit#readme",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/movingco/moving-kit.git"
+  },
+  "scripts": {
+    "build": "tsc && tsc --project tsconfig.cjs.json"
+  },
+  "bugs": {
+    "url": "https://github.com/movingco/moving-kit/issues"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@saberhq/tsconfig": "^1.13.29",
+    "@types/bn.js": "^5.1.0",
+    "bn.js": "^5.2.1",
+    "jsbi": "^4.3.0",
+    "typescript": "^4.7.3"
+  },
+  "peerDependencies": {
+    "@movingco/prelude": "workspace:^",
+    "bn.js": "^5.2.0",
+    "jsbi": "^4.3.0"
+  }
+}
