@@ -1,5 +1,5 @@
 import type { CoinInfo } from "@movingco/core";
-import { ChainId, Coin } from "@movingco/core";
+import { ChainId, Coin, CoinAmount } from "@movingco/core";
 
 const TEST_COIN_INFO: CoinInfo = {
   name: "Test Coin",
@@ -13,4 +13,4 @@ const TEST_COIN_INFO: CoinInfo = {
 
 export const TEST_COIN = new Coin(TEST_COIN_INFO);
 
-export const ZERO_TEST_COINS = TEST_COIN.ZERO;
+export const ZERO_TEST_COINS = new CoinAmount(TEST_COIN, 0);

@@ -3,7 +3,6 @@ import {
   parseAmountFromString,
   Price as UPrice,
   TokenAmount as UTokenAmount,
-  ZERO,
 } from "@ubeswap/token-math";
 
 import type { ChainId, CoinInfo } from "./coinList.js";
@@ -32,13 +31,6 @@ export class Coin implements UToken<Coin> {
 
   get decimals(): number {
     return this.info.decimals;
-  }
-
-  /**
-   * Zero of this coin.
-   */
-  get ZERO(): CoinAmount {
-    return new CoinAmount(this, ZERO);
   }
 
   /**
