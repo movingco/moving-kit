@@ -792,7 +792,7 @@ __metadata:
     lint-staged: ^13.0.3
     prettier: ^2.7.1
     ts-jest: ^28.0.5
-    typedoc: ^0.23.0
+    typedoc: ^0.22
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -3881,7 +3881,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^8.0.1":
+"glob@npm:^8.0.1, glob@npm:^8.0.3":
   version: 8.0.3
   resolution: "glob@npm:8.0.3"
   dependencies:
@@ -7009,19 +7009,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "typedoc@npm:0.23.0"
+"typedoc@npm:^0.22":
+  version: 0.22.18
+  resolution: "typedoc@npm:0.22.18"
   dependencies:
+    glob: ^8.0.3
     lunr: ^2.3.9
     marked: ^4.0.16
     minimatch: ^5.1.0
     shiki: ^0.10.1
   peerDependencies:
-    typescript: 4.6.x || 4.7.x
+    typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x || 4.6.x || 4.7.x
   bin:
     typedoc: bin/typedoc
-  checksum: 9a23f39fef8e28c3a8c23c5f7166086aea7f9503d3954e27cd9dae7fbc7b46c170ba834c978cb5dd1eaff8fc6a345a72582340cb985d507e44f6dc85fd04f9e1
+  checksum: b813d8129682f6ed5a4e96bacaf019e4da1d2744ca89fef850d6bb4c034616567ce67e6a7f5cfc5f00aac573f0b45d44b1427aafa262ab88dce6b460cb9e744c
   languageName: node
   linkType: hard
 
