@@ -1,7 +1,17 @@
+import type { HexEncodedBytes } from "@movingco/aptos-api";
 import type { HexStringLike, Signer } from "@movingco/core";
 import { Address, PublicKey } from "@movingco/core";
 import { AptosAccount } from "aptos";
 import { Buffer } from "buffer/";
+
+/**
+ * JSON-serializable representation of an {@link Account}.
+ */
+export interface AccountObject {
+  address?: string;
+  publicKeyHex?: HexEncodedBytes;
+  privateKeyHex: HexEncodedBytes;
+}
 
 /**
  * Backed by a signing key.
@@ -15,6 +25,20 @@ export class Account implements Signer {
   constructor(readonly account: AptosAccount) {
     this.address = new Address(account.address().hex());
     this.pubKey = new PublicKey(this.account.pubKey().toBuffer());
+  }
+
+  /**
+   * Exports this account as a private key object.
+   */
+  toPrivateKeyObject(): AccountObject {
+    return this.account.toPrivateKeyObject();
+  }
+
+  /**
+   * Creates an {@link Account} from an account object.
+   */
+  static fromObject(obj: AccountObject): Account {
+    return new Account(AptosAccount.fromAptosAccountObject(obj));
   }
 
   /**

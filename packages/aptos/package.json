@@ -31,6 +31,7 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
+    "@movingco/aptos-api": "workspace:^",
     "@movingco/leb128": "workspace:^",
     "@vespaiach/axios-fetch-adapter": "^0.3.0",
     "aptos": "^1.1.0",
