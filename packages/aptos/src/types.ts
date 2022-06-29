@@ -1,4 +1,4 @@
-import type { Types } from "aptos";
+import type { MoveStructTagId } from "@movingco/aptos-api";
 
 /**
  * Account resource is a Move struct value belongs to an account.
@@ -20,7 +20,7 @@ export interface AccountResource<T> {
    *   2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).
    * See [doc](https://diem.github.io/move/structs-and-resources.html) for more details.
    */
-  type: Types.MoveStructTagId;
+  type: MoveStructTagId;
 
   /**
    * Account resource data is JSON representation of the Move struct `type`.
