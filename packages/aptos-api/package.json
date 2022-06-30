@@ -1,6 +1,6 @@
 {
   "name": "@movingco/aptos-api",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "description": "Aptos API wrapper generated from the Swagger spec.",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
