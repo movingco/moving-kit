@@ -1,4 +1,4 @@
-import fetchAdapter from "@vespaiach/axios-fetch-adapter";
+import { default as fetchAdapter } from "@vespaiach/axios-fetch-adapter";
 import { AptosClient } from "aptos";
 
 /**

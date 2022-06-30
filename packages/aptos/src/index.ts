@@ -1,4 +1,5 @@
 export * from "./account.js";
+export * from "./api.js";
 export * from "./client.js";
 export * from "./constants.js";
 export * from "./signingMessage.js";
