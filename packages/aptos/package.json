@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@movingco/core": "workspace:^",
-    "@saberhq/tsconfig": "^1.13.32",
+    "@saberhq/tsconfig": "^2.0.1",
     "@types/bn.js": "^5.1.0",
     "bn.js": "^5.2.1",
     "jsbi": "^4.3.0",

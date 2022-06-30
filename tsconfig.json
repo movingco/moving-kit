@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@saberhq/tsconfig/tsconfig.module.json",
+  "extends": "@saberhq/tsconfig/tsconfig.root.json",
   "include": [
     "packages/**/*.spec.ts",
     "packages/**/*.d.ts",
@@ -8,9 +8,7 @@
     ".eslintrc.cjs"
   ],
   "compilerOptions": {
-    "lib": ["DOM", "ES2019"],
-    "types": ["jest"],
-    "noEmit": true
+    "lib": ["DOM", "ES2019"]
   },
   "references": [
     { "path": "packages/aptos/" },
