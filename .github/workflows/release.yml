@@ -43,7 +43,8 @@ jobs:
         run: yarn workspaces foreach -t version ${{ github.event.inputs.version }}
         if: github.event_name == 'workflow_dispatch'
 
-      - name: Update the changelog
+      - id: build-changelog
+        name: Update the changelog
         uses: mikepenz/release-changelog-builder-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -66,6 +67,7 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         with:
           tag_name: ${{ steps.git-release.outputs.version }}
+          body: ${{steps.build-changelog.outputs.changelog}}
           generate_release_notes: true
 
       # Handle release from pushing a new tag
@@ -73,6 +75,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: github.event_name == 'push'
         with:
+          body: ${{steps.build-changelog.outputs.changelog}}
           generate_release_notes: true
 
       - name: Publish to NPM
