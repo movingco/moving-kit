@@ -13,8 +13,8 @@
   "devDependencies": {
     "@jest/types": "^28.1.1",
     "@rushstack/eslint-patch": "^1.1.4",
-    "@saberhq/eslint-config": "^1.13.30",
-    "@saberhq/tsconfig": "^1.13.30",
+    "@saberhq/eslint-config": "^1.13.32",
+    "@saberhq/tsconfig": "^1.13.32",
     "@types/bn.js": "^5.1.0",
     "@types/eslint": "^8.4.3",
     "@types/jest": "^28.1.3",
