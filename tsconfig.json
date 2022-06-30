@@ -1,7 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@saberhq/tsconfig/tsconfig.module.json",
-  "include": ["packages/**/*.spec.ts", "jest.config.mjs", ".eslintrc.cjs"],
+  "include": [
+    "packages/**/*.spec.ts",
+    "packages/**/*.d.ts",
+    "jest.config.mjs",
+    ".eslintrc.cjs"
+  ],
   "compilerOptions": {
     "lib": ["DOM", "ES2019"],
     "types": ["jest"],

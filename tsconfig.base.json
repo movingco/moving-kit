@@ -1,4 +1,0 @@
-{
-  "extends": "@saberhq/tsconfig/tsconfig.module.json",
-  "exclude": ["**/*.spec.ts"]
-}
