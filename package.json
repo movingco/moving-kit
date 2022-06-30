@@ -36,7 +36,7 @@
   "scripts": {
     "build": "yarn workspaces foreach --exclude @moving/workspace -vpti --topological-dev run build",
     "publish:all": "yarn workspaces foreach --exclude @moving/workspace -vpti --topological-dev npm publish",
-    "docs:generate": "typedoc --excludePrivate --includeVersion --out docs/ packages/**/src/index.{ts,tsx}",
+    "docs:generate": "typedoc --excludePrivate --includeVersion --out docs/ --entryPointStrategy packages --includes packages/ $(find ./packages -mindepth 1 -maxdepth 1 | grep -v browserslist)",
     "bump": "yarn workspaces foreach -t version",
     "test": "jest",
     "lint": "eslint . --cache",
