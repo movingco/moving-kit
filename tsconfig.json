@@ -1,11 +1,22 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@saberhq/tsconfig/tsconfig.lib.json",
-  "include": ["packages/", "jest.config.mjs", ".eslintrc.cjs"],
+  "extends": "@saberhq/tsconfig/tsconfig.module.json",
+  "include": ["packages/**/*.spec.ts", "jest.config.mjs", ".eslintrc.cjs"],
   "compilerOptions": {
-    "lib": ["DOM"],
+    "lib": ["DOM", "ES2019"],
     "types": ["jest"],
-    "moduleResolution": "nodenext",
     "noEmit": true
-  }
+  },
+  "references": [
+    { "path": "packages/aptos/" },
+    { "path": "packages/aptos-api/" },
+    { "path": "packages/aptos-coin/" },
+    { "path": "packages/core/" },
+    { "path": "packages/hdwallet/" },
+    { "path": "packages/hooks/" },
+    { "path": "packages/idl/" },
+    { "path": "packages/leb128/" },
+    { "path": "packages/prelude/" },
+    { "path": "packages/sha3/" }
+  ]
 }

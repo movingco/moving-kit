@@ -39,7 +39,7 @@
     "test": "jest",
     "lint": "eslint . --cache",
     "lint:ci": "eslint . --max-warnings=0",
-    "typecheck": "tsc",
+    "typecheck": "tsc --build",
     "prepare": "husky install"
   },
   "lint-staged": {
