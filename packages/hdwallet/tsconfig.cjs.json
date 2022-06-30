@@ -4,5 +4,6 @@
     "lib": ["DOM", "ES2019"],
     "outDir": "dist/cjs/"
   },
-  "include": ["src/"]
+  "include": ["src/"],
+  "exclude": ["**/*.spec.ts"]
 }
