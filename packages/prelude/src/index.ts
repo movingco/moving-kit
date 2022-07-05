@@ -1,24 +1,27 @@
 import type { BigintIsh, HexStringLike } from "@movingco/core";
-import {
-  HexString,
-  parseBigintIsh,
-  validateU64,
-  validateU128,
-} from "@movingco/core";
-import type { IDLModule, IDLScriptFunction } from "@movingco/idl";
+import type { IDLScriptFunction } from "@movingco/idl";
+
+export * as IDL from "@movingco/idl";
 
 /**
- * Definition of a Move module as defined in generated types.
+ * Serializes and validates a value.
  */
-export interface MoveModuleDefinition<A extends string, N extends string> {
+export * as serializers from "./serializers.js";
+
+export interface MoveModuleId<A extends string, N extends string> {
   /** The address of the module. */
   readonly ADDRESS: A;
   /** The full module name. */
   readonly FULL_NAME: `${A}::${N}`;
   /** The name of the module. */
   readonly NAME: N;
-  /** The IDL of the module. */
-  readonly IDL: IDLModule;
+}
+
+/**
+ * Definition of a Move module as defined in generated types.
+ */
+export interface MoveModuleDefinition<A extends string, N extends string>
+  extends MoveModuleId<A, N> {
   /** All module function IDLs. */
   readonly functions: Record<string, IDLScriptFunction>;
   /** All struct types with ability `key`. */
@@ -46,7 +49,10 @@ export type U128 = BigintIsh;
  * Payload for a script function.
  */
 export interface ScriptFunctionPayload {
-  type: "script_function_payload";
+  /**
+   * Hard-coded argument showing this is a script function payload.
+   */
+  readonly type: "script_function_payload";
 
   /**
    * Script function id is string representation of a script function defined on-chain.
@@ -57,28 +63,8 @@ export interface ScriptFunctionPayload {
   function: string;
 
   /** Generic type arguments required by the script function. */
-  type_arguments: string[];
+  type_arguments: readonly string[];
 
   /** The script function arguments. */
-  arguments: unknown[];
+  arguments: readonly unknown[];
 }
-
-/**
- * Serializes and validates a value.
- */
-export const serializers = {
-  hexString: (arg: HexStringArg) => {
-    const str = typeof arg === "string" ? arg : arg.hex();
-    return HexString.ensure(str).hex();
-  },
-  u64: (arg: BigintIsh) => {
-    const bi = parseBigintIsh(arg);
-    validateU64(bi);
-    return bi.toString();
-  },
-  u128: (arg: BigintIsh) => {
-    const bi = parseBigintIsh(arg);
-    validateU128(bi);
-    return bi.toString();
-  },
-};
