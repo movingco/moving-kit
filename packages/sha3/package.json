@@ -5,6 +5,7 @@
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
   "license": "Apache-2.0",
+  "sideEffects": false,
   "type": "commonjs",
   "main": "dist/cjs/index.js",
   "files": [

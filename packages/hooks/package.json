@@ -5,6 +5,8 @@
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
   "license": "Apache-2.0",
+  "sideEffects": false,
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",
@@ -31,7 +33,7 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
-    "@movingco/core": "workspace:*",
+    "@movingco/core": "workspace:^",
     "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0"
   },

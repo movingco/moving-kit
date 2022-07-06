@@ -918,7 +918,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/hooks@workspace:packages/hooks"
   dependencies:
-    "@movingco/core": "workspace:*"
+    "@movingco/core": "workspace:^"
     "@saberhq/tsconfig": ^2.0.1
     "@types/bn.js": ^5.1.0
     "@types/react": ^18.0.15
