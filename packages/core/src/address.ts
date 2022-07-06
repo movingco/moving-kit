@@ -1,4 +1,4 @@
-import type { Buffer } from "buffer/";
+import type { Buffer } from "buffer/index.js";
 
 import type { MaybeHexString } from "./hexString.js";
 import { HexString } from "./hexString.js";

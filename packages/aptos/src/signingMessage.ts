@@ -1,7 +1,7 @@
 import type { SerializableHexString } from "@movingco/core";
 import { sha3_256 } from "@movingco/core";
 import { encodeU32 } from "@movingco/leb128";
-import { Buffer } from "buffer/";
+import { Buffer } from "buffer/index.js";
 
 import type { Account } from "./account.js";
 

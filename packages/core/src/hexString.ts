@@ -1,7 +1,7 @@
 // Taken from <https://github.com/aptos-labs/aptos-core/blob/main/ecosystem/typescript/sdk/src/hex_string.ts>
 
 import { sha3_256 } from "@movingco/sha3";
-import { Buffer } from "buffer/";
+import { Buffer } from "buffer/index.js";
 import { default as invariant } from "tiny-invariant";
 
 export type MaybeHexString = HexStringLike | string;

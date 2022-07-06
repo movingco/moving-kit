@@ -3,6 +3,7 @@
   "workspaces": [
     "packages/*"
   ],
+  "type": "module",
   "name": "@moving/workspace",
   "version": "0.1.39",
   "description": "TypeScript utilities for interacting with the Move language and Move blockchains.",

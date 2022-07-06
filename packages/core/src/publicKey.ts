@@ -1,6 +1,6 @@
 import { sha3_256 } from "@movingco/sha3";
 import BN from "bn.js";
-import { Buffer } from "buffer/";
+import { Buffer } from "buffer/index.js";
 
 import { Address } from "./address.js";
 import type { HexStringLike } from "./hexString.js";

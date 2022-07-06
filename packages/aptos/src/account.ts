@@ -2,7 +2,7 @@ import type { HexEncodedBytes } from "@movingco/aptos-api";
 import type { HexStringLike, Signer } from "@movingco/core";
 import { Address, PublicKey } from "@movingco/core";
 import { AptosAccount } from "aptos";
-import { Buffer } from "buffer/";
+import { Buffer } from "buffer/index.js";
 
 /**
  * JSON-serializable representation of an {@link Account}.
