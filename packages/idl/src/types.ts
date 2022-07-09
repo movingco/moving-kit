@@ -52,8 +52,8 @@ export type IDLType =
   | "signer"
   | {
       struct: {
-        module_name: ModuleId;
         name: string;
+        ty_args?: readonly IDLType[];
       };
     };
 
