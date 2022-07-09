@@ -39,6 +39,11 @@ export interface MoveModuleDefinition<A extends string, N extends string>
 export type HexStringArg = string | HexStringLike;
 
 /**
+ * String-like address argument.
+ */
+export type RawAddress = HexStringArg;
+
+/**
  * Unsigned 64-bit integer.
  */
 export type U64 = BigintIsh;
