@@ -56,7 +56,9 @@ export type IDLType =
         name: string;
         ty_args?: readonly IDLType[];
       };
-    };
+    }
+  | { vector: IDLType }
+  | { tuple: readonly IDLType[] };
 
 export interface IDLField {
   name: string;
