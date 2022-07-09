@@ -1,8 +1,9 @@
 export interface IDLPackage {
   name: string;
   modules: { [id: string]: IDLModule<string, string> };
-  structs: readonly IDLStruct<string, string>[];
   aliases: { readonly [alias: string]: string };
+  dependencies: { [id: string]: IDLModule<string, string> };
+  structs: readonly IDLStruct<string, string>[];
 }
 
 export interface ModuleId<
