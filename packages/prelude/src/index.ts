@@ -44,6 +44,16 @@ export type HexStringArg = string | HexStringLike;
 export type RawAddress = HexStringArg;
 
 /**
+ * String-like address argument representing a Signer.
+ */
+export type RawSigner = RawAddress;
+
+/**
+ * A `vector<u8>`.
+ */
+export type ByteString = HexStringArg;
+
+/**
  * Unsigned 64-bit integer.
  */
 export type U64 = BigintIsh;
