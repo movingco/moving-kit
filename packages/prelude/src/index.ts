@@ -8,6 +8,9 @@ export * as IDL from "@movingco/idl";
  */
 export * as serializers from "./serializers.js";
 
+/**
+ * An identifier for a Move module.
+ */
 export interface MoveModuleId<A extends string, N extends string> {
   /** The address of the module. */
   readonly ADDRESS: A;

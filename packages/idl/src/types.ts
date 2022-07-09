@@ -1,6 +1,6 @@
 export interface IDLPackage {
   name: string;
-  modules: { readonly [id: string]: IDLModule };
+  modules: { [id: string]: IDLModule<string, string> };
   structs: readonly IDLStruct<string, string>[];
   aliases: { readonly [alias: string]: string };
 }
@@ -14,16 +14,25 @@ export interface ModuleId<
 }
 
 export interface IDLStruct<A extends string, N extends string> {
-  module_name: ModuleId<A, N>;
-  name: string;
+  name: `${A}::${N}::${string}`;
   fields: readonly IDLField[];
   type_params?: readonly string[];
   abilities: readonly IDLAbility[];
 }
 
-export interface IDLModule {
+export interface IDLError {
+  name: string;
+  doc?: string;
+}
+
+export interface IDLModule<A extends string, N extends string> {
+  module_id: `${A}::${N}`;
   doc?: string;
   functions: readonly IDLScriptFunction[];
+  structs: readonly IDLStruct<A, N>[];
+  errors: {
+    [code: string]: IDLError;
+  };
 }
 
 export type IDLAbility = "copy" | "drop" | "store" | "key";
