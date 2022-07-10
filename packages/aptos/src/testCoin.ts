@@ -5,7 +5,7 @@ const TEST_COIN_INFO: CoinInfo = {
   name: "Test Coin",
   symbol: "TST",
   logoURI:
-    "https://raw.githubusercontent.com/movingco/aptos-coin-list/master/assets/devnet/apt.svg",
+    "https://raw.githubusercontent.com/aptosis/aptosis-coin-list/master/assets/devnet/apt.svg",
   decimals: 4,
   address: "0x1::TestCoin::TestCoin",
   chainId: ChainId.AptosDevnet,
