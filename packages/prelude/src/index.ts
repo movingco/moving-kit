@@ -81,8 +81,8 @@ export interface ScriptFunctionPayload {
   function: string;
 
   /** Generic type arguments required by the script function. */
-  type_arguments: readonly string[];
+  type_arguments: string[];
 
   /** The script function arguments. */
-  arguments: readonly unknown[];
+  arguments: unknown[];
 }
