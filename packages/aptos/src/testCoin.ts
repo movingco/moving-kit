@@ -2,8 +2,8 @@ import type { CoinInfo } from "@movingco/core";
 import { ChainId, Coin, CoinAmount } from "@movingco/core";
 
 const TEST_COIN_INFO: CoinInfo = {
-  name: "Test Coin",
-  symbol: "TST",
+  name: "Aptos",
+  symbol: "APTOS",
   logoURI:
     "https://raw.githubusercontent.com/aptosis/aptosis-coin-list/master/assets/devnet/apt.svg",
   decimals: 4,
