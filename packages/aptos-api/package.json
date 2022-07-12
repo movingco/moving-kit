@@ -6,7 +6,7 @@
   "homepage": "https://github.com/movingco/moving-kit#readme",
   "license": "Apache-2.0",
   "sideEffects": false,
-  "type": "commonjs",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",

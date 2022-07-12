@@ -9,8 +9,8 @@
  * ---------------------------------------------------------------
  */
 
-import { AptosError, Event, HexEncodedBytes } from "./data-contracts";
-import { HttpClient, RequestParams } from "./http-client";
+import { AptosError, Event, HexEncodedBytes } from "./data-contracts.js";
+import { HttpClient, RequestParams } from "./http-client.js";
 
 export class Events<SecurityDataType = unknown> {
   http: HttpClient<SecurityDataType>;

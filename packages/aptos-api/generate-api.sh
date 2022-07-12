@@ -7,3 +7,6 @@ curl https://raw.githubusercontent.com/aptos-labs/aptos-core/devnet/api/doc/open
 yarn swagger-typescript-api -p fixtures/openapi.yaml \
     --modular --axios --single-http-client --extract-request-params --extract-request-body --responses \
     -o src/
+
+sed -i 's/http-client"/http-client.js"/g' src/*
+sed -i 's/data-contracts"/data-contracts.js"/g' src/*

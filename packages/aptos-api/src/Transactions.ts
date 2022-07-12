@@ -18,8 +18,8 @@ import {
   SubmitTransactionRequest,
   Transaction,
   UserCreateSigningMessageRequest,
-} from "./data-contracts";
-import { ContentType, HttpClient, RequestParams } from "./http-client";
+} from "./data-contracts.js";
+import { ContentType, HttpClient, RequestParams } from "./http-client.js";
 
 export class Transactions<SecurityDataType = unknown> {
   http: HttpClient<SecurityDataType>;
@@ -40,7 +40,10 @@ export class Transactions<SecurityDataType = unknown> {
    * @response `404` `(AptosError)`
    * @response `500` `(AptosError)`
    */
-  getTransactions = (query: GetTransactionsParams, params: RequestParams = {}) =>
+  getTransactions = (
+    query: GetTransactionsParams,
+    params: RequestParams = {}
+  ) =>
     this.http.request<OnChainTransaction[], AptosError>({
       path: `/transactions`,
       method: "GET",
@@ -61,7 +64,10 @@ export class Transactions<SecurityDataType = unknown> {
    * @response `415` `(AptosError)`
    * @response `500` `(AptosError)`
    */
-  submitTransaction = (data: SubmitTransactionRequest, params: RequestParams = {}) =>
+  submitTransaction = (
+    data: SubmitTransactionRequest,
+    params: RequestParams = {}
+  ) =>
     this.http.request<PendingTransaction, AptosError>({
       path: `/transactions`,
       method: "POST",
@@ -83,7 +89,10 @@ export class Transactions<SecurityDataType = unknown> {
    * @response `415` `(AptosError)`
    * @response `500` `(AptosError)`
    */
-  simulateTransaction = (data: SubmitTransactionRequest, params: RequestParams = {}) =>
+  simulateTransaction = (
+    data: SubmitTransactionRequest,
+    params: RequestParams = {}
+  ) =>
     this.http.request<OnChainTransaction[], AptosError>({
       path: `/transactions/simulate`,
       method: "POST",
@@ -125,7 +134,10 @@ export class Transactions<SecurityDataType = unknown> {
    * @response `415` `(AptosError)`
    * @response `500` `(AptosError)`
    */
-  createSigningMessage = (data: UserCreateSigningMessageRequest, params: RequestParams = {}) =>
+  createSigningMessage = (
+    data: UserCreateSigningMessageRequest,
+    params: RequestParams = {}
+  ) =>
     this.http.request<{ message: HexEncodedBytes }, AptosError>({
       path: `/transactions/signing_message`,
       method: "POST",

@@ -9,7 +9,8 @@
  * ---------------------------------------------------------------
  */
 
-import axios, {
+import {
+  default as axios,
   AxiosInstance,
   AxiosRequestConfig,
   AxiosResponse,

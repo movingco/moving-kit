@@ -9,7 +9,7 @@
  * ---------------------------------------------------------------
  */
 
-import { HttpClient, RequestParams } from "./http-client";
+import { HttpClient, RequestParams } from "./http-client.js";
 
 export class OpenapiYaml<SecurityDataType = unknown> {
   http: HttpClient<SecurityDataType>;

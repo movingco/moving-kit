@@ -9,8 +9,8 @@
  * ---------------------------------------------------------------
  */
 
-import { AptosError, TableItemRequest } from "./data-contracts";
-import { ContentType, HttpClient, RequestParams } from "./http-client";
+import { AptosError, TableItemRequest } from "./data-contracts.js";
+import { ContentType, HttpClient, RequestParams } from "./http-client.js";
 
 export class Tables<SecurityDataType = unknown> {
   http: HttpClient<SecurityDataType>;

@@ -23,8 +23,8 @@ import {
   GetEventsByEventHandleParams,
   MoveModule,
   OnChainTransaction,
-} from "./data-contracts";
-import { HttpClient, RequestParams } from "./http-client";
+} from "./data-contracts.js";
+import { HttpClient, RequestParams } from "./http-client.js";
 
 export class Accounts<SecurityDataType = unknown> {
   http: HttpClient<SecurityDataType>;
@@ -64,7 +64,10 @@ export class Accounts<SecurityDataType = unknown> {
    * @response `404` `(AptosError)`
    * @response `500` `(AptosError)`
    */
-  getAccountResources = ({ address, ...query }: GetAccountResourcesParams, params: RequestParams = {}) =>
+  getAccountResources = (
+    { address, ...query }: GetAccountResourcesParams,
+    params: RequestParams = {}
+  ) =>
     this.http.request<AccountResource[], AptosError>({
       path: `/accounts/${address}/resources`,
       method: "GET",
@@ -84,7 +87,10 @@ export class Accounts<SecurityDataType = unknown> {
    * @response `404` `(AptosError)`
    * @response `500` `(AptosError)`
    */
-  getAccountResource = ({ address, resourceType, ...query }: GetAccountResourceParams, params: RequestParams = {}) =>
+  getAccountResource = (
+    { address, resourceType, ...query }: GetAccountResourceParams,
+    params: RequestParams = {}
+  ) =>
     this.http.request<AccountResource, AptosError>({
       path: `/accounts/${address}/resource/${resourceType}`,
       method: "GET",
@@ -104,7 +110,10 @@ export class Accounts<SecurityDataType = unknown> {
    * @response `404` `(AptosError)`
    * @response `500` `(AptosError)`
    */
-  getAccountModules = ({ address, ...query }: GetAccountModulesParams, params: RequestParams = {}) =>
+  getAccountModules = (
+    { address, ...query }: GetAccountModulesParams,
+    params: RequestParams = {}
+  ) =>
     this.http.request<MoveModule[], AptosError>({
       path: `/accounts/${address}/modules`,
       method: "GET",
@@ -124,7 +133,10 @@ export class Accounts<SecurityDataType = unknown> {
    * @response `404` `(AptosError)`
    * @response `500` `(AptosError)`
    */
-  getAccountModule = ({ address, moduleName, ...query }: GetAccountModuleParams, params: RequestParams = {}) =>
+  getAccountModule = (
+    { address, moduleName, ...query }: GetAccountModuleParams,
+    params: RequestParams = {}
+  ) =>
     this.http.request<MoveModule, AptosError>({
       path: `/accounts/${address}/module/${moduleName}`,
       method: "GET",
@@ -143,7 +155,10 @@ export class Accounts<SecurityDataType = unknown> {
    * @response `400` `(AptosError)`
    * @response `500` `(AptosError)`
    */
-  getAccountTransactions = ({ address, ...query }: GetAccountTransactionsParams, params: RequestParams = {}) =>
+  getAccountTransactions = (
+    { address, ...query }: GetAccountTransactionsParams,
+    params: RequestParams = {}
+  ) =>
     this.http.request<OnChainTransaction[], AptosError>({
       path: `/accounts/${address}/transactions`,
       method: "GET",
@@ -164,8 +179,13 @@ export class Accounts<SecurityDataType = unknown> {
    * @response `500` `(AptosError)`
    */
   getEventsByEventHandle = (
-    { address, eventHandleStruct, fieldName, ...query }: GetEventsByEventHandleParams,
-    params: RequestParams = {},
+    {
+      address,
+      eventHandleStruct,
+      fieldName,
+      ...query
+    }: GetEventsByEventHandleParams,
+    params: RequestParams = {}
   ) =>
     this.http.request<Event[], AptosError>({
       path: `/accounts/${address}/events/${eventHandleStruct}/${fieldName}`,
