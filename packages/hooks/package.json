@@ -38,7 +38,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^2.0.1",
+    "@saberhq/tsconfig": "^2.0.2",
     "@types/bn.js": "^5.1.0",
     "@types/react": "^18.0.15",
     "jsbi": "^4.3.0",
