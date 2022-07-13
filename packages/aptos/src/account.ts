@@ -1,4 +1,4 @@
-import type { HexEncodedBytes } from "@movingco/aptos-api";
+import type { HexEncodedBytes } from "@aptosis/aptos-api";
 import type { HexStringLike, Signer } from "@movingco/core";
 import { Address, PublicKey } from "@movingco/core";
 import { AptosAccount } from "aptos";
