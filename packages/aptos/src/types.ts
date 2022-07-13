@@ -1,4 +1,4 @@
-import type { MoveStructTagId } from "@movingco/aptos-api";
+import type { MoveStructTagId } from "@aptosis/aptos-api";
 
 /**
  * Account resource is a Move struct value belongs to an account.

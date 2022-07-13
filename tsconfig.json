@@ -12,7 +12,6 @@
   },
   "references": [
     { "path": "packages/aptos/" },
-    { "path": "packages/aptos-api/" },
     { "path": "packages/core/" },
     { "path": "packages/hdwallet/" },
     { "path": "packages/hooks/" },
