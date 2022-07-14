@@ -5,16 +5,28 @@ import { HexString } from "./hexString.js";
 
 /**
  * An address, backed by a hex string.
+ *
+ * This type is normalized.
  */
 export class Address extends HexString {
+  /**
+   * Creates a new Address from a hex string.
+   * @param raw
+   */
+  constructor(raw: string) {
+    super(HexString.ensure(raw).toShortString().toLowerCase());
+  }
+
+  /**
+   * Create a new Address object.
+   */
   static override ensure(hexString: MaybeHexString): Address {
     if (hexString instanceof Address) {
       return hexString;
     }
-    if (typeof hexString === "string") {
-      return new Address(hexString);
-    }
-    return new Address(hexString.hex());
+    return new Address(
+      typeof hexString === "string" ? hexString : hexString.hex()
+    );
   }
 
   static override fromBuffer(buffer: Buffer): Address {
