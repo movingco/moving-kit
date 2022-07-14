@@ -33,9 +33,9 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
-    "@aptosis/aptos-api": "^0.0.1",
-    "@aptosis/aptos-client": "^0.0.1",
-    "@aptosis/faucet-client": "^0.0.1",
+    "@aptosis/aptos-api": "^0.0.2",
+    "@aptosis/aptos-client": "^0.0.2",
+    "@aptosis/faucet-client": "^0.0.2",
     "@movingco/leb128": "workspace:^",
     "@vespaiach/axios-fetch-adapter": "^0.3.0",
     "aptos": "^1.2.0",
@@ -51,7 +51,6 @@
   },
   "peerDependencies": {
     "@movingco/core": "workspace:^",
-    "bn.js": "^5",
     "jsbi": "^4.3.0"
   }
 }
