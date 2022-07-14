@@ -51,6 +51,7 @@
   },
   "peerDependencies": {
     "@movingco/core": "workspace:^",
+    "bn.js": "^5",
     "jsbi": "^4.3.0"
   }
 }

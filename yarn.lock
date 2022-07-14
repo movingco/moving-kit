@@ -876,6 +876,7 @@ __metadata:
     typescript: ^4.7.4
   peerDependencies:
     "@movingco/core": "workspace:^"
+    bn.js: ^5
     jsbi: ^4.3.0
   languageName: unknown
   linkType: soft
