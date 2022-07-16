@@ -15,43 +15,76 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aptosis/aptos-api@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@aptosis/aptos-api@npm:0.0.2"
+"@aptosis/aptos-api@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@aptosis/aptos-api@npm:0.0.5"
   dependencies:
     tslib: ^2.4.0
   peerDependencies:
     axios: ^0.27.2
-  checksum: 9fd9cf5751ffa26762dd90cdbeb5c717c9fabfd923857b3639187d2188246c76474f8f6b761a009f287c4496604d49d5e7cdd6b01c3ec24b573a152991bf9954
+  checksum: 5eda905c04de81c5b4814b826f5ab5f23a9b4a83ee51a8ce58767797b14bda9ae93c6b5f35e2ed8a7190fe69015eb3ec2d7a5fb4562195556ad7b2d1c22d3be3
   languageName: node
   linkType: hard
 
-"@aptosis/aptos-client@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@aptosis/aptos-client@npm:0.0.2"
+"@aptosis/aptos-client@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@aptosis/aptos-client@npm:0.0.5"
   dependencies:
-    "@aptosis/aptos-api": ^0.0.2
+    "@aptosis/aptos-api": ^0.0.5
     "@vespaiach/axios-fetch-adapter": ^0.3.0
     tslib: ^2.4.0
   peerDependencies:
     axios: ^0.27.2
-  checksum: 570a2159a6ccec9ab8323f10e3ca03c0fb465df05915923df9f164ee7540347b5b88003d705f811f5308ba533e485af863333d487e2481ccbb945478ec3e983e
+  checksum: 5c80abb3bac2f6a629d16a63dfe3b05f10c6488b7fd1a144d8d7139baf7ccd94bf2bd7d7872159906cedcb1ab33ab43a8e8c09bdfe59f82e8cda8584e2f1dce5
   languageName: node
   linkType: hard
 
-"@aptosis/faucet-client@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@aptosis/faucet-client@npm:0.0.2"
+"@aptosis/aptos-common@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@aptosis/aptos-common@npm:0.1.0"
   dependencies:
-    "@aptosis/aptos-api": ^0.0.2
-    "@aptosis/aptos-client": ^0.0.2
-    "@movingco/core": ^0.1.50
+    "@aptosis/aptos-api": ^0.0.5
+    "@aptosis/aptos-client": ^0.0.5
+    "@aptosis/aptos-typed-api": ^0.0.5
+    "@aptosis/faucet-client": ^0.0.5
+    "@movingco/leb128": ^0.1.51
+    "@vespaiach/axios-fetch-adapter": ^0.3.0
+    aptos: ^1.2.0
+    axios: ^0.27.2
+    buffer: ^6.0.3
+    tslib: ^2.4.0
+  peerDependencies:
+    "@movingco/core": ^0.1.51
+    jsbi: ^4.3.0
+  checksum: afcbf398c11ab4c9a0dde5f69842a4c123cc2a22ee8cd782200f50954329cef818e388d93eec784a6e69cf6cd218b9c7710e126eca9ed705cb1cd1996412f928
+  languageName: node
+  linkType: hard
+
+"@aptosis/aptos-typed-api@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@aptosis/aptos-typed-api@npm:0.0.5"
+  dependencies:
+    "@aptosis/aptos-api": ^0.0.5
+    tslib: ^2.4.0
+  peerDependencies:
+    axios: ^0.27
+  checksum: 4b35a5afcd85177bd588a7e26152cd504a8f25edcd8ed1a44ad308521a7bd48f99fa8734d0ebd6c8403a9875237058879d9bc9118f5181546686bc1e9a0f8476
+  languageName: node
+  linkType: hard
+
+"@aptosis/faucet-client@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@aptosis/faucet-client@npm:0.0.5"
+  dependencies:
+    "@aptosis/aptos-api": ^0.0.5
+    "@aptosis/aptos-client": ^0.0.5
+    "@movingco/core": ^0.1.51
     "@vespaiach/axios-fetch-adapter": ^0.3.0
     tslib: ^2.4.0
   peerDependencies:
     axios: ^0.27.2
     jsbi: ^4.3.0
-  checksum: 21e13a41e9f35e28f1ace24474bc206291cc880ba95f4347e554bfc31086ba82e0291a4547a935f3c43538e621830bbf59c9508f00bbc832fb35c1197fd05b5b
+  checksum: 555a8cb4806080dd1ea4291769abca57b647d85a93faf45d925b739325078640fb830612a776c602bf84dca1e66d66cb1229c23a734a39b375c9df7abf0df0e3
   languageName: node
   linkType: hard
 
@@ -839,8 +872,8 @@ __metadata:
     "@saberhq/eslint-config": ^2.0.2
     "@saberhq/tsconfig": ^2.0.2
     "@types/eslint": ^8.4.5
-    "@types/jest": ^28.1.5
-    "@types/node": ^18.0.4
+    "@types/jest": ^28.1.6
+    "@types/node": ^18.0.5
     "@types/prettier": ^2.6.3
     "@typescript-eslint/utils": ^5.30.6
     "@yarnpkg/doctor": ^3.1.3
@@ -860,16 +893,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/aptos@workspace:packages/aptos"
   dependencies:
-    "@aptosis/aptos-api": ^0.0.2
-    "@aptosis/aptos-client": ^0.0.2
-    "@aptosis/faucet-client": ^0.0.2
+    "@aptosis/aptos-common": ^0.1.0
     "@movingco/core": "workspace:^"
-    "@movingco/leb128": "workspace:^"
     "@saberhq/tsconfig": ^2.0.2
     "@vespaiach/axios-fetch-adapter": ^0.3.0
     aptos: ^1.2.0
     axios: ^0.27.2
-    buffer: ^6.0.3
     jsbi: ^4.3.0
     tslib: ^2.4.0
     typescript: ^4.7.4
@@ -879,7 +908,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/core@^0.1.50, @movingco/core@workspace:*, @movingco/core@workspace:^, @movingco/core@workspace:packages/core":
+"@movingco/core@^0.1.51, @movingco/core@workspace:*, @movingco/core@workspace:^, @movingco/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@movingco/core@workspace:packages/core"
   dependencies:
@@ -903,7 +932,7 @@ __metadata:
   dependencies:
     "@movingco/core": "workspace:^"
     "@saberhq/tsconfig": ^2.0.2
-    "@types/jest": ^28.1.5
+    "@types/jest": ^28.1.6
     "@types/pbkdf2": ^3.1.0
     bip39-light: ^1.0.7
     ed25519-hd-key: ^1.2.0
@@ -949,7 +978,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/leb128@workspace:^, @movingco/leb128@workspace:packages/leb128":
+"@movingco/leb128@^0.1.51, @movingco/leb128@workspace:packages/leb128":
   version: 0.0.0-use.local
   resolution: "@movingco/leb128@workspace:packages/leb128"
   dependencies:
@@ -978,7 +1007,7 @@ __metadata:
   resolution: "@movingco/sha3@workspace:packages/sha3"
   dependencies:
     "@saberhq/tsconfig": ^2.0.2
-    "@types/node": ^18.0.4
+    "@types/node": ^18.0.5
     js-sha3: ^0.8.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
@@ -1255,13 +1284,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^28.1.5":
-  version: 28.1.5
-  resolution: "@types/jest@npm:28.1.5"
+"@types/jest@npm:^28.1.6":
+  version: 28.1.6
+  resolution: "@types/jest@npm:28.1.6"
   dependencies:
     jest-matcher-utils: ^28.0.0
     pretty-format: ^28.0.0
-  checksum: 994bfc25a5e767ec1506a2a7d94e60a7a5645b2e4e8444c56ae902f3a3e27ae54e821e41c1b4e7c8d7f5022bf5abfdd0460ead223ba6f2d0a194e5b2bed1ad76
+  checksum: f2ba5fbefc8f44d1c16ee19d8d2811bca75754a2846e222287f2788d96062801c568215e6b81eb532a48e8cb2a7282729da1d4f6fb496831da8269c5abaad4c5
   languageName: node
   linkType: hard
 
@@ -1323,10 +1352,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.0.4":
-  version: 18.0.4
-  resolution: "@types/node@npm:18.0.4"
-  checksum: 981284fd57941f233f0e77038087c122f56e3c2b4fc4e090dfc7f0a93abfc526d5ccdd59eb3ef551d713245cf3943e37c7b957f12ba699209341a447c39fab59
+"@types/node@npm:^18.0.5":
+  version: 18.0.5
+  resolution: "@types/node@npm:18.0.5"
+  checksum: cc9c67d0074252f798d226dd95a22e0e8851cf7fc623ef4a603d9ad2c2b46650f930147062ea33719008b1de67f08f499ad693307d02f8396e6f1fead8144329
   languageName: node
   linkType: hard
 
