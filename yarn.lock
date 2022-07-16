@@ -908,7 +908,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/core@^0.1.51, @movingco/core@workspace:*, @movingco/core@workspace:^, @movingco/core@workspace:packages/core":
+"@movingco/core@^0.1.51, @movingco/core@workspace:^, @movingco/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@movingco/core@workspace:packages/core"
   dependencies:
@@ -992,7 +992,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/prelude@workspace:packages/prelude"
   dependencies:
-    "@movingco/core": "workspace:*"
+    "@movingco/core": "workspace:^"
     "@movingco/idl": "workspace:^"
     "@saberhq/tsconfig": ^2.0.2
     tslib: ^2.4.0

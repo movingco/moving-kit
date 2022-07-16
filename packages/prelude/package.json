@@ -33,7 +33,7 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
-    "@movingco/core": "workspace:*",
+    "@movingco/core": "workspace:^",
     "@movingco/idl": "workspace:^",
     "tslib": "^2.4.0"
   },
