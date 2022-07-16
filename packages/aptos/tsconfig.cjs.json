@@ -1,6 +1,7 @@
 {
   "extends": "@saberhq/tsconfig/tsconfig.cjs.json",
   "compilerOptions": {
+    "lib": ["DOM", "ES2019"],
     "outDir": "dist/cjs/"
   },
   "include": ["src/"]

@@ -1,6 +1,7 @@
 {
   "extends": "@saberhq/tsconfig/tsconfig.mono.json",
   "compilerOptions": {
+    "lib": ["DOM", "ES2019"],
     "rootDir": "./src",
     "outDir": "dist/esm/"
   },

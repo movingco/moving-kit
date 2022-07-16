@@ -8,5 +8,5 @@ import { AptosClient } from "aptos";
  */
 export const createAptosClient = (fullNodeURL: string) =>
   new AptosClient(fullNodeURL, {
-    adapter: fetchAdapter,
+    adapter: typeof fetch !== "undefined" ? fetchAdapter : undefined,
   });
