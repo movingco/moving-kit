@@ -1,7 +1,7 @@
 {
   "name": "@movingco/move-types",
   "version": "0.1.51",
-  "description": "IDL.",
+  "description": "Better types for Move code.",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
   "license": "Apache-2.0",
