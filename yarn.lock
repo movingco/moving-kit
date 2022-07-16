@@ -988,12 +988,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@movingco/move-types@workspace:^, @movingco/move-types@workspace:packages/move-types":
+  version: 0.0.0-use.local
+  resolution: "@movingco/move-types@workspace:packages/move-types"
+  dependencies:
+    "@saberhq/tsconfig": ^2.0.2
+    jsbi: ^4.3.0
+    tiny-invariant: ^1.2.0
+    tslib: ^2.4.0
+    typescript: ^4.7.4
+  peerDependencies:
+    jsbi: ^4.3.0
+  languageName: unknown
+  linkType: soft
+
 "@movingco/prelude@workspace:packages/prelude":
   version: 0.0.0-use.local
   resolution: "@movingco/prelude@workspace:packages/prelude"
   dependencies:
     "@movingco/core": "workspace:^"
     "@movingco/idl": "workspace:^"
+    "@movingco/move-types": "workspace:^"
     "@saberhq/tsconfig": ^2.0.2
     tslib: ^2.4.0
     typescript: ^4.7.4

@@ -17,6 +17,7 @@
     { "path": "packages/hooks/" },
     { "path": "packages/idl/" },
     { "path": "packages/leb128/" },
+    { "path": "packages/move-types/" },
     { "path": "packages/prelude/" },
     { "path": "packages/sha3/" }
   ]

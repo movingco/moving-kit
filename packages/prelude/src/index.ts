@@ -1,7 +1,14 @@
 import type { BigintIsh, HexStringLike } from "@movingco/core";
 import type { IDLScriptFunction } from "@movingco/idl";
+import type {
+  AddressHex,
+  MoveModuleId,
+  MoveModuleInfo,
+} from "@movingco/move-types";
 
 export * as IDL from "@movingco/idl";
+export type { ScriptFunctionPayload } from "@movingco/move-types";
+export * as Move from "@movingco/move-types";
 
 /**
  * Serializes and validates a value.
@@ -9,28 +16,16 @@ export * as IDL from "@movingco/idl";
 export * as serializers from "./serializers.js";
 
 /**
- * An identifier for a Move module.
- */
-export interface MoveModuleId<A extends string, N extends string> {
-  /** The address of the module. */
-  readonly ADDRESS: A;
-  /** The full module name. */
-  readonly FULL_NAME: `${A}::${N}`;
-  /** The name of the module. */
-  readonly NAME: N;
-}
-
-/**
  * Definition of a Move module as defined in generated types.
  */
-export interface MoveModuleDefinition<A extends string, N extends string>
-  extends MoveModuleId<A, N> {
+export interface MoveModuleDefinition<A extends AddressHex, N extends string>
+  extends MoveModuleInfo<A, N> {
   /** All module function IDLs. */
   readonly functions: Record<string, IDLScriptFunction>;
   /** All struct types with ability `key`. */
-  readonly resources: Record<string, `${A}::${N}::${string}`>;
+  readonly resources: Record<string, `${MoveModuleId<A, N>}::${string}`>;
   /** All struct types. */
-  readonly structs: Record<string, `${A}::${N}::${string}`>;
+  readonly structs: Record<string, `${MoveModuleId<A, N>}::${string}`>;
 }
 
 /**
@@ -62,27 +57,3 @@ export type U64 = BigintIsh;
  * Unsigned 128-bit integer.
  */
 export type U128 = BigintIsh;
-
-/**
- * Payload for a script function.
- */
-export interface ScriptFunctionPayload {
-  /**
-   * Hard-coded argument showing this is a script function payload.
-   */
-  readonly type: "script_function_payload";
-
-  /**
-   * Script function id is string representation of a script function defined on-chain.
-   *
-   * Format: `{address}::{module name}::{function name}`
-   * Both `module name` and `function name` are case-sensitive.
-   */
-  function: string;
-
-  /** Generic type arguments required by the script function. */
-  type_arguments: string[];
-
-  /** The script function arguments. */
-  arguments: unknown[];
-}
