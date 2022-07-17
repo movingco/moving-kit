@@ -37,6 +37,17 @@ export class Address extends HexString {
     return Address.ensure(HexString.fromUint8Array(arr));
   }
 
+  /**
+   * Returns true if this address is equivalent to the other address.
+   *
+   * @param other
+   * @returns
+   */
+  equals(other: MaybeHexString): boolean {
+    // hex() is normalized
+    return this.hex() === Address.ensure(other).hex();
+  }
+
   toJSON() {
     return {
       __typename: "Address",
