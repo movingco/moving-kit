@@ -49,5 +49,8 @@
   },
   "peerDependencies": {
     "jsbi": "*"
+  },
+  "typedoc": {
+    "readmeFile": "./README.md"
   }
 }

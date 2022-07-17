@@ -48,5 +48,8 @@
   "peerDependencies": {
     "@movingco/core": "workspace:^",
     "jsbi": "^4.3.0"
+  },
+  "typedoc": {
+    "readmeFile": "./README.md"
   }
 }

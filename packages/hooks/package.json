@@ -47,5 +47,8 @@
   "peerDependencies": {
     "jsbi": "^4.3.0",
     "react": "*"
+  },
+  "typedoc": {
+    "readmeFile": "./README.md"
   }
 }

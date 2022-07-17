@@ -1,0 +1,12 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "excludePrivate": true,
+  "includeVersion": true,
+  "out": "docs/",
+  "entryPointStrategy": "packages",
+  "includes": "packages/",
+  "readme": "./README.md",
+  "name": "Moving Kit",
+  "gaID": "G-DC1255QBSY",
+  "cname": "moving-kit.moving.wtf"
+}

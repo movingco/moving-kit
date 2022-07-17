@@ -34,5 +34,8 @@
     "@saberhq/tsconfig": "^2.0.3",
     "@types/node": "^18.0.5",
     "typescript": "^4.7.4"
+  },
+  "typedoc": {
+    "readmeFile": "./README.md"
   }
 }
