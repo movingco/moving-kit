@@ -1,4 +1,3 @@
-/// <reference types="jest" />
 import "bip39-light";
 
 import { generateMnemonic, HDWallet } from "./hdwallet.js";

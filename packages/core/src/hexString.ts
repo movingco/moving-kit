@@ -24,7 +24,9 @@ export interface SerializableHexString extends HexStringLike {
  * A hexadecimal string.
  */
 export class HexString implements SerializableHexString {
-  /// We want to make sure this hexString has the `0x` hex prefix
+  /**
+   * We want to make sure this hexString has the `0x` hex prefix
+   */
   private readonly _hexString: string;
 
   static fromBuffer(buffer: Buffer): HexString {
