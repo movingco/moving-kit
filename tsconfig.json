@@ -3,7 +3,9 @@
   "extends": "@saberhq/tsconfig/tsconfig.root.json",
   "compilerOptions": {
     "lib": ["DOM", "ES2019"],
-    "noUnusedLocals": false
+    "noUnusedLocals": false,
+    "allowJs": true,
+    "checkJs": true
   },
 
   "references": [
