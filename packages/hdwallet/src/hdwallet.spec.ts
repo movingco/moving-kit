@@ -1,3 +1,4 @@
+import "./types.d";
 import "bip39-light";
 
 import { generateMnemonic, HDWallet } from "./hdwallet.js";
