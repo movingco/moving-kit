@@ -5,9 +5,9 @@
     "lib": ["DOM", "ES2019"],
     "noUnusedLocals": false
   },
+
   "references": [
-    { "path": "packages/aptos/" },
-    { "path": "packages/aptos/tsconfig.cjs.json" },
+    { "path": "packages/sha3/" },
     { "path": "packages/core/" },
     { "path": "packages/core/tsconfig.cjs.json" },
     { "path": "packages/hdwallet/" },
@@ -22,7 +22,9 @@
     { "path": "packages/move-types/tsconfig.cjs.json" },
     { "path": "packages/prelude/" },
     { "path": "packages/prelude/tsconfig.cjs.json" },
-    { "path": "packages/sha3/" }
+    { "path": "packages/aptos/" },
+    { "path": "packages/aptos/tsconfig.cjs.json" }
   ],
+  "files": ["jest.config.mjs", ".eslintrc.cjs"],
   "include": ["./packages/**/*.spec.ts"]
 }
