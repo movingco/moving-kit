@@ -1,9 +1,11 @@
 {
-  "extends": "@saberhq/tsconfig/tsconfig.cjs.json",
+  "extends": "@saberhq/tsconfig/tsconfig.mono.cjs.json",
   "compilerOptions": {
+    "rootDir": "./src",
     "outDir": "dist/cjs/",
     "lib": ["DOM", "ES2019"]
   },
   "include": ["src/"],
+  "references": [{ "path": "../sha3" }],
   "exclude": ["**/*.spec.ts"]
 }

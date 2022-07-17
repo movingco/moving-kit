@@ -4,5 +4,6 @@
     "rootDir": "./src",
     "outDir": "dist/esm/"
   },
-  "include": ["src/"]
+  "include": ["src/"],
+  "exclude": ["**/*.spec.ts"]
 }

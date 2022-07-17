@@ -1,24 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@saberhq/tsconfig/tsconfig.root.json",
-  "include": [
-    "packages/**/*.spec.ts",
-    "packages/**/*.d.ts",
-    "jest.config.mjs",
-    ".eslintrc.cjs"
-  ],
   "compilerOptions": {
-    "lib": ["DOM", "ES2019"]
+    "lib": ["DOM", "ES2019"],
+    "noUnusedLocals": false,
+    "allowJs": true,
+    "checkJs": true
   },
+
   "references": [
-    { "path": "packages/aptos/" },
+    { "path": "packages/sha3/" },
     { "path": "packages/core/" },
+    { "path": "packages/core/tsconfig.cjs.json" },
     { "path": "packages/hdwallet/" },
+    { "path": "packages/hdwallet/tsconfig.cjs.json" },
     { "path": "packages/hooks/" },
+    { "path": "packages/hooks/tsconfig.cjs.json" },
     { "path": "packages/idl/" },
+    { "path": "packages/idl/tsconfig.cjs.json" },
     { "path": "packages/leb128/" },
+    { "path": "packages/leb128/tsconfig.cjs.json" },
     { "path": "packages/move-types/" },
+    { "path": "packages/move-types/tsconfig.cjs.json" },
     { "path": "packages/prelude/" },
-    { "path": "packages/sha3/" }
-  ]
+    { "path": "packages/prelude/tsconfig.cjs.json" },
+    { "path": "packages/aptos/" },
+    { "path": "packages/aptos/tsconfig.cjs.json" }
+  ],
+  "files": ["jest.config.mjs", ".eslintrc.cjs"],
+  "include": ["./packages/**/*.spec.ts"]
 }
