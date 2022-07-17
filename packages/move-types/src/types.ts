@@ -1,27 +1,27 @@
 /**
-* Hex-encoded account address.
-
-Prefixed with `0x` and leading zeros are trimmed.
-
-See [doc](https://diem.github.io/move/address.html) for more details.
-* @format address
-* @example 0xdd
-*/
+ * Hex-encoded account address.
+ *
+ * Prefixed with `0x` and leading zeros are trimmed.
+ *
+ * See [doc](https://diem.github.io/move/address.html) for more details.
+ * @format address
+ * @example 0xdd
+ */
 export type AddressHex = `0x${string}`;
 
 /**
-* Move module id is a string representation of Move module.
-
-Format: "{address}::{module name}"
-
-`address` should be hex-encoded 16 bytes account address
-that is prefixed with `0x` and leading zeros are trimmed.
-
-Module name is case-sensitive.
-
-See [doc](https://diem.github.io/move/modules-and-scripts.html#modules) for more details.
-* @example 0x1::Aptos
-*/
+ * Move module id is a string representation of Move module.
+ *
+ * Format: "{address}::{module name}"
+ *
+ * `address` should be hex-encoded 16 bytes account address
+ * that is prefixed with `0x` and leading zeros are trimmed.
+ *
+ * Module name is case-sensitive.
+ *
+ * See [doc](https://diem.github.io/move/modules-and-scripts.html#modules) for more details.
+ * @example 0x1::Aptos
+ */
 export type MoveModuleId<
   TAddress extends AddressHex = AddressHex,
   TModule extends string = string
