@@ -1,6 +1,6 @@
 {
   "name": "@movingco/leb128",
-  "version": "0.1.56",
+  "version": "0.1.57",
   "description": "LEB128 helpers.",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
