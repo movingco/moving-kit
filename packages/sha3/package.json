@@ -19,9 +19,6 @@
     "type": "git",
     "url": "git+https://github.com/movingco/moving-kit.git"
   },
-  "scripts": {
-    "build": "tsc"
-  },
   "bugs": {
     "url": "https://github.com/movingco/moving-kit/issues"
   },
@@ -32,8 +29,7 @@
   },
   "devDependencies": {
     "@saberhq/tsconfig": "^2.0.3",
-    "@types/node": "^18.0.6",
-    "typescript": "^4.7.4"
+    "@types/node": "^18.0.6"
   },
   "typedoc": {
     "readmeFile": "./README.md"

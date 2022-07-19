@@ -901,7 +901,6 @@ __metadata:
     axios: ^0.27.2
     jsbi: ^4.3.0
     tslib: ^2.4.0
-    typescript: ^4.7.4
   peerDependencies:
     "@movingco/core": "workspace:^"
     jsbi: ^4.3.0
@@ -920,7 +919,6 @@ __metadata:
     jsbi: ^4.3.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
-    typescript: ^4.7.4
   peerDependencies:
     jsbi: ^4.3.0
   languageName: unknown
@@ -940,7 +938,6 @@ __metadata:
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
     tweetnacl: ^1.0.3
-    typescript: ^4.7.4
   peerDependencies:
     jsbi: "*"
   languageName: unknown
@@ -957,7 +954,6 @@ __metadata:
     react: ^18.2.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
-    typescript: ^4.7.4
   peerDependencies:
     jsbi: ^4.3.0
     react: "*"
@@ -972,7 +968,6 @@ __metadata:
     jsbi: ^4.3.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
-    typescript: ^4.7.4
   peerDependencies:
     jsbi: ^4.3.0
   languageName: unknown
@@ -984,7 +979,6 @@ __metadata:
   dependencies:
     "@saberhq/tsconfig": ^2.0.3
     tslib: ^2.4.0
-    typescript: ^4.7.4
   languageName: unknown
   linkType: soft
 
@@ -995,7 +989,6 @@ __metadata:
     "@saberhq/tsconfig": ^2.0.3
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
-    typescript: ^4.7.4
   languageName: unknown
   linkType: soft
 
@@ -1008,7 +1001,6 @@ __metadata:
     "@movingco/move-types": "workspace:^"
     "@saberhq/tsconfig": ^2.0.3
     tslib: ^2.4.0
-    typescript: ^4.7.4
   languageName: unknown
   linkType: soft
 
@@ -1021,7 +1013,6 @@ __metadata:
     js-sha3: ^0.8.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
-    typescript: ^4.7.4
   languageName: unknown
   linkType: soft
 
