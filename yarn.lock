@@ -1000,6 +1000,7 @@ __metadata:
     "@movingco/idl": "workspace:^"
     "@movingco/move-types": "workspace:^"
     "@saberhq/tsconfig": ^2.0.3
+    jsbi: ^4.3.0
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
