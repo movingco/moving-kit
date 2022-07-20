@@ -907,7 +907,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/core@^0.1.51, @movingco/core@workspace:^, @movingco/core@workspace:packages/core":
+"@movingco/core@npm:^0.1.51":
+  version: 0.1.59
+  resolution: "@movingco/core@npm:0.1.59"
+  dependencies:
+    "@movingco/sha3": ^0.1.58
+    "@saberhq/option-utils": ^1.13.32
+    "@ubeswap/token-math": ^5.2.0
+    buffer: ^6.0.3
+    tiny-invariant: ^1.2.0
+    tslib: ^2.4.0
+  peerDependencies:
+    jsbi: ^4.3.0
+  checksum: 0d1a290b7958a01ae5e4a3cadcadb56be2bf802ab4662797b2c188b6df0056d4a385bc2e3c77be54eeb227940bef427e17527b26db75686016788de85d001998
+  languageName: node
+  linkType: hard
+
+"@movingco/core@workspace:^, @movingco/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@movingco/core@workspace:packages/core"
   dependencies:
@@ -985,7 +1001,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/leb128@^0.1.51, @movingco/leb128@workspace:packages/leb128":
+"@movingco/leb128@npm:^0.1.51":
+  version: 0.1.59
+  resolution: "@movingco/leb128@npm:0.1.59"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: 6f33d8d48df4b7b56f41616ba77f065fef026d671cb90a9cdbf9f26b1834a146ccd52160f970a1280204a78496f0804d5dfc9715c00b076bd6844bc462b70f2f
+  languageName: node
+  linkType: hard
+
+"@movingco/leb128@workspace:packages/leb128":
   version: 0.0.0-use.local
   resolution: "@movingco/leb128@workspace:packages/leb128"
   dependencies:
@@ -1015,6 +1040,17 @@ __metadata:
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
+
+"@movingco/sha3@npm:^0.1.58":
+  version: 0.1.58
+  resolution: "@movingco/sha3@npm:0.1.58"
+  dependencies:
+    js-sha3: ^0.8.0
+    tiny-invariant: ^1.2.0
+    tslib: ^2.4.0
+  checksum: afa31aa96552b20a47d6ae9d4576c65304eadbbedaaaa61f1a0ebd17c8888ccaad1ea21ed02071f3662c4ff1629246fada2cc85ea689bb5af5bffdfc2715ddbc
+  languageName: node
+  linkType: hard
 
 "@movingco/sha3@workspace:^, @movingco/sha3@workspace:packages/sha3":
   version: 0.0.0-use.local
