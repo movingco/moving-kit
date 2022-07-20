@@ -18,6 +18,10 @@ export interface SerializableHexString extends HexStringLike {
   toBuffer(): Buffer;
 }
 
+export const trimLeadingZeros = (hexString: string): string => {
+  return hexString.replace(/^0*/, "");
+};
+
 /**
  * A hexadecimal string.
  *
@@ -72,8 +76,7 @@ export class HexString implements SerializableHexString {
   }
 
   toShortString(): string {
-    const trimmed = this._hexString.replace(/^0x0*/, "");
-    return `0x${trimmed}`;
+    return `0x${trimLeadingZeros(this.noPrefix())}`;
   }
 
   toBuffer(): Buffer {
