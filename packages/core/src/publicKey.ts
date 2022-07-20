@@ -1,9 +1,10 @@
+import type { HexStringLike } from "@movingco/hexstring";
+import { HexString } from "@movingco/hexstring";
 import { sha3_256 } from "@movingco/sha3";
 import { Buffer } from "buffer/index.js";
 
 import { Address } from "./address.js";
-import type { HexStringLike } from "./hexString.js";
-import { HexString } from "./hexString.js";
+import { zeroPadBuffer } from "./misc.js";
 
 /**
  * Value to be converted into public key
@@ -54,15 +55,6 @@ const parsePublicKeyInitDataUnchecked = (value: PublicKeyInitData): Buffer => {
   return Buffer.from(value);
 };
 
-const zeroPadBufferForPubkey = (buffer: Buffer): Buffer => {
-  if (buffer.length === PUBLIC_KEY_SIZE) {
-    return buffer;
-  }
-  const zeroPad = Buffer.alloc(PUBLIC_KEY_SIZE);
-  buffer.copy(zeroPad, PUBLIC_KEY_SIZE - buffer.length);
-  return buffer;
-};
-
 /**
  * An ED25519 public key.
  *
@@ -83,7 +75,7 @@ export class PublicKey implements HexStringLike {
     if (bufferUnchecked.length > PUBLIC_KEY_SIZE) {
       throw new Error(`Invalid public key input`);
     }
-    this._buffer = zeroPadBufferForPubkey(bufferUnchecked);
+    this._buffer = zeroPadBuffer(bufferUnchecked, PUBLIC_KEY_SIZE);
   }
 
   /**
@@ -138,7 +130,10 @@ export class PublicKey implements HexStringLike {
    */
   toSuiAddress(): Address {
     const hexHash = sha3_256(this.toBytes());
-    const publicKeyBytes = zeroPadBufferForPubkey(Buffer.from(hexHash, "hex"));
+    const publicKeyBytes = zeroPadBuffer(
+      Buffer.from(hexHash, "hex"),
+      PUBLIC_KEY_SIZE
+    );
     // Only take the first 20 bytes
     const addressBytes = publicKeyBytes.slice(0, 20);
     return Address.fromUint8Array(Uint8Array.from(addressBytes));

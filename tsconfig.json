@@ -10,6 +10,8 @@
 
   "references": [
     { "path": "packages/sha3/" },
+    { "path": "packages/hexstring/" },
+    { "path": "packages/hexstring/tsconfig.cjs.json" },
     { "path": "packages/core/" },
     { "path": "packages/core/tsconfig.cjs.json" },
     { "path": "packages/hdwallet/" },

@@ -1,11 +1,11 @@
 export * from "./address.js";
 export * from "./coin.js";
 export * from "./coinList.js";
-export * from "./hexString.js";
 export * from "./misc.js";
 export * from "./moveType.js";
 export * from "./publicKey.js";
 export * from "./types.js";
+export * from "@movingco/hexstring";
 export * from "@movingco/sha3";
 
 // re-export token-math types

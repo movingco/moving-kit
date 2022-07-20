@@ -911,6 +911,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/core@workspace:packages/core"
   dependencies:
+    "@movingco/hexstring": "workspace:^"
     "@movingco/sha3": "workspace:^"
     "@saberhq/option-utils": ^1.13.32
     "@saberhq/tsconfig": ^2.0.3
@@ -940,6 +941,17 @@ __metadata:
     tweetnacl: ^1.0.3
   peerDependencies:
     jsbi: "*"
+  languageName: unknown
+  linkType: soft
+
+"@movingco/hexstring@workspace:^, @movingco/hexstring@workspace:packages/hexstring":
+  version: 0.0.0-use.local
+  resolution: "@movingco/hexstring@workspace:packages/hexstring"
+  dependencies:
+    "@saberhq/tsconfig": ^2.0.3
+    buffer: ^6.0.3
+    tiny-invariant: ^1.2.0
+    tslib: ^2.4.0
   languageName: unknown
   linkType: soft
 

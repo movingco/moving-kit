@@ -1,7 +1,10 @@
+import type { MaybeHexString } from "@movingco/hexstring";
+import { HexString, trimLeadingZeros } from "@movingco/hexstring";
+import { sha3_256 } from "@movingco/sha3";
 import type { Buffer } from "buffer/index.js";
+import { default as invariant } from "tiny-invariant";
 
-import type { MaybeHexString } from "./hexString.js";
-import { HexString } from "./hexString.js";
+import { zeroPadBuffer } from "./misc.js";
 
 /**
  * An address, backed by a hex string.
@@ -43,7 +46,7 @@ export class Address extends HexString {
    * @param other
    * @returns
    */
-  equals(other: MaybeHexString): boolean {
+  override equals(other: MaybeHexString): boolean {
     // hex() is normalized
     return this.hex() === Address.ensure(other).hex();
   }
@@ -55,3 +58,53 @@ export class Address extends HexString {
     };
   }
 }
+
+/**
+ * Returns the checksum version of an address.
+ * @returns
+ */
+export const checksumAddress = (address: Address): string => {
+  const bytes = zeroPadBuffer(address.toBuffer(), 32);
+  const chars = bytes.toString("hex").split("");
+
+  const hash = sha3_256.create();
+  hash.update(bytes);
+
+  const hashed = hash.digest();
+
+  for (let i = 0; i < chars.length; i += 2) {
+    const hiByte = hashed[i >> 1];
+    invariant(hiByte !== undefined);
+    if (hiByte >> 4 >= 8) {
+      const hiChar = chars[i];
+      invariant(hiChar !== undefined);
+      chars[i] = hiChar.toUpperCase();
+    }
+    if ((hiByte & 0x0f) >= 8) {
+      const loChar = chars[i + 1];
+      invariant(loChar !== undefined);
+      chars[i + 1] = loChar.toUpperCase();
+    }
+  }
+  return `0x${trimLeadingZeros(chars.join(""))}`;
+};
+
+/**
+ * Shortened version of an address as a checksum address.
+ * @param leading
+ * @param trailing
+ * @returns
+ */
+export const shortenAddress = (
+  address: Address,
+  leading = 5,
+  trailing = 3
+): string => {
+  const hex = checksumAddress(address);
+  const last = leading + 2;
+  return (
+    hex.substring(0, leading + 2) +
+    "…" +
+    hex.substring(Math.max(hex.length - trailing, last))
+  );
+};
