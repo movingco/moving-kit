@@ -45,7 +45,7 @@ export class Coin implements UToken<Coin> {
   }
 
   equals(other: Coin): boolean {
-    return this.address === other.address;
+    return this.address === other.address && this.chainId === other.chainId;
   }
 
   toString(): string {
