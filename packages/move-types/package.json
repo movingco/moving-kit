@@ -30,7 +30,6 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
-    "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

@@ -987,7 +987,6 @@ __metadata:
   resolution: "@movingco/move-types@workspace:packages/move-types"
   dependencies:
     "@saberhq/tsconfig": ^2.0.3
-    tiny-invariant: ^1.2.0
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
