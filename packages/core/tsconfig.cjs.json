@@ -6,6 +6,5 @@
     "lib": ["DOM", "ES2019"]
   },
   "include": ["src/"],
-  "references": [{ "path": "../sha3" }],
   "exclude": ["**/*.spec.ts"]
 }

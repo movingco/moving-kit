@@ -1,9 +1,9 @@
+import type { HexStringLike } from "@movingco/hexstring";
+import { HexString } from "@movingco/hexstring";
 import { sha3_256 } from "@movingco/sha3";
 import { Buffer } from "buffer/index.js";
 
 import { Address } from "./address.js";
-import type { HexStringLike } from "./hexString.js";
-import { HexString } from "./hexString.js";
 
 /**
  * Value to be converted into public key
