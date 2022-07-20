@@ -1,4 +1,14 @@
 /**
+ * All bytes data are represented as hex-encoded string prefixed with `0x` and fulfilled with
+ * two hex digits per byte.
+ *
+ * Different with `Address` type, hex-encoded bytes should not trim any zeros.
+ * @format hex
+ * @example 0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1
+ */
+export type ByteStringHex = `0x${string}`;
+
+/**
  * Hex-encoded account address.
  *
  * Prefixed with `0x` and leading zeros are trimmed.
@@ -7,7 +17,7 @@
  * @format address
  * @example 0xdd
  */
-export type AddressHex = `0x${string}`;
+export type AddressHex = ByteStringHex;
 
 /**
  * Move module id is a string representation of Move module.
