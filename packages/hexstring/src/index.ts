@@ -2,6 +2,14 @@
 
 import { Buffer } from "buffer/index.js";
 
+/**
+ * A string prefixed with `0x`.
+ *
+ * Note: this is unsafe as one could pass in a string like
+ * `0xwhatever` -- it is not checked!
+ */
+export type HexPrefixedString = `0x${string}`;
+
 export type MaybeHexString = HexStringLike | string;
 
 export interface HexStringLike {
@@ -31,11 +39,11 @@ export class HexString implements SerializableHexString {
   /**
    * We want to make sure this hexString has the `0x` hex prefix
    */
-  private readonly _hexString: string;
+  private readonly _hexString: HexPrefixedString;
 
   constructor(hexString: string) {
     if (hexString.startsWith("0x")) {
-      this._hexString = hexString;
+      this._hexString = hexString as HexPrefixedString;
     } else {
       this._hexString = `0x${hexString}`;
     }
@@ -59,33 +67,38 @@ export class HexString implements SerializableHexString {
     return new HexString(hexString.hex());
   }
 
-  hex(): string {
+  hex(): HexPrefixedString {
     return this._hexString;
   }
 
-  lowerHex(): string {
-    return this.hex().toLowerCase();
+  lowerHex(): HexPrefixedString {
+    return this.hex().toLowerCase() as HexPrefixedString;
   }
 
   noPrefix(): string {
     return this._hexString.slice(2);
   }
 
-  toString(): string {
+  toString(): HexPrefixedString {
     return this.hex();
   }
 
-  toShortString(): string {
+  toShortString(): HexPrefixedString {
     return `0x${trimLeadingZeros(this.noPrefix())}`;
   }
 
+  /**
+   * Returns the hex encoded bytes of the {@link HexString}.
+   * @returns
+   */
+  hexBytesNoPrefix(): string {
+    return this._hexString.length % 2 === 1
+      ? `0${this.noPrefix()}`
+      : this.noPrefix();
+  }
+
   toBuffer(): Buffer {
-    return Buffer.from(
-      this._hexString.length % 2 === 1
-        ? `0${this.noPrefix()}`
-        : this.noPrefix(),
-      "hex"
-    );
+    return Buffer.from(this.hexBytesNoPrefix(), "hex");
   }
 
   toUint8Array(): Uint8Array {
