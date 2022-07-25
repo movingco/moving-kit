@@ -14,4 +14,10 @@ describe("HexString", () => {
       expect(HexString.ensure("0x1234").equals("0x1235")).toBe(false);
     });
   });
+
+  describe("#toUint8Array", () => {
+    expect(HexString.ensure("0x1234").toUint8Array()).toEqual(
+      new Uint8Array([0x12, 0x34])
+    );
+  });
 });

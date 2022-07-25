@@ -30,7 +30,7 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
-    "buffer": "^6.0.3",
+    "@movingco/bytes-to-hex": "workspace:^",
     "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0"
   },

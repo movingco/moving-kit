@@ -1,6 +1,6 @@
 // Taken from <https://github.com/aptos-labs/aptos-core/blob/main/ecosystem/typescript/sdk/src/hex_string.ts>
 
-import { Buffer } from "buffer/index.js";
+import { bytesToHex, hexToBytes, zeroPadHex } from "@movingco/bytes-to-hex";
 
 /**
  * A string prefixed with `0x`.
@@ -23,7 +23,6 @@ export interface SerializableHexString extends HexStringLike {
   noPrefix(): string;
   toString(): string;
   toUint8Array(): Uint8Array;
-  toBuffer(): Buffer;
 }
 
 export const trimLeadingZeros = (hexString: string): string => {
@@ -49,12 +48,12 @@ export class HexString implements SerializableHexString {
     }
   }
 
-  static fromBuffer(buffer: Buffer): HexString {
-    return new HexString(buffer.toString("hex"));
+  static fromBuffer(buffer: Uint8Array): HexString {
+    return HexString.fromUint8Array(buffer);
   }
 
   static fromUint8Array(arr: Uint8Array): HexString {
-    return HexString.fromBuffer(Buffer.from(arr));
+    return new HexString(bytesToHex(arr));
   }
 
   static ensure(hexString: MaybeHexString): HexString {
@@ -92,17 +91,15 @@ export class HexString implements SerializableHexString {
    * @returns
    */
   hexBytesNoPrefix(): string {
-    return this._hexString.length % 2 === 1
-      ? `0${this.noPrefix()}`
-      : this.noPrefix();
+    return zeroPadHex(this._hexString);
   }
 
-  toBuffer(): Buffer {
-    return Buffer.from(this.hexBytesNoPrefix(), "hex");
-  }
-
+  /**
+   * Generates a byte array representation of the {@link HexString}.
+   * @returns
+   */
   toUint8Array(): Uint8Array {
-    return Uint8Array.from(this.toBuffer());
+    return Uint8Array.from(hexToBytes(this.noPrefix()));
   }
 
   /**

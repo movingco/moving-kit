@@ -1,27 +1,34 @@
+import { bytesToHex, hexToBytes } from "@movingco/bytes-to-hex";
 import type { HexStringLike } from "@movingco/hexstring";
 import { HexString } from "@movingco/hexstring";
 import { sha3_256 } from "@movingco/sha3";
-import { Buffer } from "buffer/index.js";
 
 import { Address } from "./address.js";
 import { zeroPadBuffer } from "./misc.js";
 
+export const byteArrayEquals = (a: Uint8Array, b: Uint8Array): boolean => {
+  if (a.length !== b.length) {
+    return false;
+  }
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) {
+      return false;
+    }
+  }
+  return true;
+};
+
 /**
  * Value to be converted into public key
  */
-export type PublicKeyInitData =
-  | string
-  | Buffer
-  | Uint8Array
-  | number[]
-  | PublicKeyData;
+export type PublicKeyInitData = string | Uint8Array | number[] | PublicKeyData;
 
 /**
  * JSON object representation of PublicKey class
  */
 export type PublicKeyData = {
   /** @internal */
-  _buffer: Buffer;
+  _buffer: Uint8Array;
 };
 
 export const PUBLIC_KEY_SIZE = 32;
@@ -35,24 +42,26 @@ function isPublicKeyData(value: PublicKeyInitData): value is PublicKeyData {
  * @param value
  * @returns
  */
-const parsePublicKeyInitDataUnchecked = (value: PublicKeyInitData): Buffer => {
+const parsePublicKeyInitDataUnchecked = (
+  value: PublicKeyInitData
+): Uint8Array => {
   if (isPublicKeyData(value)) {
     return value._buffer;
   }
   if (typeof value === "string") {
-    const buffer = Buffer.from(value, "base64");
+    const buffer = hexToBytes(value);
     if (buffer.length !== PUBLIC_KEY_SIZE) {
       throw new Error(
         `Invalid public key input. Expected ${PUBLIC_KEY_SIZE} bytes, got ${buffer.length}`
       );
     }
     return buffer;
-  } else if (value instanceof Buffer) {
+  } else if (value instanceof Uint8Array) {
     return value;
   } else if (Array.isArray(value)) {
-    return Buffer.from(Uint8Array.from(value));
+    return Uint8Array.from(value);
   }
-  return Buffer.from(value);
+  return Uint8Array.from(value);
 };
 
 /**
@@ -64,11 +73,11 @@ export class PublicKey implements HexStringLike {
   /**
    * Buffer backing the {@link PublicKey}.
    */
-  private readonly _buffer: Buffer;
+  private readonly _buffer: Uint8Array;
 
   /**
    * Create a new PublicKey object
-   * @param value ed25519 public key as buffer or base-64 encoded string
+   * @param value ed25519 public key as buffer or hex encoded string
    */
   constructor(value: PublicKeyInitData) {
     const bufferUnchecked = parsePublicKeyInitDataUnchecked(value);
@@ -82,7 +91,7 @@ export class PublicKey implements HexStringLike {
    * Checks if two publicKeys are equal
    */
   equals(publicKey: PublicKey): boolean {
-    return this._buffer.equals(publicKey._buffer);
+    return byteArrayEquals(this._buffer, publicKey._buffer);
   }
 
   /**
@@ -93,36 +102,21 @@ export class PublicKey implements HexStringLike {
   }
 
   hex(): string {
-    return `0x${this._buffer.toString("hex")}`;
+    return `0x${bytesToHex(this._buffer)}`;
   }
 
   /**
-   * Return the base-64 representation of the public key
-   */
-  toBase64(): string {
-    return this._buffer.toString("base64");
-  }
-
-  /**
-   * Return the byte array representation of the public key
+   * Return the (copied) byte array representation of the public key
    */
   toBytes(): Uint8Array {
-    return this.toBuffer();
+    return this._buffer.slice();
   }
 
   /**
-   * Return the (cloned) Buffer representation of the public key
-   */
-  toBuffer(): Buffer {
-    // cloned
-    return Buffer.from(this._buffer);
-  }
-
-  /**
-   * Return the base-64 representation of the public key
+   * Return the hex representation of the public key
    */
   toString(): string {
-    return this.toBase64();
+    return this.hex();
   }
 
   /**
@@ -130,10 +124,7 @@ export class PublicKey implements HexStringLike {
    */
   toSuiAddress(): Address {
     const hexHash = sha3_256(this.toBytes());
-    const publicKeyBytes = zeroPadBuffer(
-      Buffer.from(hexHash, "hex"),
-      PUBLIC_KEY_SIZE
-    );
+    const publicKeyBytes = zeroPadBuffer(hexToBytes(hexHash), PUBLIC_KEY_SIZE);
     // Only take the first 20 bytes
     const addressBytes = publicKeyBytes.slice(0, 20);
     return Address.fromUint8Array(Uint8Array.from(addressBytes));

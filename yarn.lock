@@ -907,6 +907,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@movingco/bytes-to-hex@workspace:^, @movingco/bytes-to-hex@workspace:packages/bytes-to-hex":
+  version: 0.0.0-use.local
+  resolution: "@movingco/bytes-to-hex@workspace:packages/bytes-to-hex"
+  dependencies:
+    "@saberhq/tsconfig": ^2.0.3
+    tiny-invariant: ^1.2.0
+    tslib: ^2.4.0
+  languageName: unknown
+  linkType: soft
+
 "@movingco/core@npm:^0.1.51":
   version: 0.1.59
   resolution: "@movingco/core@npm:0.1.59"
@@ -927,12 +937,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/core@workspace:packages/core"
   dependencies:
+    "@movingco/bytes-to-hex": "workspace:^"
     "@movingco/hexstring": "workspace:^"
     "@movingco/sha3": "workspace:^"
     "@saberhq/option-utils": ^1.13.32
     "@saberhq/tsconfig": ^2.0.3
     "@ubeswap/token-math": ^5.2.0
-    buffer: ^6.0.3
     jsbi: ^4.3.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
@@ -964,8 +974,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@movingco/hexstring@workspace:packages/hexstring"
   dependencies:
+    "@movingco/bytes-to-hex": "workspace:^"
     "@saberhq/tsconfig": ^2.0.3
-    buffer: ^6.0.3
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
   languageName: unknown

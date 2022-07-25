@@ -1,5 +1,4 @@
 import { MAX_U64, ZERO } from "@ubeswap/token-math";
-import { Buffer } from "buffer/index.js";
 import { default as JSBI } from "jsbi";
 
 export * from "@saberhq/option-utils";
@@ -23,13 +22,14 @@ export const sleep = (duration: number): Promise<void> => {
  * @param length
  * @returns
  */
-export const zeroPadBuffer = (buffer: Buffer, length: number): Buffer => {
-  if (buffer.length === length) {
+export const zeroPadBuffer = (
+  buffer: Uint8Array,
+  length: number
+): Uint8Array => {
+  if (buffer.length >= length) {
     return buffer;
   }
-  const zeroPad = Buffer.alloc(length);
-  buffer.copy(zeroPad, length - buffer.length);
-  return buffer;
+  return new Uint8Array([...new Uint8Array(length - buffer.length), ...buffer]);
 };
 
 /**

@@ -9,6 +9,8 @@
   },
 
   "references": [
+    { "path": "packages/bytes-to-hex/" },
+    { "path": "packages/bytes-to-hex/tsconfig.cjs.json" },
     { "path": "packages/sha3/" },
     { "path": "packages/hexstring/" },
     { "path": "packages/hexstring/tsconfig.cjs.json" },

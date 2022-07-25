@@ -1,0 +1,9 @@
+{
+  "extends": "@saberhq/tsconfig/tsconfig.mono.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "dist/esm/"
+  },
+  "include": ["src/"],
+  "exclude": ["**/*.spec.ts"]
+}

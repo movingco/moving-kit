@@ -1,7 +1,7 @@
+import { bytesToHex } from "@movingco/bytes-to-hex";
 import type { MaybeHexString } from "@movingco/hexstring";
 import { HexString, trimLeadingZeros } from "@movingco/hexstring";
 import { sha3_256 } from "@movingco/sha3";
-import type { Buffer } from "buffer/index.js";
 import { default as invariant } from "tiny-invariant";
 
 import { zeroPadBuffer } from "./misc.js";
@@ -32,7 +32,7 @@ export class Address extends HexString {
     );
   }
 
-  static override fromBuffer(buffer: Buffer): Address {
+  static override fromBuffer(buffer: Uint8Array): Address {
     return Address.ensure(HexString.fromBuffer(buffer));
   }
 
@@ -64,8 +64,8 @@ export class Address extends HexString {
  * @returns
  */
 export const checksumAddress = (address: Address): string => {
-  const bytes = zeroPadBuffer(address.toBuffer(), 32);
-  const chars = bytes.toString("hex").split("");
+  const bytes = zeroPadBuffer(address.toUint8Array(), 32);
+  const chars = bytesToHex(bytes).split("");
 
   const hash = sha3_256.create();
   hash.update(bytes);

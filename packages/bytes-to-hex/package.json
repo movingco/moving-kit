@@ -1,7 +1,7 @@
 {
-  "name": "@movingco/core",
+  "name": "@movingco/bytes-to-hex",
   "version": "0.2.0",
-  "description": "Core packages for MovingKit.",
+  "description": "Converts a byte array to hex.",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
   "license": "Apache-2.0",
@@ -30,20 +30,11 @@
     "url": "https://github.com/movingco/moving-kit/issues"
   },
   "dependencies": {
-    "@movingco/bytes-to-hex": "workspace:^",
-    "@movingco/hexstring": "workspace:^",
-    "@movingco/sha3": "workspace:^",
-    "@saberhq/option-utils": "^1.13.32",
-    "@ubeswap/token-math": "^5.2.0",
     "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^2.0.3",
-    "jsbi": "^4.3.0"
-  },
-  "peerDependencies": {
-    "jsbi": "^4.3.0"
+    "@saberhq/tsconfig": "^2.0.3"
   },
   "typedoc": {
     "readmeFile": "./README.md"
