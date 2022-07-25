@@ -1,6 +1,6 @@
 {
   "name": "@movingco/bytes-to-hex",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Converts a byte array to hex.",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
