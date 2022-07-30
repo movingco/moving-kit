@@ -15,79 +15,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aptosis/aptos-api@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@aptosis/aptos-api@npm:0.0.5"
-  dependencies:
-    tslib: ^2.4.0
-  peerDependencies:
-    axios: ^0.27.2
-  checksum: 5eda905c04de81c5b4814b826f5ab5f23a9b4a83ee51a8ce58767797b14bda9ae93c6b5f35e2ed8a7190fe69015eb3ec2d7a5fb4562195556ad7b2d1c22d3be3
-  languageName: node
-  linkType: hard
-
-"@aptosis/aptos-client@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@aptosis/aptos-client@npm:0.0.5"
-  dependencies:
-    "@aptosis/aptos-api": ^0.0.5
-    "@vespaiach/axios-fetch-adapter": ^0.3.0
-    tslib: ^2.4.0
-  peerDependencies:
-    axios: ^0.27.2
-  checksum: 5c80abb3bac2f6a629d16a63dfe3b05f10c6488b7fd1a144d8d7139baf7ccd94bf2bd7d7872159906cedcb1ab33ab43a8e8c09bdfe59f82e8cda8584e2f1dce5
-  languageName: node
-  linkType: hard
-
-"@aptosis/aptos-common@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@aptosis/aptos-common@npm:0.1.0"
-  dependencies:
-    "@aptosis/aptos-api": ^0.0.5
-    "@aptosis/aptos-client": ^0.0.5
-    "@aptosis/aptos-typed-api": ^0.0.5
-    "@aptosis/faucet-client": ^0.0.5
-    "@movingco/leb128": ^0.1.51
-    "@vespaiach/axios-fetch-adapter": ^0.3.0
-    aptos: ^1.2.0
-    axios: ^0.27.2
-    buffer: ^6.0.3
-    tslib: ^2.4.0
-  peerDependencies:
-    "@movingco/core": ^0.1.51
-    jsbi: ^4.3.0
-  checksum: afcbf398c11ab4c9a0dde5f69842a4c123cc2a22ee8cd782200f50954329cef818e388d93eec784a6e69cf6cd218b9c7710e126eca9ed705cb1cd1996412f928
-  languageName: node
-  linkType: hard
-
-"@aptosis/aptos-typed-api@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@aptosis/aptos-typed-api@npm:0.0.5"
-  dependencies:
-    "@aptosis/aptos-api": ^0.0.5
-    tslib: ^2.4.0
-  peerDependencies:
-    axios: ^0.27
-  checksum: 4b35a5afcd85177bd588a7e26152cd504a8f25edcd8ed1a44ad308521a7bd48f99fa8734d0ebd6c8403a9875237058879d9bc9118f5181546686bc1e9a0f8476
-  languageName: node
-  linkType: hard
-
-"@aptosis/faucet-client@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@aptosis/faucet-client@npm:0.0.5"
-  dependencies:
-    "@aptosis/aptos-api": ^0.0.5
-    "@aptosis/aptos-client": ^0.0.5
-    "@movingco/core": ^0.1.51
-    "@vespaiach/axios-fetch-adapter": ^0.3.0
-    tslib: ^2.4.0
-  peerDependencies:
-    axios: ^0.27.2
-    jsbi: ^4.3.0
-  checksum: 555a8cb4806080dd1ea4291769abca57b647d85a93faf45d925b739325078640fb830612a776c602bf84dca1e66d66cb1229c23a734a39b375c9df7abf0df0e3
-  languageName: node
-  linkType: hard
-
 "@arcanis/slice-ansi@npm:^1.1.1":
   version: 1.1.1
   resolution: "@arcanis/slice-ansi@npm:1.1.1"
@@ -889,24 +816,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/aptos@workspace:packages/aptos":
-  version: 0.0.0-use.local
-  resolution: "@movingco/aptos@workspace:packages/aptos"
-  dependencies:
-    "@aptosis/aptos-common": ^0.1.0
-    "@movingco/core": "workspace:^"
-    "@saberhq/tsconfig": ^2.0.3
-    "@vespaiach/axios-fetch-adapter": ^0.3.0
-    aptos: ^1.2.0
-    axios: ^0.27.2
-    jsbi: ^4.3.0
-    tslib: ^2.4.0
-  peerDependencies:
-    "@movingco/core": "workspace:^"
-    jsbi: ^4.3.0
-  languageName: unknown
-  linkType: soft
-
 "@movingco/bytes-to-hex@workspace:^, @movingco/bytes-to-hex@workspace:packages/bytes-to-hex":
   version: 0.0.0-use.local
   resolution: "@movingco/bytes-to-hex@workspace:packages/bytes-to-hex"
@@ -916,22 +825,6 @@ __metadata:
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
-
-"@movingco/core@npm:^0.1.51":
-  version: 0.1.59
-  resolution: "@movingco/core@npm:0.1.59"
-  dependencies:
-    "@movingco/sha3": ^0.1.58
-    "@saberhq/option-utils": ^1.13.32
-    "@ubeswap/token-math": ^5.2.0
-    buffer: ^6.0.3
-    tiny-invariant: ^1.2.0
-    tslib: ^2.4.0
-  peerDependencies:
-    jsbi: ^4.3.0
-  checksum: 0d1a290b7958a01ae5e4a3cadcadb56be2bf802ab4662797b2c188b6df0056d4a385bc2e3c77be54eeb227940bef427e17527b26db75686016788de85d001998
-  languageName: node
-  linkType: hard
 
 "@movingco/core@workspace:^, @movingco/core@workspace:packages/core":
   version: 0.0.0-use.local
@@ -1002,15 +895,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@movingco/leb128@npm:^0.1.51":
-  version: 0.1.59
-  resolution: "@movingco/leb128@npm:0.1.59"
-  dependencies:
-    tslib: ^2.4.0
-  checksum: 6f33d8d48df4b7b56f41616ba77f065fef026d671cb90a9cdbf9f26b1834a146ccd52160f970a1280204a78496f0804d5dfc9715c00b076bd6844bc462b70f2f
-  languageName: node
-  linkType: hard
-
 "@movingco/leb128@workspace:packages/leb128":
   version: 0.0.0-use.local
   resolution: "@movingco/leb128@workspace:packages/leb128"
@@ -1040,17 +924,6 @@ __metadata:
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
-
-"@movingco/sha3@npm:^0.1.58":
-  version: 0.1.58
-  resolution: "@movingco/sha3@npm:0.1.58"
-  dependencies:
-    js-sha3: ^0.8.0
-    tiny-invariant: ^1.2.0
-    tslib: ^2.4.0
-  checksum: afa31aa96552b20a47d6ae9d4576c65304eadbbedaaaa61f1a0ebd17c8888ccaad1ea21ed02071f3662c4ff1629246fada2cc85ea689bb5af5bffdfc2715ddbc
-  languageName: node
-  linkType: hard
 
 "@movingco/sha3@workspace:^, @movingco/sha3@workspace:packages/sha3":
   version: 0.0.0-use.local
@@ -1695,15 +1568,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vespaiach/axios-fetch-adapter@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@vespaiach/axios-fetch-adapter@npm:0.3.0"
-  peerDependencies:
-    axios: ">=0.26.0"
-  checksum: 9ce4b22f2fa36df4f209cf958e147d29f9852f63048f8b507b96a24d23b369a5a851ca690f7577593df4bea24b9a4df30f464b9c3c723326922df4beade6c00a
-  languageName: node
-  linkType: hard
-
 "@yarnpkg/cli@npm:^3.2.1":
   version: 3.2.1
   resolution: "@yarnpkg/cli@npm:3.2.1"
@@ -2309,20 +2173,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aptos@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "aptos@npm:1.2.0"
-  dependencies:
-    axios: ^0.26.1
-    buffer: ^6.0.3
-    js-sha3: ^0.8.0
-    tweetnacl: ^1.0.3
-    typescript-memoize: ^1.1.0
-    yarn: ^1.22.18
-  checksum: 113c17b72698383d55d30a16b9c1d6569bf46428b103497e323d245c97fb6eaaaab172dfc8871d252a0e2cfeae25efa83807aa8d320ed0e871883f4a7174017f
-  languageName: node
-  linkType: hard
-
 "are-we-there-yet@npm:^3.0.0":
   version: 3.0.0
   resolution: "are-we-there-yet@npm:3.0.0"
@@ -2392,23 +2242,6 @@ __metadata:
   version: 2.0.0
   resolution: "astral-regex@npm:2.0.0"
   checksum: 876231688c66400473ba505731df37ea436e574dd524520294cc3bbc54ea40334865e01fa0d074d74d036ee874ee7e62f486ea38bc421ee8e6a871c06f011766
-  languageName: node
-  linkType: hard
-
-"asynckit@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "asynckit@npm:0.4.0"
-  checksum: 7b78c451df768adba04e2d02e63e2d0bf3b07adcd6e42b4cf665cb7ce899bedd344c69a1dcbce355b5f972d597b25aaa1c1742b52cffd9caccb22f348114f6be
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.27":
-  version: 0.27.2
-  resolution: "axios@npm:0.27.2"
-  dependencies:
-    follow-redirects: ^1.14.9
-    form-data: ^4.0.0
-  checksum: 38cb7540465fe8c4102850c4368053c21683af85c5fdf0ea619f9628abbcb59415d1e22ebc8a6390d2bbc9b58a9806c874f139767389c862ec9b772235f06854
   languageName: node
   linkType: hard
 
@@ -2617,16 +2450,6 @@ __metadata:
     base64-js: ^1.3.1
     ieee754: ^1.1.13
   checksum: e2cf8429e1c4c7b8cbd30834ac09bd61da46ce35f5c22a78e6c2f04497d6d25541b16881e30a019c6fd3154150650ccee27a308eff3e26229d788bbdeb08ab84
-  languageName: node
-  linkType: hard
-
-"buffer@npm:^6.0.3":
-  version: 6.0.3
-  resolution: "buffer@npm:6.0.3"
-  dependencies:
-    base64-js: ^1.3.1
-    ieee754: ^1.2.1
-  checksum: 5ad23293d9a731e4318e420025800b42bf0d264004c0286c8cc010af7a270c7a0f6522e84f54b9ad65cbd6db20b8badbfd8d2ebf4f80fa03dab093b89e68c3f9
   languageName: node
   linkType: hard
 
@@ -2939,15 +2762,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"combined-stream@npm:^1.0.8":
-  version: 1.0.8
-  resolution: "combined-stream@npm:1.0.8"
-  dependencies:
-    delayed-stream: ~1.0.0
-  checksum: 49fa4aeb4916567e33ea81d088f6584749fc90c7abec76fd516bf1c5aa5c79f3584b5ba3de6b86d26ddd64bae5329c4c7479343250cfe71c75bb366eae53bb7c
-  languageName: node
-  linkType: hard
-
 "commander@npm:^9.3.0":
   version: 9.3.0
   resolution: "commander@npm:9.3.0"
@@ -3121,13 +2935,6 @@ __metadata:
     has-property-descriptors: ^1.0.0
     object-keys: ^1.1.1
   checksum: ce0aef3f9eb193562b5cfb79b2d2c86b6a109dfc9fdcb5f45d680631a1a908c06824ddcdb72b7573b54e26ace07f0a23420aaba0d5c627b34d2c1de8ef527e2b
-  languageName: node
-  linkType: hard
-
-"delayed-stream@npm:~1.0.0":
-  version: 1.0.0
-  resolution: "delayed-stream@npm:1.0.0"
-  checksum: 46fe6e83e2cb1d85ba50bd52803c68be9bd953282fa7096f51fc29edd5d67ff84ff753c51966061e5ba7cb5e47ef6d36a91924eddb7f3f3483b1c560f77a0020
   languageName: node
   linkType: hard
 
@@ -3808,27 +3615,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.9":
-  version: 1.15.1
-  resolution: "follow-redirects@npm:1.15.1"
-  peerDependenciesMeta:
-    debug:
-      optional: true
-  checksum: 6aa4e3e3cdfa3b9314801a1cd192ba756a53479d9d8cca65bf4db3a3e8834e62139245cd2f9566147c8dfe2efff1700d3e6aefd103de4004a7b99985e71dd533
-  languageName: node
-  linkType: hard
-
-"form-data@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "form-data@npm:4.0.0"
-  dependencies:
-    asynckit: ^0.4.0
-    combined-stream: ^1.0.8
-    mime-types: ^2.1.12
-  checksum: 01135bf8675f9d5c61ff18e2e2932f719ca4de964e3be90ef4c36aacfc7b9cb2fceb5eca0b7e0190e3383fe51c5b37f4cb80b62ca06a99aaabfcfd6ac7c9328c
-  languageName: node
-  linkType: hard
-
 "fs-constants@npm:^1.0.0":
   version: 1.0.0
   resolution: "fs-constants@npm:1.0.0"
@@ -4264,7 +4050,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ieee754@npm:^1.1.13, ieee754@npm:^1.2.1":
+"ieee754@npm:^1.1.13":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
   checksum: 5144c0c9815e54ada181d80a0b810221a253562422e7c6c3a60b1901154184f49326ec239d618c416c1c5945a2e197107aee8d986a3dd836b53dffefd99b5e7e
@@ -5496,22 +5282,6 @@ __metadata:
     braces: ^3.0.2
     picomatch: ^2.3.1
   checksum: 02a17b671c06e8fefeeb6ef996119c1e597c942e632a21ef589154f23898c9c6a9858526246abb14f8bca6e77734aa9dcf65476fca47cedfb80d9577d52843fc
-  languageName: node
-  linkType: hard
-
-"mime-db@npm:1.52.0":
-  version: 1.52.0
-  resolution: "mime-db@npm:1.52.0"
-  checksum: 0d99a03585f8b39d68182803b12ac601d9c01abfa28ec56204fa330bc9f3d1c5e14beb049bafadb3dbdf646dfb94b87e24d4ec7b31b7279ef906a8ea9b6a513f
-  languageName: node
-  linkType: hard
-
-"mime-types@npm:^2.1.12":
-  version: 2.1.35
-  resolution: "mime-types@npm:2.1.35"
-  dependencies:
-    mime-db: 1.52.0
-  checksum: 89a5b7f1def9f3af5dad6496c5ed50191ae4331cc5389d7c521c8ad28d5fdad2d06fd81baf38fed813dc4e46bb55c8145bb0ff406330818c9cf712fb2e9b3836
   languageName: node
   linkType: hard
 
@@ -7214,13 +6984,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-memoize@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "typescript-memoize@npm:1.1.0"
-  checksum: a7d3357adbf421972619397c5db562664f3d440629a5afbb510c09e23e3a176424f600c3c853addc2234a9b7be3e61dae984771c057a76980fab67fb30c70d64
-  languageName: node
-  linkType: hard
-
 "typescript@npm:4.7.0-beta":
   version: 4.7.0-beta
   resolution: "typescript@npm:4.7.0-beta"
@@ -7467,16 +7230,6 @@ __metadata:
     y18n: ^5.0.5
     yargs-parser: ^21.0.0
   checksum: e2c662a7a63aa125a162cc0d77e38bdfe2a0dd5121a0d485a464499cd7782c5198b57103aed4608df96a017d01cb6a834bc22d4a1f20b92649fa82983d53522b
-  languageName: node
-  linkType: hard
-
-"yarn@npm:^1.22.18":
-  version: 1.22.18
-  resolution: "yarn@npm:1.22.18"
-  bin:
-    yarn: bin/yarn.js
-    yarnpkg: bin/yarn.js
-  checksum: ffd9a4872caa5fce83e914592dd6a40bb978bf992d3dca839bc3853b9e6de951d7596f7e8c4a88bec3af3a049e46097f9139a51740d9074582fd923af8762f7a
   languageName: node
   linkType: hard
 

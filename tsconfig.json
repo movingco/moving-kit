@@ -27,9 +27,7 @@
     { "path": "packages/move-types/" },
     { "path": "packages/move-types/tsconfig.cjs.json" },
     { "path": "packages/prelude/" },
-    { "path": "packages/prelude/tsconfig.cjs.json" },
-    { "path": "packages/aptos/" },
-    { "path": "packages/aptos/tsconfig.cjs.json" }
+    { "path": "packages/prelude/tsconfig.cjs.json" }
   ],
   "files": ["jest.config.mjs", ".eslintrc.cjs"],
   "include": ["./packages/**/*.spec.ts"]
