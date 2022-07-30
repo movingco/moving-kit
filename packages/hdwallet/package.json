@@ -43,9 +43,6 @@
     "@types/jest": "^28.1.6",
     "@types/pbkdf2": "^3.1.0"
   },
-  "peerDependencies": {
-    "jsbi": "*"
-  },
   "typedoc": {
     "readmeFile": "./README.md"
   }

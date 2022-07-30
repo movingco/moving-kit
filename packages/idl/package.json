@@ -34,11 +34,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^2.0.3",
-    "jsbi": "^4.3.0"
-  },
-  "peerDependencies": {
-    "jsbi": "^4.3.0"
+    "@saberhq/tsconfig": "^2.0.3"
   },
   "typedoc": {
     "readmeFile": "./README.md"

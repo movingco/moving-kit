@@ -946,8 +946,6 @@ __metadata:
     jsbi: ^4.3.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
-  peerDependencies:
-    jsbi: ^4.3.0
   languageName: unknown
   linkType: soft
 
@@ -965,8 +963,6 @@ __metadata:
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
     tweetnacl: ^1.0.3
-  peerDependencies:
-    jsbi: "*"
   languageName: unknown
   linkType: soft
 
@@ -988,12 +984,10 @@ __metadata:
     "@movingco/core": "workspace:^"
     "@saberhq/tsconfig": ^2.0.3
     "@types/react": ^18.0.15
-    jsbi: ^4.3.0
     react: ^18.2.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
   peerDependencies:
-    jsbi: ^4.3.0
     react: "*"
   languageName: unknown
   linkType: soft
@@ -1003,11 +997,8 @@ __metadata:
   resolution: "@movingco/idl@workspace:packages/idl"
   dependencies:
     "@saberhq/tsconfig": ^2.0.3
-    jsbi: ^4.3.0
     tiny-invariant: ^1.2.0
     tslib: ^2.4.0
-  peerDependencies:
-    jsbi: ^4.3.0
   languageName: unknown
   linkType: soft
 
@@ -1046,7 +1037,6 @@ __metadata:
     "@movingco/idl": "workspace:^"
     "@movingco/move-types": "workspace:^"
     "@saberhq/tsconfig": ^2.0.3
-    jsbi: ^4.3.0
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft

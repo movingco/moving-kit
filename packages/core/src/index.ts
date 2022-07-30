@@ -27,3 +27,4 @@ export {
 // re-export token-math types
 // so consumers don't need to use them
 export type { BigintIsh, IFormatUint, NumberFormat } from "@ubeswap/token-math";
+export { default as JSBI } from "jsbi";
