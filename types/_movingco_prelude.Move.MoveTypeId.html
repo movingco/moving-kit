@@ -51,7 +51,7 @@ which is the position of the generic type parameter in the <code>struct</code> o
 <li><code>&amp;mut vector&lt;u8&gt;</code></li>
 </ul>
 <p>Generic type parameter value example, the following is <code>0x1::TransactionFee::TransactionFee</code> JSON representation:</p>
-<pre><code class="language-json"><span class="hl-1">    {</span><br/><span class="hl-1">        </span><span class="hl-5">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-6">&quot;TransactionFee&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-5">&quot;is_native&quot;</span><span class="hl-1">: </span><span class="hl-7">false</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-5">&quot;abilities&quot;</span><span class="hl-1">: [</span><span class="hl-6">&quot;key&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">        </span><span class="hl-5">&quot;generic_type_params&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">            {</span><span class="hl-5">&quot;constraints&quot;</span><span class="hl-1">: [], </span><span class="hl-5">&quot;is_phantom&quot;</span><span class="hl-1">: </span><span class="hl-7">true</span><span class="hl-1">}</span><br/><span class="hl-1">        ],</span><br/><span class="hl-1">        </span><span class="hl-5">&quot;fields&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">            { </span><span class="hl-5">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-6">&quot;balance&quot;</span><span class="hl-1">, </span><span class="hl-5">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-6">&quot;0x1::Aptos::Aptos&lt;T0&gt;&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">            { </span><span class="hl-5">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-6">&quot;preburn&quot;</span><span class="hl-1">, </span><span class="hl-5">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-6">&quot;0x1::Aptos::Preburn&lt;T0&gt;&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">        ]</span><br/><span class="hl-1">    }</span>
+<pre><code class="language-json"><span class="hl-1">    {</span><br/><span class="hl-1">        </span><span class="hl-7">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-8">&quot;TransactionFee&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-7">&quot;is_native&quot;</span><span class="hl-1">: </span><span class="hl-4">false</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-7">&quot;abilities&quot;</span><span class="hl-1">: [</span><span class="hl-8">&quot;key&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">        </span><span class="hl-7">&quot;generic_type_params&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">            {</span><span class="hl-7">&quot;constraints&quot;</span><span class="hl-1">: [], </span><span class="hl-7">&quot;is_phantom&quot;</span><span class="hl-1">: </span><span class="hl-4">true</span><span class="hl-1">}</span><br/><span class="hl-1">        ],</span><br/><span class="hl-1">        </span><span class="hl-7">&quot;fields&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">            { </span><span class="hl-7">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-8">&quot;balance&quot;</span><span class="hl-1">, </span><span class="hl-7">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-8">&quot;0x1::Aptos::Aptos&lt;T0&gt;&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">            { </span><span class="hl-7">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-8">&quot;preburn&quot;</span><span class="hl-1">, </span><span class="hl-7">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-8">&quot;0x1::Aptos::Preburn&lt;T0&gt;&quot;</span><span class="hl-1"> }</span><br/><span class="hl-1">        ]</span><br/><span class="hl-1">    }</span>
 </code></pre>
 <p>It&#39;s Move source code:</p>
 <pre><code class="language-move">    module AptosFramework::TransactionFee {
@@ -71,7 +71,7 @@ the <code>CoinType</code> in the Move source code.</p>
 
 <h3>Pattern</h3><p>^(bool|u8|u64|u128|address|signer|vector&lt;.+&gt;|0x[0-9a-zA-Z:_&lt;, &gt;]+|^&amp;(mut )?.+$|T\d+)$</p>
 
-<h3>Example</h3><pre><code class="language-ts"><span class="hl-2">0x1</span><span class="hl-1">::</span><span class="hl-3">AptosAccount</span><span class="hl-1">::</span><span class="hl-0">Balance</span><span class="hl-1">&lt;</span><span class="hl-2">0x1</span><span class="hl-1">::</span><span class="hl-3">XUS</span><span class="hl-1">::</span><span class="hl-4">XUS</span><span class="hl-1">&gt;</span>
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-2">0x1</span><span class="hl-1">::</span><span class="hl-5">AptosAccount</span><span class="hl-1">::</span><span class="hl-0">Balance</span><span class="hl-1">&lt;</span><span class="hl-2">0x1</span><span class="hl-1">::</span><span class="hl-5">XUS</span><span class="hl-1">::</span><span class="hl-6">XUS</span><span class="hl-1">&gt;</span>
 </code></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -96,21 +96,20 @@ the <code>CoinType</code> in the Move source code.</p>
 <ul>
 <li class="current"><a href="../modules.html">Moving <wbr/>Kit</a>
 <ul>
-<li class="tsd-kind-module"><a href="../modules/_movingco_aptos.html">@movingco/aptos -<wbr/> v0.2.0</a></li>
-<li class="tsd-kind-module"><a href="../modules/_movingco_bytes_to_hex.html">@movingco/bytes-<wbr/>to-<wbr/>hex -<wbr/> v0.2.0</a></li>
-<li class="tsd-kind-module"><a href="../modules/_movingco_core.html">@movingco/core -<wbr/> v0.2.0</a></li>
-<li class="tsd-kind-module"><a href="../modules/_movingco_hdwallet.html">@movingco/hdwallet -<wbr/> v0.2.0</a></li>
-<li class="tsd-kind-module"><a href="../modules/_movingco_hexstring.html">@movingco/hexstring -<wbr/> v0.2.0</a></li>
-<li class="tsd-kind-module"><a href="../modules/_movingco_hooks.html">@movingco/hooks -<wbr/> v0.2.0</a></li>
-<li class="tsd-kind-module"><a href="../modules/_movingco_idl.html">@movingco/idl -<wbr/> v0.2.0</a></li>
-<li class="tsd-kind-module"><a href="../modules/_movingco_leb128.html">@movingco/leb128 -<wbr/> v0.2.0</a></li>
-<li class="tsd-kind-module"><a href="../modules/_movingco_move_types.html">@movingco/move-<wbr/>types -<wbr/> v0.2.0</a></li>
-<li class="current tsd-kind-module"><a href="../modules/_movingco_prelude.html">@movingco/prelude -<wbr/> v0.2.0</a>
+<li class="tsd-kind-module"><a href="../modules/_movingco_bytes_to_hex.html">@movingco/bytes-<wbr/>to-<wbr/>hex -<wbr/> v0.3.0</a></li>
+<li class="tsd-kind-module"><a href="../modules/_movingco_core.html">@movingco/core -<wbr/> v0.3.0</a></li>
+<li class="tsd-kind-module"><a href="../modules/_movingco_hdwallet.html">@movingco/hdwallet -<wbr/> v0.3.0</a></li>
+<li class="tsd-kind-module"><a href="../modules/_movingco_hexstring.html">@movingco/hexstring -<wbr/> v0.3.0</a></li>
+<li class="tsd-kind-module"><a href="../modules/_movingco_hooks.html">@movingco/hooks -<wbr/> v0.3.0</a></li>
+<li class="tsd-kind-module"><a href="../modules/_movingco_idl.html">@movingco/idl -<wbr/> v0.3.0</a></li>
+<li class="tsd-kind-module"><a href="../modules/_movingco_leb128.html">@movingco/leb128 -<wbr/> v0.3.0</a></li>
+<li class="tsd-kind-module"><a href="../modules/_movingco_move_types.html">@movingco/move-<wbr/>types -<wbr/> v0.3.0</a></li>
+<li class="current tsd-kind-module"><a href="../modules/_movingco_prelude.html">@movingco/prelude -<wbr/> v0.3.0</a>
 <ul>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/_movingco_prelude.IDL.html">IDL</a></li>
 <li class="current tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/_movingco_prelude.Move.html">Move</a></li>
 <li class="tsd-kind-namespace tsd-parent-kind-module"><a href="../modules/_movingco_prelude.serializers.html">serializers</a></li></ul></li>
-<li class="tsd-kind-module"><a href="../modules/_movingco_sha3.html">@movingco/sha3 -<wbr/> v0.2.0</a></li></ul></li></ul></div></details></nav>
+<li class="tsd-kind-module"><a href="../modules/_movingco_sha3.html">@movingco/sha3 -<wbr/> v0.3.0</a></li></ul></li></ul></div></details></nav>
 <nav class="tsd-navigation secondary menu-sticky">
 <ul>
 <li class="tsd-kind-reference tsd-parent-kind-namespace"><a href="../modules/_movingco_prelude.Move.html#ScriptFunctionPayload" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4D82" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-8388608-path"></rect><path d="M10.354 17V8.24H13.066C13.586 8.24 14.042 8.348 14.434 8.564C14.826 8.772 15.13 9.064 15.346 9.44C15.562 9.816 15.67 10.256 15.67 10.76C15.67 11.352 15.514 11.86 15.202 12.284C14.898 12.708 14.482 13 13.954 13.16L15.79 17H14.518L12.838 13.28H11.434V17H10.354ZM11.434 12.308H13.066C13.514 12.308 13.874 12.168 14.146 11.888C14.418 11.6 14.554 11.224 14.554 10.76C14.554 10.288 14.418 9.912 14.146 9.632C13.874 9.352 13.514 9.212 13.066 9.212H11.434V12.308Z" fill="var(--color-text)" id="icon-8388608-text"></path></svg>Script<wbr/>Function<wbr/>Payload</a></li>
