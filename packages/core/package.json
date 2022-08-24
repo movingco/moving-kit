@@ -33,14 +33,14 @@
     "@movingco/bytes-to-hex": "workspace:^",
     "@movingco/hexstring": "workspace:^",
     "@movingco/sha3": "workspace:^",
-    "@saberhq/option-utils": "^1.13.32",
+    "@saberhq/option-utils": "^1.14.2",
     "@ubeswap/token-math": "^5.2.0",
     "jsbi": "^4.3.0",
     "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^2.0.3"
+    "@saberhq/tsconfig": "^2.0.4"
   },
   "typedoc": {
     "readmeFile": "./README.md"
