@@ -1,6 +1,6 @@
 {
   "name": "@movingco/hexstring",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "String of hex characters.",
   "author": "Ian Macalinao <ian@moving.wtf>",
   "homepage": "https://github.com/movingco/moving-kit#readme",
