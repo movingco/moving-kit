@@ -32,15 +32,15 @@
   "dependencies": {
     "@movingco/core": "workspace:^",
     "bip39-light": "^1.0.7",
-    "ed25519-hd-key": "^1.2.0",
+    "ed25519-hd-key": "^1.3.0",
     "pbkdf2": "^3.1.2",
     "tiny-invariant": "^1.2.0",
     "tslib": "^2.4.0",
     "tweetnacl": "^1.0.3"
   },
   "devDependencies": {
-    "@saberhq/tsconfig": "^2.0.3",
-    "@types/jest": "^28.1.6",
+    "@saberhq/tsconfig": "^2.0.4",
+    "@types/jest": "^28.1.8",
     "@types/pbkdf2": "^3.1.0"
   },
   "typedoc": {
